@@ -11,24 +11,68 @@ import toast from 'react-hot-toast';
 
 const fakeData = [
     {
-        src: "/src/assets/Window-Frame-placeholder.jpg",
+        src: "/src/assets/windows/shape-1.svg",
         imageId: 1,
     },
     {
-        src: "/src/assets/Window-Frame-placeholder.jpg",
+        src: "/src/assets/windows/shape-2.svg",
         imageId: 2,
     },
     {
-        src: "/src/assets/Window-Frame-placeholder.jpg",
+        src: "/src/assets/windows/shape-3.svg",
         imageId: 3,
     },
     {
-        src: "/src/assets/Window-Frame-placeholder.jpg",
+        src: "/src/assets/windows/shape-4.svg",
         imageId: 4,
     },
     {
-        src: "/src/assets/Window-Frame-placeholder.jpg",
+        src: "/src/assets/windows/shape-5.svg",
         imageId: 5,
+    },
+    {
+        src: "/src/assets/windows/shape-6.svg",
+        imageId: 6,
+    },
+    {
+        src: "/src/assets/windows/shape-7.svg",
+        imageId: 7,
+    },
+    {
+        src: "/src/assets/windows/shape-8.svg",
+        imageId: 8,
+    },
+    {
+        src: "/src/assets/windows/shape-9.svg",
+        imageId: 9,
+    },
+    {
+        src: "/src/assets/windows/shape-10.svg",
+        imageId: 10,
+    },
+    {
+        src: "/src/assets/windows/shape-11.svg",
+        imageId: 11,
+    },
+    {
+        src: "/src/assets/windows/shape-12.svg",
+        imageId: 12,
+    },
+    {
+        src: "/src/assets/windows/shape-13.svg",
+        imageId: 13,
+    },
+    {
+        src: "/src/assets/windows/shape-14.svg",
+        imageId: 14,
+    },
+    {
+        src: "/src/assets/windows/shape-15.svg",
+        imageId: 15,
+    },
+    {
+        src: "/src/assets/windows/shape-16.svg",
+        imageId: 16,
     },
 ]
 
@@ -153,7 +197,7 @@ export default function AddRoom({ setShowRoom, type }) {
             }
 
             <div>
-                <div className="flex align-center gap-2">
+                <div className="flex align-center gap-2" style={{overflowX: "auto", margin: "2rem"}}>
                     {
                         fakeData.map(window => <Window window={window} key={window.imageId} />)
                     }

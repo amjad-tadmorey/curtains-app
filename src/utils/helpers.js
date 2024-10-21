@@ -19,10 +19,10 @@ export function renderItemIcon(productType) {
     if (productType === "black-out") icon = "/src/assets/icons/fabric-black.svg"
     if (productType === "light") icon = "/src/assets/icons/fabric-white.svg"
     if (productType === "havey") icon = "/src/assets/icons/fabric-black.svg"
-    if (productType === "migar") icon = "/src/assets/icons/pipe.svg"
-    if (productType === "mawaseer") icon = "/src/assets/icons/pipe.svg"
-    if (productType === "shmmaatat") icon = "/src/assets/icons/hook.svg"
-    if (productType === "oima") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "roller") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "accessories ") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "hooks") icon = "/src/assets/icons/hook.svg"
+    if (productType === "oyema") icon = "/src/assets/icons/pipe.svg"
 
     return icon
 }
