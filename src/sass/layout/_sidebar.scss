@@ -1,0 +1,35 @@
+.sidebar {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    padding: 2rem 3rem;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &__name {
+        color: $color-grey-4;
+    }
+}
+
+.nav {
+    list-style: none;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    flex: 1;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

@@ -1,0 +1,22 @@
+.order-type {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    font-size: $font-small;
+
+    &__icon {
+        grid-column: 1 / -1;
+        height: 4.5rem;
+    }
+
+    &__text {
+        align-self: end;
+    }
+
+    span {
+        color: $color-grey-3;
+        display: block;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,104 @@
+.create-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    &__heading {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        h4 {
+            color: $color-grey-3;
+            font-size: $font-small;
+            font-weight: 300;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: $font-extra-small;
+            color: $color-grey-3
+        }
+
+    }
+
+    &__field {
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: $rounded-normal;
+        background-color: $color-grey-1;
+        width: 100%;
+
+        &:focus-visible {
+            border: none;
+            outline: none;
+        }
+    }
+
+    label {
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+        }
+    }
+
+    .label {
+        margin: 0 0 1rem .5rem;
+        color: $color-grey-3;
+    }
+
+    textarea {
+        min-height: 20rem;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+
+// create customer grid
+
+.create-form--customer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.create-form__field {
+    &--name {
+        grid-column: 1 / -1;
+    }
+
+    &--adress {
+        grid-column: 1 / -1;
+    }
+
+    &--country {
+        grid-column: 1 / 3;
+    }
+
+    &--number {
+        grid-column: 3 / -1;
+    }
+
+    &--payment {
+        grid-column: 1 / 4;
+    }
+
+    &--type {
+        grid-column: 4 / 7;
+    }
+
+    &--date {
+        grid-column: 1 / -1;
+    }
+
+    &--note {
+        grid-column: 1 / -1;
+    }
+}

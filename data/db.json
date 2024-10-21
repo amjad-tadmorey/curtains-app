@@ -1,0 +1,110 @@
+{
+  "orders": [
+    {
+      "id": "771616067",
+      "created__at": "2024-10-20T20:52:12.304Z",
+      "status": "pending",
+      "staticItems": [
+        {
+          "productName": "rosa",
+          "code": "1",
+          "productType": "havey",
+          "quantity": 31
+        },
+        {
+          "productName": "silia",
+          "code": "2",
+          "productType": "havey",
+          "quantity": 21
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "master",
+          "windows": [
+            {
+              "windowId": 0.7625488434348071,
+              "imageId": 1,
+              "src": "/src/assets/Window-Frame-placeholder.jpg",
+              "width": "3",
+              "height": "3",
+              "heightType": "net"
+            }
+          ],
+          "roomMaterials": [
+            {
+              "product": "rosa",
+              "quantity": "31",
+              "productType": "havey",
+              "sewingType": "type-1"
+            }
+          ],
+          "notes": ""
+        },
+        {
+          "roomName": "living",
+          "windows": [
+            {
+              "windowId": 0.7004425611297813,
+              "imageId": 2,
+              "src": "/src/assets/Window-Frame-placeholder.jpg",
+              "width": "3",
+              "height": "3",
+              "heightType": "installation"
+            }
+          ],
+          "roomMaterials": [
+            {
+              "product": "silia",
+              "quantity": "21",
+              "productType": "havey",
+              "sewingType": "type-2"
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "generalInfo": {
+        "customer": "957523748",
+        "date": "2024-10-16",
+        "orderType": "home-delivery",
+        "sales": "sales-1",
+        "technical": "محمود كامل",
+        "showRoom": "madinaty"
+      }
+    }
+  ],
+  "customers": [
+    {
+      "id": "957523748",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "1227139914",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "aaaa"
+      ],
+      "created_at": "2024-10-20",
+      "orders": [],
+      "status": "active"
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "productName": "rosa",
+      "productType": "havey",
+      "price": "120",
+      "created_at": "2024-10-20",
+      "status": "active"
+    },
+    {
+      "id": "2",
+      "productName": "silia",
+      "productType": "havey",
+      "price": "110",
+      "created_at": "2024-10-20",
+      "status": "active",
+      "quantity": 0
+    }
+  ]
+}

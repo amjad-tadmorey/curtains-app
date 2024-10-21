@@ -1,0 +1,30 @@
+.windows-options {
+    position: absolute;
+    top: 4rem;
+    background-color: $color-grey-1;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 100;
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        & p {
+            font-weight: 800;
+        }
+    }
+}
+
+.room-materials-form {
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 9px #c8c8c8;
+}

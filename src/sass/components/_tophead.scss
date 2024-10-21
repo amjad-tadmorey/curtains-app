@@ -1,0 +1,26 @@
+.tophead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid $color-grey-1;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    &__name {
+        background-color: rgba($color-secondary, .2);
+        padding: 1rem 2rem;
+        border-radius: $rounded-normal;
+    }
+    &__notification {
+        cursor: pointer;
+    }
+
+    &__photo {
+        cursor: pointer;
+    }
+}

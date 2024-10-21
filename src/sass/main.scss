@@ -1,0 +1,41 @@
+@import "base/variables.scss";
+@import "base/base.scss";
+@import "base/utilities.scss";
+@import "base/animations.scss";
+@import "base/typography.scss";
+
+// LAYOUT
+
+@import "layout/layout.scss";
+@import "layout/header.scss";
+@import "layout/sidebar.scss";
+@import "layout/content.scss";
+@import "layout/wrapper.scss";
+
+// COMPONENTS
+@import "components/menu-item.scss";
+@import "components/notification.scss";
+@import "components/support.scss";
+@import "components/gift.scss";
+@import "components/logout.scss";
+@import "components/tophead.scss";
+@import "components/route-display.scss";
+@import "components/button.scss";
+@import "components/section-heading.scss";
+@import "components/section-stats.scss";
+@import "components/table.scss";
+@import "components/sub-section-heading.scss";
+@import "components/modal.scss";
+@import "components/no-orders.scss";
+@import "components/create-form.scss";
+@import "components/products-list.scss";
+@import "components/search.scss";
+@import "components/order-view.scss";
+@import "components/client-info.scss";
+@import "components/client-location.scss";
+@import "components/order-type.scss";
+@import "components/widows-preview.scss";
+@import "components/windows-options.scss";
+@import "components/card.scss";
+@import "components/Tage.scss";
+@import "components/pdf.scss";

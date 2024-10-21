@@ -1,0 +1,18 @@
+.support {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba($color-grey-3, .1);
+    padding: 1rem 1.5rem;
+    border-radius: $rounded-normal;
+    cursor: pointer;
+
+    // &__icon {
+
+    // }
+
+    &__text {
+        color: $color-black;
+        font-size:$font-small;
+    }
+}

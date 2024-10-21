@@ -1,0 +1,35 @@
+.table {
+    padding: 2rem;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+    margin-top: 2rem;
+    overflow: auto;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid $color-grey-2;
+        border-bottom: 1px solid $color-grey-2;
+        font-size: $font-extra-small;
+        color: $color-grey-3;
+        font-weight: 300;
+        text-align: start;
+        height: fit-content;
+        padding: 1rem 0;
+    }
+
+    &__row {
+        display: flex;
+        margin-top: 1.5rem;
+    }
+
+    &__item {
+        font-size: $font-extra-small;
+        color: $color-grey-2;
+        font-weight: 300;
+        text-align: start;
+    }
+}

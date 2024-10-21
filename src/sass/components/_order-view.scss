@@ -1,0 +1,48 @@
+.order-view {
+    &__heading {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 1rem 0 ;
+
+        p {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: $font-small;
+
+            span {
+                font-size: $font-extra-small;
+                color: $color-grey-2;
+            }
+        }
+    }
+
+    &__client-details {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    &__pdf-btn {
+        margin-left: auto;
+        padding: 2rem;
+    }
+
+    &__total {
+        border-top: 1px solid $color-grey-2;
+        color: $color-black;
+        font-size: $font-medium;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem;
+
+        span {
+            font-weight: 300;
+            color: $color-grey-3;
+            margin-left: 10rem;
+        }
+    }
+}

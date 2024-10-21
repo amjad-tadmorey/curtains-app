@@ -1,0 +1,25 @@
+.widows-preview {
+    background-color: #EEF0FA;
+    height: 14rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-radius: 1rem;
+}
+
+.selected-item {
+    border-right: 1px solid $color-grey-2;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+        font-size: 1.5rem;
+        padding: .5rem 0;
+        font-size: 1rem;
+    }
+}
