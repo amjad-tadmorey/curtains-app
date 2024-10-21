@@ -745,7 +745,7 @@ body {
 }
 .products-list__items {
   padding: 2rem 0;
-  height: 100%;
+  height: 45vh;
   overflow-y: scroll;
 }
 .products-list__item {

@@ -86,25 +86,2207 @@
       "created_at": "2024-10-20",
       "orders": [],
       "status": "active"
+    },
+    {
+      "id": "463594645",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "01227139914",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "cairo, egypt, Alrehab: 70 - 7 - 2"
+      ],
+      "created_at": "2024-10-21",
+      "orders": [],
+      "status": "active"
     }
   ],
   "items": [
     {
-      "id": "1",
-      "productName": "rosa",
+      "id": "270-10-0002-04-00002",
+      "productName": "قماش استرا اوف وايت - PC 2612",
+      "quantity": 2.5,
       "productType": "havey",
-      "price": "120",
-      "created_at": "2024-10-20",
+      "price": 523,
+      "created_at": "10/20/2024",
       "status": "active"
     },
     {
-      "id": "2",
-      "productName": "silia",
+      "id": "270-10-0002-04-00003",
+      "productName": "قماش استرا سلفر - PC 2612",
+      "quantity": 3,
       "productType": "havey",
-      "price": "110",
-      "created_at": "2024-10-20",
-      "status": "active",
-      "quantity": 0
+      "price": 523,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-06-00002",
+      "productName": "قماش الينا بني - AJR9336 - 550 - تباع 3.25 م",
+      "quantity": 10.75,
+      "productType": "havey",
+      "price": 586.01,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-06-00003",
+      "productName": "قماش الينا اسود - AJR93036 - 574 - تباع 3.25 م",
+      "quantity": 3.25,
+      "productType": "havey",
+      "price": 659,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-08-00002",
+      "productName": "قماش انجل  اسود - ANGEL",
+      "quantity": 3,
+      "productType": "havey",
+      "price": 423,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-10-00001",
+      "productName": "قماش اوهانا اوفوايت - BR-J813183",
+      "quantity": 131.2,
+      "productType": "havey",
+      "price": 208,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-10-00002",
+      "productName": "قماش اوهانا سلفر - BR-J813183",
+      "quantity": 44.75,
+      "productType": "havey",
+      "price": 208,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-10-00003",
+      "productName": "قماش اوهانا كافيه - BR-J813183",
+      "quantity": 241.9,
+      "productType": "havey",
+      "price": 208,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-10-00004",
+      "productName": "قماش اوهانا بيج - BR-J813183",
+      "quantity": 22,
+      "productType": "havey",
+      "price": 208,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-10-00005",
+      "productName": "قماش اوهانا روز - BR-J813183",
+      "quantity": 153.75,
+      "productType": "havey",
+      "price": 208,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-11-00003",
+      "productName": "قماش اياز سلفر - EO1710 - V005",
+      "quantity": 10.75,
+      "productType": "havey",
+      "price": 371,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-12-00002",
+      "productName": "قماش ايفان اوف وايت - EB2529 - V001",
+      "quantity": 12.5,
+      "productType": "havey",
+      "price": 523,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-15-00001",
+      "productName": "قماش توركان بيج - EO1705 - V003",
+      "quantity": 74.35,
+      "productType": "havey",
+      "price": 321,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-15-00002",
+      "productName": "قماش توركان سلفر - EO1705 - V005",
+      "quantity": 129,
+      "productType": "havey",
+      "price": 321,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-15-00003",
+      "productName": "قماش توركان اوف وايت - EO1705 - V002",
+      "quantity": 53.6,
+      "productType": "havey",
+      "price": 321,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-15-00004",
+      "productName": "قماش توركان كافيه - EO1705 - V004",
+      "quantity": 20.3,
+      "productType": "havey",
+      "price": 321,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-16-00002",
+      "productName": "قماش توناي ازرق - ACF9644 - 508 -   تباع 3.25م",
+      "quantity": 49,
+      "productType": "havey",
+      "price": 726,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-17-00001",
+      "productName": "قماش جيكا سلفر -  BJR9893 - 522 - تباع 3.25م",
+      "quantity": 31.9,
+      "productType": "havey",
+      "price": 659,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-17-00002",
+      "productName": "قماش جيكا كافيه -  BJR9893 - 524 - تباع 3.25م",
+      "quantity": 30.25,
+      "productType": "havey",
+      "price": 659,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-20-00001",
+      "productName": "قماش رشا روز - BR-J813224",
+      "quantity": 15,
+      "productType": "havey",
+      "price": 179,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-20-00002",
+      "productName": "قماش رشا سلفر - BR-J813224",
+      "quantity": 26.1,
+      "productType": "havey",
+      "price": 179,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-28-00001",
+      "productName": "قماش لورا - GL-80334",
+      "quantity": 41.9,
+      "productType": "havey",
+      "price": 412,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-34-00001",
+      "productName": "قماش يولان - BR-J813186",
+      "quantity": 81.8,
+      "productType": "havey",
+      "price": 342,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-01-00001",
+      "productName": "قماش 5 - RM",
+      "quantity": 8,
+      "productType": "havey",
+      "price": 187,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-01-00003",
+      "productName": "قماش 4 - RM",
+      "quantity": 9.1,
+      "productType": "havey",
+      "price": 196.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-01-00004",
+      "productName": "قماش 3 - RM",
+      "quantity": 1.5,
+      "productType": "havey",
+      "price": 196.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-01-00005",
+      "productName": "قماش 1 - RM",
+      "quantity": 1.85,
+      "productType": "havey",
+      "price": 187,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-03-00001",
+      "productName": "قماش ازاد سلفر - EB2408 - V008",
+      "quantity": 4.25,
+      "productType": "havey",
+      "price": 370,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-03-00002",
+      "productName": "قماش ازاد اوف وايت - EB2408 - V005",
+      "quantity": 7.5,
+      "productType": "havey",
+      "price": 370,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-03-00003",
+      "productName": "قماش ازاد بيج - EB2408 - V007",
+      "quantity": 5.05,
+      "productType": "havey",
+      "price": 370,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-01-00002",
+      "productName": "اوركنزا جكار كشمير",
+      "quantity": 24,
+      "productType": "havey",
+      "price": 161,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-01-00007",
+      "productName": "اوركنزا سادة جراي 921/3",
+      "quantity": 106.25,
+      "productType": "havey",
+      "price": 162,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-03-00001",
+      "productName": "جاكور 15",
+      "quantity": 3,
+      "productType": "havey",
+      "price": 391,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-03-00002",
+      "productName": "جاكور 14",
+      "quantity": 5,
+      "productType": "havey",
+      "price": 391,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-03-00003",
+      "productName": "جاكور 16",
+      "quantity": 25,
+      "productType": "havey",
+      "price": 391,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-03-00004",
+      "productName": "جاكور 17",
+      "quantity": 17.75,
+      "productType": "havey",
+      "price": 391,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-03-00005",
+      "productName": "جاكور 18",
+      "quantity": 57.5,
+      "productType": "havey",
+      "price": 391,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00001",
+      "productName": "دجراديه KEB / 8",
+      "quantity": 4,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00002",
+      "productName": "دجراديه 3 / KEB",
+      "quantity": 77.5,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00003",
+      "productName": "دجراديه 4 / KEB",
+      "quantity": 50.9,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00004",
+      "productName": "دجراديه 6 / KEB",
+      "quantity": 42,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00005",
+      "productName": "دجراديه  5 / KEB",
+      "quantity": 81.85,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00006",
+      "productName": "دجراديه 9 / KEB",
+      "quantity": 9.95,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00007",
+      "productName": "دجراديه KEB / 10",
+      "quantity": 99.45,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00008",
+      "productName": "دجراديه KEB / 7",
+      "quantity": 109.75,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00009",
+      "productName": "دجراديه KEB / 2",
+      "quantity": 5,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00010",
+      "productName": "دجراديه KEB / 1",
+      "quantity": 11.25,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00011",
+      "productName": "دجراديه KEB / 12",
+      "quantity": 244,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00012",
+      "productName": "دجراديه KEB / 11",
+      "quantity": 3,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-05-00013",
+      "productName": "دجراديه KEB / 13",
+      "quantity": 1.25,
+      "productType": "havey",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-21-00001",
+      "productName": "قماش رنيم روز - BR-W011484",
+      "quantity": 59.5,
+      "productType": "havey",
+      "price": 238,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00001",
+      "productName": "ساتان ارل بيج - PLS75012",
+      "quantity": 243.7,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00002",
+      "productName": "ساتان ارل كافيه - PLS75012",
+      "quantity": 5.25,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00003",
+      "productName": "ساتان ارل تركواز - PLS75012",
+      "quantity": 241.25,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00004",
+      "productName": "ساتان اني اوف وايت - 94131",
+      "quantity": 2.4,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00005",
+      "productName": "ساتان اني كافيه - 94131",
+      "quantity": 50,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00006",
+      "productName": "ساتان اني بني - 94131",
+      "quantity": 250.5,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00007",
+      "productName": "ساتان اني جراي - 94131",
+      "quantity": 152.1,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00008",
+      "productName": "ساتان نيس اوف وايت - 94090",
+      "quantity": 45.75,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00009",
+      "productName": "ساتان نيس بيج - 94090",
+      "quantity": 9.75,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00011",
+      "productName": "ساتان نيس ازرق - 94090",
+      "quantity": 4.5,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00012",
+      "productName": "ساتان باسيتا بيج - PLS75013",
+      "quantity": 232.15,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00013",
+      "productName": "ساتان باسيتا تركواز - PLS75013",
+      "quantity": 224,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00014",
+      "productName": "ساتان باسيتا اسود - PLS75013",
+      "quantity": 53.25,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00015",
+      "productName": "ساتان بايون بيج - 94187",
+      "quantity": 86.6,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00016",
+      "productName": "ساتان بايون اسود - 94187",
+      "quantity": 287.6,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00017",
+      "productName": "ساتان بايون جراي - 94187",
+      "quantity": 69.75,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00018",
+      "productName": "ساتان بايون بني - 94187",
+      "quantity": 147.65,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00019",
+      "productName": "ساتان بوردو نحاسي - 94132",
+      "quantity": 84.35,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00020",
+      "productName": "ساتان بوردو بيج - 94132",
+      "quantity": 4.75,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00021",
+      "productName": "ساتان بوردو فضي - 94132",
+      "quantity": 245.05,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00022",
+      "productName": "ساتان تروا اوف وايت - 16110",
+      "quantity": 247.85,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00023",
+      "productName": "ساتان تروا سلفر - 16110",
+      "quantity": 257.05,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00024",
+      "productName": "ساتان تروا نحاسي - 16110",
+      "quantity": 303.15,
+      "productType": "havey",
+      "price": 761,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00025",
+      "productName": "ساتان لوريان اوف اوايت - MAR736",
+      "quantity": 308.35,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00026",
+      "productName": "ساتان لوريان دهبي - MAR736",
+      "quantity": 37.1,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00028",
+      "productName": "ساتان لوريان شامبين - MAR736",
+      "quantity": 185.05,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00029",
+      "productName": "ساتان لوريان سلفر - MAR736",
+      "quantity": 78.75,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00030",
+      "productName": "ساتان لوريان تركواز - MAR736",
+      "quantity": 44,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00031",
+      "productName": "ساتان تولون اوف وايت - MAR681",
+      "quantity": 68.3,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00033",
+      "productName": "ساتان تولون سلفر - MAR681",
+      "quantity": 30.25,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00034",
+      "productName": "ساتان تولون بيج - MAR681",
+      "quantity": 3.5,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00035",
+      "productName": "ساتان ديجون بيج - MAR997",
+      "quantity": 194.5,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00036",
+      "productName": "ساتان ديجون سلفر - MAR997",
+      "quantity": 316.75,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00037",
+      "productName": "ساتان ديجون اسود - MAR997",
+      "quantity": 128,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00038",
+      "productName": "ساتان ديجون ازرق - MAR997",
+      "quantity": 4,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00039",
+      "productName": "ساتان ديجون تركواز - MAR997",
+      "quantity": 114.75,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00040",
+      "productName": "ساتان روان دهبي - MAR942",
+      "quantity": 6.1,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00041",
+      "productName": "ساتان روان فضي - MAR942",
+      "quantity": 98.05,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00042",
+      "productName": "ساتان روان موف - MAR942",
+      "quantity": 45.5,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00043",
+      "productName": "ساتان روان جراي - MAR942",
+      "quantity": 8,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00044",
+      "productName": "ساتان روان تركواز - MAR942",
+      "quantity": 8.9,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00045",
+      "productName": "ساتان ريمس دهبي - MAR640",
+      "quantity": 271,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00046",
+      "productName": "ساتان ريمس بيج - MAR640",
+      "quantity": 195,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00047",
+      "productName": "ساتان ريمس تركواز - MAR640",
+      "quantity": 305.5,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00048",
+      "productName": "ساتان ريمس ازرق - MAR640",
+      "quantity": 148.75,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00049",
+      "productName": "ساتان كاليه اوف وايت - MAR747",
+      "quantity": 285.3,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00050",
+      "productName": "ساتان كاليه عسلي - MAR747",
+      "quantity": 152.75,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00051",
+      "productName": "ساتان كاليه سلفر - MAR747",
+      "quantity": 307.2,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00052",
+      "productName": "ساتان كاليه دهبي - MAR747",
+      "quantity": 201.2,
+      "productType": "havey",
+      "price": 826,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00053",
+      "productName": "ساتان كولمار سلفر - MAR866",
+      "quantity": 261.5,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00054",
+      "productName": "ساتان كولمار دهبي - MAR866",
+      "quantity": 275,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0002-24-00055",
+      "productName": "ساتان كولمار كافيه - MAR866",
+      "quantity": 188,
+      "productType": "havey",
+      "price": 782,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00003",
+      "productName": "شانيل كيمو بلو",
+      "quantity": 10.75,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00004",
+      "productName": "شانيل كيمو كاكاو",
+      "quantity": 6.4,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00006",
+      "productName": "شانيل كيمو سيمون",
+      "quantity": 143.25,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00008",
+      "productName": "شانيل رودي كاكاو",
+      "quantity": 3,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00009",
+      "productName": "شانيل رودي موكا",
+      "quantity": 3.6,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00010",
+      "productName": "شانيل رودي سيلفر",
+      "quantity": 11.55,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-12-00011",
+      "productName": "شانيل رودي سيمون",
+      "quantity": 3.5,
+      "productType": "havey",
+      "price": 452,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-13-00002",
+      "productName": "شبك 5006 كشمير",
+      "quantity": 68.75,
+      "productType": "havey",
+      "price": 244,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-13-00003",
+      "productName": "شبك 5006 لبني",
+      "quantity": 4.7,
+      "productType": "havey",
+      "price": 244,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-13-00005",
+      "productName": "شبك 5006 فضي",
+      "quantity": 3,
+      "productType": "havey",
+      "price": 222,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-15-00002",
+      "productName": "قطيفة تركي مط",
+      "quantity": 39,
+      "productType": "havey",
+      "price": 171,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-15-00007",
+      "productName": "قطيفة سيليا عرضين",
+      "quantity": 0,
+      "productType": "havey",
+      "price": 699.3,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-15-00008",
+      "productName": "قطيفة روزا عرضين",
+      "quantity": 0,
+      "productType": "havey",
+      "price": 719.25,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-18-00002",
+      "productName": "مخمل ايبك مط",
+      "quantity": 21,
+      "productType": "havey",
+      "price": 388,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00003",
+      "productName": "برنت مراكش اصفر",
+      "quantity": 30.8,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00007",
+      "productName": "برنت مغربي موف",
+      "quantity": 19.75,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00012",
+      "productName": "برنت اطفال فيل",
+      "quantity": 20.05,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00013",
+      "productName": "برنت اطفال قطط",
+      "quantity": 48.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00029",
+      "productName": "برنت كان نبيتى",
+      "quantity": 22.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00032",
+      "productName": "برنت ارنب",
+      "quantity": 17.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00036",
+      "productName": "برنت ورقه تركواز",
+      "quantity": 31.35,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00046",
+      "productName": "برنت نوفا تركواز",
+      "quantity": 34.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00050",
+      "productName": "برنت مودرن",
+      "quantity": 102.5,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00051",
+      "productName": "برنت شنط",
+      "quantity": 38.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00052",
+      "productName": "برنت نوافذ",
+      "quantity": 18.2,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00054",
+      "productName": "برنت صوفيا بني",
+      "quantity": 1.1,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00056",
+      "productName": "برنت صوفيا فوشيا",
+      "quantity": 33.4,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00057",
+      "productName": "برنت زارا تركواز",
+      "quantity": 17.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00058",
+      "productName": "برنت زارا بني",
+      "quantity": 23.9,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00059",
+      "productName": "برنت ميدو بني",
+      "quantity": 32,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00062",
+      "productName": "ستارة جاهزة طباعة",
+      "quantity": 32,
+      "productType": "havey",
+      "price": 715,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00063",
+      "productName": "برنت x6 تركواز",
+      "quantity": 31.75,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00071",
+      "productName": "برنت x10 موف",
+      "quantity": 28,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00072",
+      "productName": "برنت x11 بني",
+      "quantity": 43.5,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00073",
+      "productName": "برنت x11 اسود",
+      "quantity": 26,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00075",
+      "productName": "برنت بابلي",
+      "quantity": 4.35,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00076",
+      "productName": "برنت دانديل",
+      "quantity": 78.4,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00079",
+      "productName": "برنت KIDS",
+      "quantity": 30.2,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00081",
+      "productName": "برنت ريماس 16",
+      "quantity": 5,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00082",
+      "productName": "برنت ريماس 17",
+      "quantity": 17,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00087",
+      "productName": "برنت 111/1",
+      "quantity": 11,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00088",
+      "productName": "برنت 111/14",
+      "quantity": 10.05,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00089",
+      "productName": "برنت 111/5",
+      "quantity": 4,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00090",
+      "productName": "برنت 111/9",
+      "quantity": 37.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00091",
+      "productName": "برنت نيون 1",
+      "quantity": 4.75,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00095",
+      "productName": "برنت  34/14",
+      "quantity": 80.25,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00096",
+      "productName": "برنت  34/5",
+      "quantity": 9,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00100",
+      "productName": "هايبر مطبوع",
+      "quantity": 98.3,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00104",
+      "productName": "برنت 0107",
+      "quantity": 19,
+      "productType": "havey",
+      "price": 150,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-24-00110",
+      "productName": "ستارة جاهزة جديد",
+      "quantity": 4,
+      "productType": "havey",
+      "price": 1210,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00002",
+      "productName": "دانتيل 281 روز",
+      "quantity": 42.4,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00005",
+      "productName": "دانتيل 276 فضي",
+      "quantity": 2.4,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00007",
+      "productName": "دانتيل 276 روز",
+      "quantity": 109.35,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00008",
+      "productName": "دانتيل 276 برونز",
+      "quantity": 69,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00009",
+      "productName": "دانتيل 277 روز",
+      "quantity": 93.5,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00012",
+      "productName": "دانتيل 273 فضي",
+      "quantity": 7,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00013",
+      "productName": "دانتيل 273 روز",
+      "quantity": 85.55,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00014",
+      "productName": "دانتيل 273 برونزي",
+      "quantity": 83.85,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00016",
+      "productName": "دانتيل 2455 كافيه",
+      "quantity": 25.6,
+      "productType": "light",
+      "currentPrice": 195.01,
+      "price": 171.06,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00019",
+      "productName": "دانتيل 4222 روز",
+      "quantity": 30.85,
+      "productType": "light",
+      "currentPrice": 281.00,
+      "price": 246.4912,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-04-00025",
+      "productName": "دانتيل 4223 روز",
+      "quantity": 12,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00001",
+      "productName": "قماش فوال سادة ابيض 1 م",
+      "quantity": 74.4,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00002",
+      "productName": "قماش فوال سادة خمري/ نبيتي  1 م",
+      "quantity": 11,
+      "productType": "light",
+      "currentPrice": 117.00,
+      "price": 102.6316,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00003",
+      "productName": "قماش فوال سادة افوايت1 م",
+      "quantity": 94.75,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00004",
+      "productName": "قماش فوال سادة بيج 1 م",
+      "quantity": 328.35,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00005",
+      "productName": "قماش فوال سادة موف فاتح 1 م",
+      "quantity": 29.75,
+      "productType": "light",
+      "currentPrice": 117.00,
+      "price": 102.6316,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00006",
+      "productName": "فوال سادة ازرق/لبني",
+      "quantity": 65.5,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-14-00008",
+      "productName": "قماش فوال سادة كيوي",
+      "quantity": 3.8,
+      "productType": "light",
+      "currentPrice": 117.00,
+      "price": 102.6316,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-17-00002",
+      "productName": "لنن سادة اخضر",
+      "quantity": 25.85,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-17-00005",
+      "productName": "لنن سادة كحلي",
+      "quantity": 44.5,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-17-00008",
+      "productName": "لنن سادة نبيتي",
+      "quantity": 75.15,
+      "productType": "light",
+      "currentPrice": 184.00,
+      "price": 161.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00005",
+      "productName": "تول كشمير سادة",
+      "quantity": 68.25,
+      "productType": "light",
+      "currentPrice": 149.00,
+      "price": 130.7018,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00008",
+      "productName": "تول مشجر",
+      "quantity": 0,
+      "productType": "light",
+      "currentPrice": 597.45,
+      "price": 524.08,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00011",
+      "productName": "تول سادة أبيض",
+      "quantity": 49.85,
+      "productType": "light",
+      "currentPrice": 149.15,
+      "price": 130.83,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00012",
+      "productName": "تول سادة بيج",
+      "quantity": 17.05,
+      "productType": "light",
+      "currentPrice": 149.00,
+      "price": 130.7018,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00016",
+      "productName": "تول سادة موف",
+      "quantity": 21.5,
+      "productType": "light",
+      "currentPrice": 134.00,
+      "price": 117.5439,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00056",
+      "productName": "تول دوائر بني",
+      "quantity": 42.8,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00065",
+      "productName": "تول باونتي",
+      "quantity": 0,
+      "productType": "light",
+      "currentPrice": 714.00,
+      "price": 626.3158,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00072",
+      "productName": "تول 634/8",
+      "quantity": 29.4,
+      "productType": "light",
+      "currentPrice": 578.00,
+      "price": 507.0175,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00083",
+      "productName": "تول 695/1 افوايت",
+      "quantity": 100.35,
+      "productType": "light",
+      "currentPrice": 697.00,
+      "price": 611.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00084",
+      "productName": "تول 695/6  روز",
+      "quantity": 7,
+      "productType": "light",
+      "currentPrice": 697.00,
+      "price": 611.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00086",
+      "productName": "تول 695/9 اسود",
+      "quantity": 3.8,
+      "productType": "light",
+      "currentPrice": 697.00,
+      "price": 611.4035,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00087",
+      "productName": "تول 743/2 بيج",
+      "quantity": 60.75,
+      "productType": "light",
+      "currentPrice": 486.00,
+      "price": 426.3158,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00088",
+      "productName": "تول 743/5 سيمون",
+      "quantity": 37,
+      "productType": "light",
+      "currentPrice": 486.00,
+      "price": 426.3158,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00090",
+      "productName": "تول 743/8 كافيه",
+      "quantity": 17.5,
+      "productType": "light",
+      "currentPrice": 486.00,
+      "price": 426.3158,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00091",
+      "productName": "تول 743/9 كشمير",
+      "quantity": 63.3,
+      "productType": "light",
+      "currentPrice": 486.00,
+      "price": 426.3158,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00092",
+      "productName": "تول 793/1 افوايت",
+      "quantity": 10.4,
+      "productType": "light",
+      "currentPrice": 465.00,
+      "price": 407.8947,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00094",
+      "productName": "تول 793/7 كافيه",
+      "quantity": 8.5,
+      "productType": "light",
+      "currentPrice": 465.00,
+      "price": 407.8947,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00095",
+      "productName": "تول 806/2 فضى",
+      "quantity": 2.7,
+      "productType": "light",
+      "currentPrice": 542.00,
+      "price": 475.4386,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00096",
+      "productName": "تول 806/4 كشمير",
+      "quantity": 49.25,
+      "productType": "light",
+      "currentPrice": 542.00,
+      "price": 475.4386,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00097",
+      "productName": "تول 806/6 بترولى",
+      "quantity": 6.9,
+      "productType": "light",
+      "currentPrice": 542.00,
+      "price": 475.4386,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00098",
+      "productName": "تول 806/8 كافيه",
+      "quantity": 15,
+      "productType": "light",
+      "currentPrice": 542.00,
+      "price": 475.4386,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00099",
+      "productName": "تول 703/1 افوايت",
+      "quantity": 40.25,
+      "productType": "light",
+      "currentPrice": 504.00,
+      "price": 442.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00100",
+      "productName": "تول 703/3 كشمير",
+      "quantity": 61,
+      "productType": "light",
+      "currentPrice": 504.00,
+      "price": 442.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00101",
+      "productName": "تول 703/8 كافيه",
+      "quantity": 28.75,
+      "productType": "light",
+      "currentPrice": 504.00,
+      "price": 442.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00102",
+      "productName": "تول1019/1 افوايت",
+      "quantity": 81.1,
+      "productType": "light",
+      "currentPrice": 406.60,
+      "price": 356.6667,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00103",
+      "productName": "تول1019/2 سيلفر",
+      "quantity": 70,
+      "productType": "light",
+      "currentPrice": 407.00,
+      "price": 357.0175,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00104",
+      "productName": "تول1019/4 كافيه",
+      "quantity": 286.5,
+      "productType": "light",
+      "currentPrice": 407.00,
+      "price": 357.0175,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00106",
+      "productName": "تول 103/1 افوايت",
+      "quantity": 21,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00107",
+      "productName": "تول 103/2 كشمير",
+      "quantity": 92.3,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00108",
+      "productName": "تول 103/3 بترولى",
+      "quantity": 119,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00109",
+      "productName": "تول 103/4 كافيه",
+      "quantity": 2,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00110",
+      "productName": "تول 102/1 افوايت",
+      "quantity": 14,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00112",
+      "productName": "تول 102/3 بترولى",
+      "quantity": 24.1,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00113",
+      "productName": "تول 102/4 كافيه",
+      "quantity": 7.5,
+      "productType": "light",
+      "currentPrice": 219.00,
+      "price": 192.1053,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00115",
+      "productName": "تول 101/2 كشمير",
+      "quantity": 47.4,
+      "productType": "light",
+      "currentPrice": 342.00,
+      "price": 300,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00116",
+      "productName": "تول 101/3 بترولى",
+      "quantity": 29.65,
+      "productType": "light",
+      "currentPrice": 342.00,
+      "price": 300,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00117",
+      "productName": "تول 101/4 كافيه",
+      "quantity": 42.2,
+      "productType": "light",
+      "currentPrice": 342.00,
+      "price": 300,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00137",
+      "productName": "تول مورا",
+      "quantity": 0,
+      "productType": "light",
+      "currentPrice": 532.35,
+      "price": 466.97,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00156",
+      "productName": "تول مورا 412",
+      "quantity": 0,
+      "productType": "light",
+      "currentPrice": 507.30,
+      "price": 445.0001,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00162",
+      "productName": "تول تويكس اوفوايت",
+      "quantity": 164.8,
+      "productType": "light",
+      "currentPrice": 229.90,
+      "price": 201.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00163",
+      "productName": "تول تويكس رمادي",
+      "quantity": 168.15,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00164",
+      "productName": "تول تويكس كافيه",
+      "quantity": 78.15,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00165",
+      "productName": "تول تويكس كشمير",
+      "quantity": 164.5,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00166",
+      "productName": "تول تويكس بترولي",
+      "quantity": 63.35,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00167",
+      "productName": "تول اشكال اوفوايت",
+      "quantity": 133.8,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00168",
+      "productName": "تول اشكال رمادي",
+      "quantity": 119.25,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00169",
+      "productName": "تول اشكال كافيه",
+      "quantity": 68.5,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00170",
+      "productName": "تول اشكال كشمير",
+      "quantity": 21,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00171",
+      "productName": "تول اشكال بترولي",
+      "quantity": 10.2,
+      "productType": "light",
+      "currentPrice": 218.50,
+      "price": 191.67,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00172",
+      "productName": "تول شراشيب كشمير",
+      "quantity": 79.75,
+      "productType": "light",
+      "currentPrice": 140.00,
+      "price": 123.6842,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00172",
+      "productName": "تول اقلام اوفوايت",
+      "quantity": 53.25,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00173",
+      "productName": "تول اقلام رمادي",
+      "quantity": 42.2,
+      "productType": "light",
+      "currentPrice": 218.33,
+      "price": 248.90,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00174",
+      "productName": "تول اقلام كافيه",
+      "quantity": 8.15,
+      "productType": "light",
+      "currentPrice": 217.37,
+      "price": 247.80,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00175",
+      "productName": "تول اقلام كشمير",
+      "quantity": 140.75,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00176",
+      "productName": "تول اقلام بترولي",
+      "quantity": 79.95,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00177",
+      "productName": "تول تانغو اوفوايت",
+      "quantity": 151.1,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00178",
+      "productName": "تول تانغو رمادي",
+      "quantity": 131.25,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00179",
+      "productName": "تول تانغو كافيه",
+      "quantity": 21.45,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00180",
+      "productName": "تول تانغو كشمير",
+      "quantity": 157.5,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-21-00181",
+      "productName": "تول تانغو بترولي",
+      "quantity": 99.45,
+      "productType": "light",
+      "currentPrice": 208.33,
+      "price": 237.50,
+      "created_at": "10/20/2024",
+      "status": "active"
     }
   ]
 }
