@@ -1,11 +1,25 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
-import Button from '../../ui/Button'
-import MaterialInput from './MaterialInput'
-import Window from "./Window";
-import { addRoom, addRoomCleats, addRoomMaterials, editQuantity, editRoom, getCleats, getItemByName, getItems, getMaterials, getRoomByName, getRooms, getWindows, resetRoomCleats, resetRoomMaterials, resetWindows } from './orderSlice';
-import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
+import {
+    addRoom,
+    addRoomCleats,
+    addRoomMaterials,
+    editQuantity,
+    editRoom,
+    getCleats,
+    getItems,
+    getMaterials,
+    getRoomByName,
+    getRooms,
+    getWindows,
+    resetRoomCleats,
+    resetRoomMaterials,
+    resetWindows
+} from './orderSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import Button from '../../ui/Button'
+import Window from "./Window";
 
 
 
@@ -85,24 +99,24 @@ export default function AddRoom({ setShowRoom, type }) {
     const [showCleatsForm, setShowCleatsForm] = useState(false)
     const isMaterialsEmpty = useSelector(getMaterials).length === 0
 
+    // for edit session
+    const [selectedRoom, setSelectedRoom] = useState("")
+
     const [roomName, setRoomName] = useState('')
     const [notes, setNotes] = useState('')
     const windows = useSelector(getWindows)
     const roomMaterials = useSelector(getMaterials)
     const roomCleats = useSelector(getCleats)
     const rooms = useSelector(getRooms)
-
-    // for edit session
-    const [selectedRoom, setSelectedRoom] = useState("")
-
+    const prevRoomData = useSelector(getRoomByName(selectedRoom))
 
     function handleAddMaterial(item, numId, btnId) {
-        
-
         const { productName: product, productType, sewingType } = item
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
         let btn = document.getElementById(btnId)
+
+        const prevQuantity = prevRoomData?.roomMaterials?.filter((el) => el.product === product)[0].quantity
 
         if (selectedItem.quantity < quantity) {
             return
@@ -120,7 +134,7 @@ export default function AddRoom({ setShowRoom, type }) {
         if (type === "add") {
             dispatch(editQuantity({ product, quantity }))
         } else if (type === "edit") {
-            dispatch(editQuantity({ product, quantity: selectedItem.quantity - quantity }))
+            dispatch(editQuantity({ product, quantity: quantity - prevQuantity }))
         }
     }
 
@@ -129,6 +143,8 @@ export default function AddRoom({ setShowRoom, type }) {
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
         let btn = document.getElementById(btnId)
+
+        const prevQuantity = prevRoomData?.roomCleates?.filter((el) => el.product === product)[0].quantity
 
         if (selectedItem.quantity < quantity) {
             return
@@ -143,7 +159,11 @@ export default function AddRoom({ setShowRoom, type }) {
             productType,
             sewingType
         }))
-        dispatch(editQuantity({ product, quantity }))
+        if (type === "add") {
+            dispatch(editQuantity({ product, quantity }))
+        } else if (type === "edit") {
+            dispatch(editQuantity({ product, quantity: quantity - prevQuantity }))
+        }
     }
 
     function handleSubmitRoom() {
@@ -210,7 +230,7 @@ export default function AddRoom({ setShowRoom, type }) {
                             </div>
                         })
                     }
-                    <Button text={"Done"} type={"primary"} size={"small"} />
+                    <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
                 </form>
             }
             {/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -243,7 +263,7 @@ export default function AddRoom({ setShowRoom, type }) {
                             </div>
                         })
                     }
-                    <Button text={"Done"} type={"primary"} size={"small"} />
+                    <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
                 </form>
             }
 

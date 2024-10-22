@@ -1,12 +1,15 @@
 import { useDispatch, useSelector } from "react-redux"
-import { addItem, decreaseItemQuantity, getCurrentQuantityById, increaseItemQuantity, increaseItemQuantityByDecimal, increaseItemQuantityByTen, removeItem } from "../features/orders/orderSlice"
+import { addItem, getCurrentQuantityById, setItemQuantity } from "../features/orders/orderSlice"
 import Button from "./Button"
+import { useState } from "react"
 
 /* eslint-disable react/prop-types */
 function ProductItem({ product }) {
     const { productName, id: code, productType } = product
     const currentQuantity = useSelector(getCurrentQuantityById(code))
     const isInCart = currentQuantity > 0
+    const [quantity, setQuantity] = useState(0)
+    const [showQuantity, setShowQuantity] = useState(false)
 
 
     const dispatch = useDispatch()
@@ -16,7 +19,7 @@ function ProductItem({ product }) {
             productName,
             code,
             productType,
-            quantity: 1,
+            quantity,
         }
         dispatch(addItem(newitem))
     }
@@ -25,20 +28,18 @@ function ProductItem({ product }) {
         <li className="products-list__item">
             <span>{code}-{productName}</span>
             <span></span>
-            {isInCart && <b>{Math.round(currentQuantity * 10) / 10}</b>}
-            {!isInCart && <Button onClick={handleAddItem} text="Add" type="primary" size="small" />}
-            {isInCart &&
-                <div>
-                    <Button onClick={() => dispatch(removeItem(code))} text="Remove" type="primary" size="small" />
-                    <Button onClick={() => {
-                        currentQuantity >= 2 ? dispatch(decreaseItemQuantity(code))
-                            : dispatch(removeItem(code))
-                    }} text="-" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantityByDecimal(code))} text="+ 0.1" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantity(code))} text="+ 1" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantityByTen(code))} text="+ 10" type="primary" size="small" />
-                </div>
-            }
+            <b>{Math.round(currentQuantity * 10) / 10}</b>
+
+            <Button onClick={handleAddItem} text="Add" type="primary" size="small" />
+
+
+            <div>
+                <input type="number" value={quantity} onChange={(e) => {
+                    setQuantity(e.target.value)
+                    dispatch(setItemQuantity({code, quantity}))
+                }} />
+            </div>
+
         </li>
     )
 }
