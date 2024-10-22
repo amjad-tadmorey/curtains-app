@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux"
 import { useCustomers } from "../customers/useCustomers"
@@ -19,8 +19,9 @@ function CreateOrderForm({ onCloseModal }) {
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
     const [isSubmited, setIsSubmited] = useState(false)
     const isItemsEmpty = useSelector(getItems).length === 0
+    const [search, setSearch] = useState('')
 
-
+    const filteredItems = items?.filter((item) => item.productName.includes(search))
 
     function onSubmit() {
         dispatch(addGeneralInfo(getValues()))
@@ -108,10 +109,10 @@ function CreateOrderForm({ onCloseModal }) {
                 </form>
                 <div className='products-list'>
                     <h4>Items</h4>
-                    <input type="search" placeholder='Search' className='search search--primary' />
+                    <input type="search" placeholder='Search' className='search search--primary' value={search} onChange={(e) => setSearch(e.target.value)} />
                     <ul className="products-list__items">
                         {
-                            items.map(product => <ProductItem key={product.code} product={product} />)
+                            filteredItems.map(product => <ProductItem key={product.code} product={product} />)
                         }
                     </ul>
                 </div>

@@ -23,33 +23,12 @@ const orderSlice = createSlice({
             state.items.push(action.payload)
             state.staticItems.push(action.payload)
         },
-        increaseItemQuantityByDecimal(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity += 0.1
-            ///////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity += 0.1
-        },
-        increaseItemQuantity(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity++
-            ///////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity++
-        },
-        increaseItemQuantityByTen(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity += 10
+        setItemQuantity(state, action) {
+            const item = state.items.find(item => item.code === action.payload.code)
+            item.quantity = action.payload.quantity
             /////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity += 10
-        },
-        decreaseItemQuantity(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity--
-            /////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity--
+            const staticItem = state.items.find(item => item.code === action.payload.code)
+            staticItem.quantity = +action.payload.quantity + 1
         },
         editQuantity(state, action) {
             const item = state.items.find(item => item.productName === action.payload.product)
@@ -101,10 +80,7 @@ const orderSlice = createSlice({
 export const {
     addGeneralInfo,
     addItem,
-    increaseItemQuantityByDecimal,
-    increaseItemQuantity,
-    increaseItemQuantityByTen,
-    decreaseItemQuantity,
+    setItemQuantity,
     editQuantity,
     removeItem,
     addRoom,
@@ -125,7 +101,7 @@ export const getItemByName = (product) => state => state.order.items.find(item =
 export const getStaticItems = (state) => state.order.staticItems;
 export const getCurrentQuantityById = (id) => state => state.order.items.find(item => item.code === id)?.quantity ?? 0;
 export const getRooms = (state) => state.order.rooms;
-export const getRoomByName = (roomName) => state => state.order.rooms.filter((room) => room.roomName === roomName);
+export const getRoomByName = (roomName) => state => state.order.rooms.filter((room) => room.roomName === roomName)[0];
 export const getWindows = (state) => state?.order?.windows;
 export const getMaterials = (state) => state?.order?.materials;
 export const getCleats = (state) => state?.order?.cleats;
