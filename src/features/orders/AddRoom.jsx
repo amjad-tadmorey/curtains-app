@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Button from '../../ui/Button'
 import MaterialInput from './MaterialInput'
 import Window from "./Window";
-import { addRoom, editRoom, getCleats, getItems, getMaterials, getRoomByName, getRooms, getWindows, resetRoomCleats, resetRoomMaterials, resetWindows } from './orderSlice';
+import { addRoom, addRoomCleats, addRoomMaterials, editQuantity, editRoom, getCleats, getItemByName, getItems, getMaterials, getRoomByName, getRooms, getWindows, resetRoomCleats, resetRoomMaterials, resetWindows } from './orderSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import toast from 'react-hot-toast';
 
@@ -79,52 +79,71 @@ const fakeData = [
 
 export default function AddRoom({ setShowRoom, type }) {
     const dispatch = useDispatch()
-    const [materialsArray, setMaterialsArray] = useState([""])
-    const [cleatsArray, setCleatsArray] = useState([""])
-
-    const [roomMaterials, setRoomMaterials] = useState()
-    const [roomCleats, setRoomCleats] = useState()
-
-    const [selectedRoom, setSelectedRoom] = useState("")
-
     const items = useSelector(getItems)
-    const rooms = useSelector(getRooms)
-    const currentRoom = useSelector(getRoomByName(selectedRoom))
-    const isMaterialsEmpty = useSelector(getMaterials).length === 0
-    const isCleatsEmpty = useSelector(getCleats).length === 0
 
-
-
-    const [roomName, setRoomName] = useState('')
     const [showMaterialsForm, setShowMaterialsForm] = useState(false)
     const [showCleatsForm, setShowCleatsForm] = useState(false)
+    const isMaterialsEmpty = useSelector(getMaterials).length === 0
+
+    const [roomName, setRoomName] = useState('')
     const [notes, setNotes] = useState('')
-
     const windows = useSelector(getWindows)
-    const roomMaterialsRedux = useSelector(getMaterials)
-    const roomCleatsRedux = useSelector(getCleats)
+    const roomMaterials = useSelector(getMaterials)
+    const roomCleats = useSelector(getCleats)
+    const rooms = useSelector(getRooms)
+
+    // for edit session
+    const [selectedRoom, setSelectedRoom] = useState("")
 
 
-    function handleAddMaterial(e) {
-        e.preventDefault()
-        setMaterialsArray([...materialsArray, ""])
-    }
-    function handleAddCleats(e) {
-        e.preventDefault()
-        setCleatsArray([...cleatsArray, ""])
+    function handleAddMaterial(item, numId, btnId) {
+        
+
+        const { productName: product, productType, sewingType } = item
+        const selectedItem = items.find(item => item.productName === product)
+        let quantity = document.getElementById(numId).value
+        let btn = document.getElementById(btnId)
+
+        if (selectedItem.quantity < quantity) {
+            return
+            // must rendering error 
+        }
+
+        btn.disabled = true
+
+        dispatch(addRoomMaterials({
+            product,
+            quantity,
+            productType,
+            sewingType
+        }))
+        if (type === "add") {
+            dispatch(editQuantity({ product, quantity }))
+        } else if (type === "edit") {
+            dispatch(editQuantity({ product, quantity: selectedItem.quantity - quantity }))
+        }
     }
 
-    function handleSubmitMaterials(e) {
-        e.preventDefault()
-        setMaterialsArray([''])
-        setRoomMaterials(roomMaterialsRedux)
-        setShowMaterialsForm(false)
-    }
-    function handleSubmitCleats(e) {
-        e.preventDefault()
-        setCleatsArray([''])
-        setRoomCleats(roomCleatsRedux)
-        setShowCleatsForm(false)
+    function handleAddCleats(item, numId, btnId) {
+        const { productName: product, productType, sewingType } = item
+        const selectedItem = items.find(item => item.productName === product)
+        let quantity = document.getElementById(numId).value
+        let btn = document.getElementById(btnId)
+
+        if (selectedItem.quantity < quantity) {
+            return
+            // must rendering error 
+        }
+
+        btn.disabled = true
+
+        dispatch(addRoomCleats({
+            product,
+            quantity,
+            productType,
+            sewingType
+        }))
+        dispatch(editQuantity({ product, quantity }))
     }
 
     function handleSubmitRoom() {
@@ -144,6 +163,7 @@ export default function AddRoom({ setShowRoom, type }) {
             )
 
             dispatch(addRoom(newRoom))
+
         } else if (type === "edit") {
             dispatch(editRoom({ ...newRoom, roomName: selectedRoom }))
         }
@@ -152,6 +172,8 @@ export default function AddRoom({ setShowRoom, type }) {
         dispatch(resetRoomCleats())
         setShowRoom(false)
     }
+
+
 
     return (
         <div>
@@ -171,33 +193,62 @@ export default function AddRoom({ setShowRoom, type }) {
             </div>
 
             {
-                showMaterialsForm && <form className="room-materials-form" action="" onSubmit={handleSubmitMaterials}>
-                    <div className="flex flex-col gap-1">
-                        {currentRoom && currentRoom[0]?.roomMaterials?.map(el => <MaterialInput items={items} editedProductQuantity={el.quantity} editedProductName={el.product} currentRoom={currentRoom} sessionType={type} type="materials" key={materialsArray.indexOf(el)} />)}
+                showMaterialsForm && <form className="room-materials-form" action="" onSubmit={(e) => {
+                    e.preventDefault()
+                    setShowMaterialsForm(false)
+                }}>
 
-                        {materialsArray.map(el => <MaterialInput currentRoom={currentRoom} sessionType={type} type="materials" items={items} key={materialsArray.indexOf(el)} />)}
-                    </div>
-                    <div className="flex flex-col gap-1 mt-3">
-                        <Button text={'Add More'} type={'primary'} size={'medium'} onClick={handleAddMaterial} />
-                        <Button text={'Done'} type={'primary'} size={'medium'} disabled={isMaterialsEmpty} />
-                    </div>
+                    {
+                        items.map((item) => {
+                            return <div className='flex gap-1 mt-1'>
+                                <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
+                                <input type="number" name="" id={item.code} min={0} />
+                                <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
+                                    e.preventDefault()
+                                    handleAddMaterial(item, item.code, item.productName)
+                                }} />
+                            </div>
+                        })
+                    }
+                    <Button text={"Done"} type={"primary"} size={"small"} />
                 </form>
             }
+            {/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
             {
-                showCleatsForm && <form className="room-materials-form" action="" onSubmit={handleSubmitCleats}>
-                    <div className="flex flex-col gap-1">
-                        {currentRoom && currentRoom[0]?.roomCleats?.map(el => <MaterialInput items={items} editedProductQuantity={el.quantity} editedProductName={el.product} currentRoom={currentRoom} sessionType={type} type="cleats" key={materialsArray.indexOf(el)} />)}
-                        {cleatsArray.map(el => <MaterialInput currentRoom={currentRoom} sessionType={type} type="cleats" items={items} key={cleatsArray.indexOf(el)} />)}
-                    </div>
-                    <div className="flex flex-col gap-1 mt-3">
-                        <Button text={'Add More'} type={'primary'} size={'medium'} onClick={handleAddCleats} />
-                        <Button text={'Done'} type={'primary'} size={'medium'} disabled={isCleatsEmpty} />
-                    </div>
+                showCleatsForm && <form className="room-materials-form" action="" onSubmit={(e) => {
+                    e.preventDefault()
+                    setShowCleatsForm(false)
+                }}>
+
+                    {
+                        items.map((item) => {
+                            return <div className='flex gap-1 mt-1'>
+                                <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
+                                <select name="" id="" onChange={(e) => {
+                                    if (e.target.value === 'height') {
+                                        document.getElementById(item.code).disabled = true;
+                                    } else {
+                                        document.getElementById(item.code).disabled = false;
+                                    }
+                                }}>
+                                    <option value="width">Width</option>
+                                    <option value="height">height</option>
+                                </select>
+
+                                <input type="number" name="" id={item.code} min={0} />
+                                <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
+                                    e.preventDefault()
+                                    handleAddCleats(item, item.code, item.productName)
+                                }} />
+                            </div>
+                        })
+                    }
+                    <Button text={"Done"} type={"primary"} size={"small"} />
                 </form>
             }
 
             <div>
-                <div className="flex align-center gap-2" style={{overflowX: "auto", margin: "2rem"}}>
+                <div className="flex align-center gap-2" style={{ overflowX: "auto", margin: "2rem" }}>
                     {
                         fakeData.map(window => <Window window={window} key={window.imageId} />)
                     }
@@ -216,6 +267,7 @@ export default function AddRoom({ setShowRoom, type }) {
                     <textarea name="" id="" value={notes} onChange={(e) => setNotes(e.target.value)}></textarea>
                 </div>
             </div>
+
             <Button type={'primary'} text={'Add'} onClick={handleSubmitRoom} size={'big'} />
         </div>
     )
