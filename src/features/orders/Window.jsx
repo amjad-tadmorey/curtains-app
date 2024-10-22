@@ -31,8 +31,13 @@ function Window({ window }) {
         setShowForm(false)
     };
 
+    /*
+        border-right: 1px solid;
+    padding-right: 3rem;
+    */
+
     return (
-        <div className="flex flex-col position-relative">
+        <div className="flex flex-col position-relative" style={{borderRight: ".5rem solid", paddingRight: "3rem"}}>
             <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} />
 
             {/* Window Materials */}

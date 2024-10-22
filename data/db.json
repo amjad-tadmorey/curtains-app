@@ -1,64 +1,68 @@
 {
   "orders": [
     {
-      "id": "771616067",
-      "created__at": "2024-10-20T20:52:12.304Z",
+      "id": "801685345",
+      "created__at": "2024-10-21T20:05:19.145Z",
       "status": "pending",
       "staticItems": [
         {
-          "productName": "rosa",
-          "code": "1",
+          "productName": "قماش استرا اوف وايت - PC 2612",
+          "code": "270-10-0002-04-00002",
           "productType": "havey",
           "quantity": 31
         },
         {
-          "productName": "silia",
-          "code": "2",
+          "productName": "قماش استرا سلفر - PC 2612",
+          "code": "270-10-0002-04-00003",
           "productType": "havey",
-          "quantity": 21
+          "quantity": 31
+        },
+        {
+          "productName": "قماش الينا بني - AJR9336 - 550 - تباع 3.25 م",
+          "code": "270-10-0002-06-00002",
+          "productType": "havey",
+          "quantity": 11
         }
       ],
       "rooms": [
         {
-          "roomName": "master",
+          "roomName": "a",
           "windows": [
             {
-              "windowId": 0.7625488434348071,
+              "windowId": 0.1082821905403315,
               "imageId": 1,
-              "src": "/src/assets/Window-Frame-placeholder.jpg",
+              "src": "/src/assets/windows/shape-1.svg",
               "width": "3",
               "height": "3",
+              "heightType": "full"
+            },
+            {
+              "windowId": 0.7567318715208615,
+              "imageId": 7,
+              "src": "/src/assets/windows/shape-7.svg",
+              "width": "12",
+              "height": "21",
               "heightType": "net"
             }
           ],
           "roomMaterials": [
             {
-              "product": "rosa",
+              "product": "قماش استرا اوف وايت - PC 2612",
               "quantity": "31",
               "productType": "havey",
-              "sewingType": "type-1"
-            }
-          ],
-          "notes": ""
-        },
-        {
-          "roomName": "living",
-          "windows": [
+              "sewingType": ""
+            },
             {
-              "windowId": 0.7004425611297813,
-              "imageId": 2,
-              "src": "/src/assets/Window-Frame-placeholder.jpg",
-              "width": "3",
-              "height": "3",
-              "heightType": "installation"
-            }
-          ],
-          "roomMaterials": [
-            {
-              "product": "silia",
-              "quantity": "21",
+              "product": "قماش استرا سلفر - PC 2612",
+              "quantity": "31",
               "productType": "havey",
-              "sewingType": "type-2"
+              "sewingType": ""
+            },
+            {
+              "product": "قماش الينا بني - AJR9336 - 550 - تباع 3.25 م",
+              "quantity": "11",
+              "productType": "havey",
+              "sewingType": ""
             }
           ],
           "notes": ""
@@ -66,11 +70,11 @@
       ],
       "generalInfo": {
         "customer": "957523748",
-        "date": "2024-10-16",
+        "date": "2024-10-21",
         "orderType": "home-delivery",
         "sales": "sales-1",
         "technical": "محمود كامل",
-        "showRoom": "madinaty"
+        "showRoom": "90"
       }
     }
   ],
@@ -1483,7 +1487,7 @@
       "productName": "دانتيل 281 روز",
       "quantity": 42.4,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1493,7 +1497,7 @@
       "productName": "دانتيل 276 فضي",
       "quantity": 2.4,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1503,7 +1507,7 @@
       "productName": "دانتيل 276 روز",
       "quantity": 109.35,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1513,7 +1517,7 @@
       "productName": "دانتيل 276 برونز",
       "quantity": 69,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1523,7 +1527,7 @@
       "productName": "دانتيل 277 روز",
       "quantity": 93.5,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1533,7 +1537,7 @@
       "productName": "دانتيل 273 فضي",
       "quantity": 7,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1543,7 +1547,7 @@
       "productName": "دانتيل 273 روز",
       "quantity": 85.55,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1553,7 +1557,7 @@
       "productName": "دانتيل 273 برونزي",
       "quantity": 83.85,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1573,7 +1577,7 @@
       "productName": "دانتيل 4222 روز",
       "quantity": 30.85,
       "productType": "light",
-      "currentPrice": 281.00,
+      "currentPrice": 281,
       "price": 246.4912,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1583,7 +1587,7 @@
       "productName": "دانتيل 4223 روز",
       "quantity": 12,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1593,7 +1597,7 @@
       "productName": "قماش فوال سادة ابيض 1 م",
       "quantity": 74.4,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1603,7 +1607,7 @@
       "productName": "قماش فوال سادة خمري/ نبيتي  1 م",
       "quantity": 11,
       "productType": "light",
-      "currentPrice": 117.00,
+      "currentPrice": 117,
       "price": 102.6316,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1613,7 +1617,7 @@
       "productName": "قماش فوال سادة افوايت1 م",
       "quantity": 94.75,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1623,7 +1627,7 @@
       "productName": "قماش فوال سادة بيج 1 م",
       "quantity": 328.35,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1633,7 +1637,7 @@
       "productName": "قماش فوال سادة موف فاتح 1 م",
       "quantity": 29.75,
       "productType": "light",
-      "currentPrice": 117.00,
+      "currentPrice": 117,
       "price": 102.6316,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1643,7 +1647,7 @@
       "productName": "فوال سادة ازرق/لبني",
       "quantity": 65.5,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1653,7 +1657,7 @@
       "productName": "قماش فوال سادة كيوي",
       "quantity": 3.8,
       "productType": "light",
-      "currentPrice": 117.00,
+      "currentPrice": 117,
       "price": 102.6316,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1663,7 +1667,7 @@
       "productName": "لنن سادة اخضر",
       "quantity": 25.85,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1673,7 +1677,7 @@
       "productName": "لنن سادة كحلي",
       "quantity": 44.5,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1683,7 +1687,7 @@
       "productName": "لنن سادة نبيتي",
       "quantity": 75.15,
       "productType": "light",
-      "currentPrice": 184.00,
+      "currentPrice": 184,
       "price": 161.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1693,7 +1697,7 @@
       "productName": "تول كشمير سادة",
       "quantity": 68.25,
       "productType": "light",
-      "currentPrice": 149.00,
+      "currentPrice": 149,
       "price": 130.7018,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1723,7 +1727,7 @@
       "productName": "تول سادة بيج",
       "quantity": 17.05,
       "productType": "light",
-      "currentPrice": 149.00,
+      "currentPrice": 149,
       "price": 130.7018,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1733,7 +1737,7 @@
       "productName": "تول سادة موف",
       "quantity": 21.5,
       "productType": "light",
-      "currentPrice": 134.00,
+      "currentPrice": 134,
       "price": 117.5439,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1743,7 +1747,7 @@
       "productName": "تول دوائر بني",
       "quantity": 42.8,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1753,7 +1757,7 @@
       "productName": "تول باونتي",
       "quantity": 0,
       "productType": "light",
-      "currentPrice": 714.00,
+      "currentPrice": 714,
       "price": 626.3158,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1763,7 +1767,7 @@
       "productName": "تول 634/8",
       "quantity": 29.4,
       "productType": "light",
-      "currentPrice": 578.00,
+      "currentPrice": 578,
       "price": 507.0175,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1773,7 +1777,7 @@
       "productName": "تول 695/1 افوايت",
       "quantity": 100.35,
       "productType": "light",
-      "currentPrice": 697.00,
+      "currentPrice": 697,
       "price": 611.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1783,7 +1787,7 @@
       "productName": "تول 695/6  روز",
       "quantity": 7,
       "productType": "light",
-      "currentPrice": 697.00,
+      "currentPrice": 697,
       "price": 611.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1793,7 +1797,7 @@
       "productName": "تول 695/9 اسود",
       "quantity": 3.8,
       "productType": "light",
-      "currentPrice": 697.00,
+      "currentPrice": 697,
       "price": 611.4035,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1803,7 +1807,7 @@
       "productName": "تول 743/2 بيج",
       "quantity": 60.75,
       "productType": "light",
-      "currentPrice": 486.00,
+      "currentPrice": 486,
       "price": 426.3158,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1813,7 +1817,7 @@
       "productName": "تول 743/5 سيمون",
       "quantity": 37,
       "productType": "light",
-      "currentPrice": 486.00,
+      "currentPrice": 486,
       "price": 426.3158,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1823,7 +1827,7 @@
       "productName": "تول 743/8 كافيه",
       "quantity": 17.5,
       "productType": "light",
-      "currentPrice": 486.00,
+      "currentPrice": 486,
       "price": 426.3158,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1833,7 +1837,7 @@
       "productName": "تول 743/9 كشمير",
       "quantity": 63.3,
       "productType": "light",
-      "currentPrice": 486.00,
+      "currentPrice": 486,
       "price": 426.3158,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1843,7 +1847,7 @@
       "productName": "تول 793/1 افوايت",
       "quantity": 10.4,
       "productType": "light",
-      "currentPrice": 465.00,
+      "currentPrice": 465,
       "price": 407.8947,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1853,7 +1857,7 @@
       "productName": "تول 793/7 كافيه",
       "quantity": 8.5,
       "productType": "light",
-      "currentPrice": 465.00,
+      "currentPrice": 465,
       "price": 407.8947,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1863,7 +1867,7 @@
       "productName": "تول 806/2 فضى",
       "quantity": 2.7,
       "productType": "light",
-      "currentPrice": 542.00,
+      "currentPrice": 542,
       "price": 475.4386,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1873,7 +1877,7 @@
       "productName": "تول 806/4 كشمير",
       "quantity": 49.25,
       "productType": "light",
-      "currentPrice": 542.00,
+      "currentPrice": 542,
       "price": 475.4386,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1883,7 +1887,7 @@
       "productName": "تول 806/6 بترولى",
       "quantity": 6.9,
       "productType": "light",
-      "currentPrice": 542.00,
+      "currentPrice": 542,
       "price": 475.4386,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1893,7 +1897,7 @@
       "productName": "تول 806/8 كافيه",
       "quantity": 15,
       "productType": "light",
-      "currentPrice": 542.00,
+      "currentPrice": 542,
       "price": 475.4386,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1903,7 +1907,7 @@
       "productName": "تول 703/1 افوايت",
       "quantity": 40.25,
       "productType": "light",
-      "currentPrice": 504.00,
+      "currentPrice": 504,
       "price": 442.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1913,7 +1917,7 @@
       "productName": "تول 703/3 كشمير",
       "quantity": 61,
       "productType": "light",
-      "currentPrice": 504.00,
+      "currentPrice": 504,
       "price": 442.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1923,7 +1927,7 @@
       "productName": "تول 703/8 كافيه",
       "quantity": 28.75,
       "productType": "light",
-      "currentPrice": 504.00,
+      "currentPrice": 504,
       "price": 442.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1933,7 +1937,7 @@
       "productName": "تول1019/1 افوايت",
       "quantity": 81.1,
       "productType": "light",
-      "currentPrice": 406.60,
+      "currentPrice": 406.6,
       "price": 356.6667,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1943,7 +1947,7 @@
       "productName": "تول1019/2 سيلفر",
       "quantity": 70,
       "productType": "light",
-      "currentPrice": 407.00,
+      "currentPrice": 407,
       "price": 357.0175,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1953,7 +1957,7 @@
       "productName": "تول1019/4 كافيه",
       "quantity": 286.5,
       "productType": "light",
-      "currentPrice": 407.00,
+      "currentPrice": 407,
       "price": 357.0175,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1963,7 +1967,7 @@
       "productName": "تول 103/1 افوايت",
       "quantity": 21,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1973,7 +1977,7 @@
       "productName": "تول 103/2 كشمير",
       "quantity": 92.3,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1983,7 +1987,7 @@
       "productName": "تول 103/3 بترولى",
       "quantity": 119,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -1993,7 +1997,7 @@
       "productName": "تول 103/4 كافيه",
       "quantity": 2,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2003,7 +2007,7 @@
       "productName": "تول 102/1 افوايت",
       "quantity": 14,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2013,7 +2017,7 @@
       "productName": "تول 102/3 بترولى",
       "quantity": 24.1,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2023,7 +2027,7 @@
       "productName": "تول 102/4 كافيه",
       "quantity": 7.5,
       "productType": "light",
-      "currentPrice": 219.00,
+      "currentPrice": 219,
       "price": 192.1053,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2033,7 +2037,7 @@
       "productName": "تول 101/2 كشمير",
       "quantity": 47.4,
       "productType": "light",
-      "currentPrice": 342.00,
+      "currentPrice": 342,
       "price": 300,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2043,7 +2047,7 @@
       "productName": "تول 101/3 بترولى",
       "quantity": 29.65,
       "productType": "light",
-      "currentPrice": 342.00,
+      "currentPrice": 342,
       "price": 300,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2053,7 +2057,7 @@
       "productName": "تول 101/4 كافيه",
       "quantity": 42.2,
       "productType": "light",
-      "currentPrice": 342.00,
+      "currentPrice": 342,
       "price": 300,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2073,7 +2077,7 @@
       "productName": "تول مورا 412",
       "quantity": 0,
       "productType": "light",
-      "currentPrice": 507.30,
+      "currentPrice": 507.3,
       "price": 445.0001,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2083,7 +2087,7 @@
       "productName": "تول تويكس اوفوايت",
       "quantity": 164.8,
       "productType": "light",
-      "currentPrice": 229.90,
+      "currentPrice": 229.9,
       "price": 201.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2093,7 +2097,7 @@
       "productName": "تول تويكس رمادي",
       "quantity": 168.15,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2103,7 +2107,7 @@
       "productName": "تول تويكس كافيه",
       "quantity": 78.15,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2113,7 +2117,7 @@
       "productName": "تول تويكس كشمير",
       "quantity": 164.5,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2123,7 +2127,7 @@
       "productName": "تول تويكس بترولي",
       "quantity": 63.35,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2133,7 +2137,7 @@
       "productName": "تول اشكال اوفوايت",
       "quantity": 133.8,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2143,7 +2147,7 @@
       "productName": "تول اشكال رمادي",
       "quantity": 119.25,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2153,7 +2157,7 @@
       "productName": "تول اشكال كافيه",
       "quantity": 68.5,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2163,7 +2167,7 @@
       "productName": "تول اشكال كشمير",
       "quantity": 21,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2173,7 +2177,7 @@
       "productName": "تول اشكال بترولي",
       "quantity": 10.2,
       "productType": "light",
-      "currentPrice": 218.50,
+      "currentPrice": 218.5,
       "price": 191.67,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2183,7 +2187,7 @@
       "productName": "تول شراشيب كشمير",
       "quantity": 79.75,
       "productType": "light",
-      "currentPrice": 140.00,
+      "currentPrice": 140,
       "price": 123.6842,
       "created_at": "10/20/2024",
       "status": "active"
@@ -2194,7 +2198,7 @@
       "quantity": 53.25,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2204,7 +2208,7 @@
       "quantity": 42.2,
       "productType": "light",
       "currentPrice": 218.33,
-      "price": 248.90,
+      "price": 248.9,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2214,7 +2218,7 @@
       "quantity": 8.15,
       "productType": "light",
       "currentPrice": 217.37,
-      "price": 247.80,
+      "price": 247.8,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2224,7 +2228,7 @@
       "quantity": 140.75,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2234,7 +2238,7 @@
       "quantity": 79.95,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2244,7 +2248,7 @@
       "quantity": 151.1,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2254,7 +2258,7 @@
       "quantity": 131.25,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2264,7 +2268,7 @@
       "quantity": 21.45,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2274,7 +2278,7 @@
       "quantity": 157.5,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
     },
@@ -2284,9 +2288,1195 @@
       "quantity": 99.45,
       "productType": "light",
       "currentPrice": 208.33,
-      "price": 237.50,
+      "price": 237.5,
       "created_at": "10/20/2024",
       "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00021",
+      "productName": "كتان ميس أخضر",
+      "quantity": 15.4,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00022",
+      "productName": "كتان ميس فوشيا",
+      "quantity": 173.5,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00024",
+      "productName": "كتان ميس جافا",
+      "quantity": 2.3,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00025",
+      "productName": "كتان ميس سيمون",
+      "quantity": 24.5,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00026",
+      "productName": "كتان ميس سلفر",
+      "quantity": 51.75,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00027",
+      "productName": "كتان ميس موكا",
+      "quantity": 105.85,
+      "productType": "havey",
+      "currentPrice": 280.26,
+      "price": 319.5,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00028",
+      "productName": "كتان ميس روز",
+      "quantity": 18.75,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00029",
+      "productName": "كتان ميس كاكاو",
+      "quantity": 8.25,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00030",
+      "productName": "كتان ميس كحلي",
+      "quantity": 185.25,
+      "productType": "havey",
+      "currentPrice": 280.27,
+      "price": 319.51,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00031",
+      "productName": "كتان ميس ليد بيج",
+      "quantity": 77.9,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00032",
+      "productName": "كتان ميس فيروزي",
+      "quantity": 101.5,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00033",
+      "productName": "كتان ميس برونز",
+      "quantity": 21.6,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00034",
+      "productName": "كتان ميس كاستل",
+      "quantity": 40.36,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00036",
+      "productName": "كتان ميس جراي",
+      "quantity": 120.25,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00037",
+      "productName": "كتان ميس اورانج",
+      "quantity": 186.75,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00038",
+      "productName": "كتان ميس بلو",
+      "quantity": 90.35,
+      "productType": "havey",
+      "currentPrice": 295.614,
+      "price": 337,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00063",
+      "productName": "كتان 1011/1 افوايت",
+      "quantity": 18.8,
+      "productType": "light",
+      "price": 372,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00064",
+      "productName": "كتان 1011/2 كافيه",
+      "quantity": 4,
+      "productType": "light",
+      "price": 372,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00065",
+      "productName": "كتان 1011/3 عسلي",
+      "quantity": 32.5,
+      "productType": "light",
+      "price": 372,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00066",
+      "productName": "كتان1011/4 سيلفر",
+      "quantity": 3.85,
+      "productType": "light",
+      "price": 372,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00068",
+      "productName": "كتان سيلين سلفر",
+      "quantity": 40.25,
+      "productType": "light",
+      "price": 475,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00069",
+      "productName": "كتان سيلين افوايت",
+      "quantity": 243,
+      "productType": "light",
+      "price": 475,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00073",
+      "productName": "كتان 1057/1",
+      "quantity": 0.85,
+      "productType": "light",
+      "price": 366.45,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00074",
+      "productName": "كتان 1057/2",
+      "quantity": 145.1,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00075",
+      "productName": "كتان 1057/3",
+      "quantity": 12.25,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00076",
+      "productName": "كتان 1009/5",
+      "quantity": 5.35,
+      "productType": "light",
+      "price": 294,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00077",
+      "productName": "كتان 1009/1",
+      "quantity": 106.05,
+      "productType": "light",
+      "price": 294,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00078",
+      "productName": "كتان 1009/2",
+      "quantity": 5,
+      "productType": "light",
+      "price": 294,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00079",
+      "productName": "كتان 1072/1 افوايت",
+      "quantity": 181.3,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00080",
+      "productName": "كتان 1072/2 سلفر",
+      "quantity": 11.85,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00081",
+      "productName": "كتان 1072/3 كافيه",
+      "quantity": 11,
+      "productType": "light",
+      "price": 366.45,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00082",
+      "productName": "كتان 1072/4 بنى",
+      "quantity": 24.95,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00083",
+      "productName": "كتان 1046/1 افوايت",
+      "quantity": 123.15,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00084",
+      "productName": "كتان 1046/2 سلفر",
+      "quantity": 60,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00085",
+      "productName": "كتان 1046/3 دهبي",
+      "quantity": 3.65,
+      "productType": "light",
+      "price": 367,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00086",
+      "productName": "كتان 2051 / 1افوايت",
+      "quantity": 79,
+      "productType": "light",
+      "price": 520,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00087",
+      "productName": "كتان 2051 / 9 اسود",
+      "quantity": 49,
+      "productType": "light",
+      "price": 520,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00088",
+      "productName": "كتان 2051 / 8 كافيه",
+      "quantity": 89.7,
+      "productType": "light",
+      "price": 518.7,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00089",
+      "productName": "كتان 2053/1 افوايت",
+      "quantity": 144.25,
+      "productType": "light",
+      "price": 466,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00090",
+      "productName": "كتان 2053 /3 اسود",
+      "quantity": 8,
+      "productType": "light",
+      "price": 466,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00091",
+      "productName": "كتان 2053/7 كافيه",
+      "quantity": 16.95,
+      "productType": "light",
+      "price": 466,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00092",
+      "productName": "كتان 2049 / 1 افوايت",
+      "quantity": 65.3,
+      "productType": "light",
+      "price": 551,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00093",
+      "productName": "كتان 2049 / 7 كافيه",
+      "quantity": 3.75,
+      "productType": "light",
+      "price": 551,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00094",
+      "productName": "كتان 2049 /4  روز",
+      "quantity": 118.65,
+      "productType": "light",
+      "price": 551,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00095",
+      "productName": "كتان 2049 / 9 اسود",
+      "quantity": 150.25,
+      "productType": "light",
+      "price": 551,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00096",
+      "productName": "كتان 1082 / 6 اسود",
+      "quantity": 43.75,
+      "productType": "light",
+      "price": 267,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00099",
+      "productName": "كتان 1082 / 3 روز",
+      "quantity": 181.95,
+      "productType": "light",
+      "price": 267,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00100",
+      "productName": "كتان 1082/4 بنى",
+      "quantity": 3.25,
+      "productType": "light",
+      "price": 267,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00103",
+      "productName": "كتان سيلين بيج",
+      "quantity": 13.9,
+      "productType": "light",
+      "price": 474.35,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00106",
+      "productName": "330-5614 كتان فرنسي",
+      "quantity": 0,
+      "productType": "light",
+      "price": 971,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00107",
+      "productName": "LN30129 كتان فرنسي",
+      "quantity": 0,
+      "productType": "light",
+      "price": 1039,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00112",
+      "productName": "2202 كتان فرنسي",
+      "quantity": 0,
+      "productType": "light",
+      "price": 1602,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00116",
+      "productName": "كتان مقلم 1077 /1",
+      "quantity": 10.2,
+      "productType": "light",
+      "price": 280,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00117",
+      "productName": "كتان مقلم 1077 / 2",
+      "quantity": 29.5,
+      "productType": "light",
+      "price": 280,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00118",
+      "productName": "كتان مقلم 1077 / 3",
+      "quantity": 15.8,
+      "productType": "light",
+      "price": 266,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00119",
+      "productName": "كتان 1101/ 1",
+      "quantity": 14.8,
+      "productType": "light",
+      "price": 355,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00120",
+      "productName": "كتان 1101 / 2",
+      "quantity": 32.25,
+      "productType": "light",
+      "price": 337.25,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00121",
+      "productName": "كتان 1101 / 3",
+      "quantity": 29.6,
+      "productType": "light",
+      "price": 337.25,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00122",
+      "productName": "كتان 2070 /1",
+      "quantity": 122.45,
+      "productType": "light",
+      "price": 454.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00123",
+      "productName": "كتان 2070/ 3",
+      "quantity": 17.75,
+      "productType": "light",
+      "price": 454.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00124",
+      "productName": "كتان 2076 /1",
+      "quantity": 28.75,
+      "productType": "light",
+      "price": 500,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00125",
+      "productName": "كتان 2076 / 8",
+      "quantity": 62.25,
+      "productType": "light",
+      "price": 475,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00126",
+      "productName": "كتان 1125 /1",
+      "quantity": 352.45,
+      "productType": "light",
+      "price": 303.45,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00127",
+      "productName": "كتان 1125 / 2",
+      "quantity": 282.5,
+      "productType": "light",
+      "price": 303.45,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00128",
+      "productName": "كتان نيو جكار لافستا سلفر",
+      "quantity": 152.25,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00129",
+      "productName": "كتان نيو جكار لافستا كافية",
+      "quantity": 149.6,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00130",
+      "productName": "كتان  نيو جكار لافستا اوف وايت",
+      "quantity": 138.25,
+      "productType": "light",
+      "price": 441,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00131",
+      "productName": "كتان  نيو جكار مارينا سلفر",
+      "quantity": 149.5,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00132",
+      "productName": "كتان   نيو جكار مارينا كافية",
+      "quantity": 89.5,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00133",
+      "productName": "كتان  نيو جكار مارينا اوف وايت",
+      "quantity": 32,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00134",
+      "productName": "كتان  نيو جكار مراسي  سلفر",
+      "quantity": 204.75,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00135",
+      "productName": "كتان   نيو جكار مراسي  كافية",
+      "quantity": 135.5,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00136",
+      "productName": "كتان  نيو جكار مراسي   اوف وايت",
+      "quantity": 7.25,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00137",
+      "productName": "كتان  نيو جكار امواج  سلفر",
+      "quantity": 114.75,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00138",
+      "productName": "كتان   نيو جكار امواج كافية",
+      "quantity": 86.74,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00139",
+      "productName": "كتان  نيو جكار امواج  اوف وايت",
+      "quantity": 184.25,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00140",
+      "productName": "كتان  نيو جكار تلال  سلفر",
+      "quantity": 101.75,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00141",
+      "productName": "كتان   نيو جكار تلال  كافية",
+      "quantity": 136.75,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-16-00142",
+      "productName": "كتان  نيو جكار تلال  اوف وايت",
+      "quantity": 122.7,
+      "productType": "light",
+      "price": 441.75,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00001",
+      "productName": "قماش بلاك اوت سادة اسباني بيج",
+      "quantity": 1004.25,
+      "productType": "black-out",
+      "currentPrice": 257.89,
+      "price": 293.99,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00003",
+      "productName": "رول بلاك اوت تصفيه مقاس",
+      "quantity": 18,
+      "productType": "black-out",
+      "currentPrice": 731.5789,
+      "price": 834,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00004",
+      "productName": "بلاك اوت اسباني بني",
+      "quantity": 471.75,
+      "productType": "black-out",
+      "currentPrice": 258.7719,
+      "price": 295,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00005",
+      "productName": "قماش بلاك اوت اسباني سلفر",
+      "quantity": 839.85,
+      "productType": "black-out",
+      "currentPrice": 257.89,
+      "price": 293.99,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00007",
+      "productName": "بلاك اوت ملون",
+      "quantity": 599.8,
+      "productType": "black-out",
+      "currentPrice": 258.7719,
+      "price": 295,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00010",
+      "productName": "بلاك اوت نيو 101",
+      "quantity": 112.2,
+      "productType": "black-out",
+      "currentPrice": 476.67,
+      "price": 543.4,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00012",
+      "productName": "بلاك كتان",
+      "quantity": 562.4,
+      "productType": "black-out",
+      "currentPrice": 541.58,
+      "price": 617.4,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-02-00006",
+      "productName": "رول بلاك اوت 4",
+      "quantity": 4.31,
+      "productType": "roller",
+      "currentPrice": 828.9474,
+      "price": 945,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-07-00001",
+      "productName": "هيد زيبرا",
+      "quantity": 0,
+      "productType": "roller",
+      "currentPrice": 508.77,
+      "price": 580,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-07-00002",
+      "productName": "زيبرا تصفيه مقاس",
+      "quantity": 34,
+      "productType": "roller",
+      "currentPrice": 975.4386,
+      "price": 1112,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-07-00003",
+      "productName": "زيبرا دبل سيستم",
+      "quantity": 0.91,
+      "productType": "roller",
+      "currentPrice": 1333.33,
+      "price": 1520,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0001-07-00017",
+      "productName": "رول بلاك ديكوراما",
+      "quantity": 0.04,
+      "productType": "roller",
+      "currentPrice": 802.63,
+      "price": 915,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-02-00001",
+      "productName": "اويمه مودرن ساده",
+      "quantity": 2.11,
+      "productType": "oyema",
+      "currentPrice": 922.807,
+      "price": 1052,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-02-00002",
+      "productName": "اويمة حفر يدوي",
+      "quantity": 6,
+      "productType": "oyema",
+      "currentPrice": 1466.67,
+      "price": 1672,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-02-00003",
+      "productName": "اويمه مفرغه مودرن",
+      "quantity": 8.5,
+      "productType": "oyema",
+      "currentPrice": 1179.82,
+      "price": 1345,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-02-00004",
+      "productName": "اويمة معدن",
+      "quantity": 2,
+      "productType": "oyema",
+      "currentPrice": 1179.82,
+      "price": 1345,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-02-00006",
+      "productName": "اويمة سادة بحرف",
+      "quantity": 2,
+      "productType": "oyema",
+      "currentPrice": 990.3509,
+      "price": 1129,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-04-00003",
+      "productName": "بند حرير k2",
+      "quantity": 0,
+      "productType": "cleats",
+      "currentPrice": 507.0175,
+      "price": 578,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-04-00006",
+      "productName": "بند حرير k4",
+      "quantity": 8,
+      "productType": "cleats",
+      "currentPrice": 617.5439,
+      "price": 704,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-04-00007",
+      "productName": "بند حرير k5",
+      "quantity": 0,
+      "productType": "cleats",
+      "currentPrice": 585.9649,
+      "price": 668,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-01-00001",
+      "productName": "عصاية مجرة اكرليك",
+      "quantity": 5,
+      "productType": "accessories",
+      "currentPrice": 188.34,
+      "price": 214.71,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-01-00002",
+      "productName": "مجرة بدون حبل الماني",
+      "quantity": 1281.2,
+      "productType": "accessories",
+      "currentPrice": 92.85,
+      "price": 105.85,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-01-00004",
+      "productName": "كابولي مجوز عادي",
+      "quantity": 376,
+      "productType": "accessories",
+      "currentPrice": 116.6667,
+      "price": 133,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-01-00005",
+      "productName": "وصلة تراك",
+      "quantity": 1,
+      "productType": "accessories",
+      "currentPrice": 975.4386,
+      "price": 1112,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00001",
+      "productName": "سكة كيرش ايطالي 2 م",
+      "quantity": 26,
+      "productType": "accessories",
+      "currentPrice": 805.2632,
+      "price": 918,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00002",
+      "productName": "سكة كيرش ايطالي 3 م",
+      "quantity": 31,
+      "productType": "accessories",
+      "currentPrice": 950.8772,
+      "price": 1084,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00003",
+      "productName": "سكة كيرش ايطالي 4 م",
+      "quantity": 20,
+      "productType": "accessories",
+      "currentPrice": 1097.37,
+      "price": 1251,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00004",
+      "productName": "سكة كيرش تايواني قياس 5",
+      "quantity": 30,
+      "productType": "accessories",
+      "currentPrice": 1391.66,
+      "price": 1586.49,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00005",
+      "productName": "سكة كيرش ايطالي 1 م",
+      "quantity": 30,
+      "productType": "accessories",
+      "currentPrice": 658.7719,
+      "price": 751,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-07-00006",
+      "productName": "سكة دوران",
+      "quantity": 162.54,
+      "productType": "accessories",
+      "currentPrice": 268.4211,
+      "price": 306,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-11-00001",
+      "productName": "قطاع المونيوم",
+      "quantity": 0,
+      "productType": "accessories",
+      "currentPrice": 1147.37,
+      "price": 1308,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00001",
+      "productName": "ماسوره مجدول احمر",
+      "quantity": 120.55,
+      "productType": "accessories",
+      "currentPrice": 233.3333,
+      "price": 266,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00002",
+      "productName": "ماسوره مجدول برونز",
+      "quantity": 185.62,
+      "productType": "accessories",
+      "currentPrice": 233.3333,
+      "price": 266,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00003",
+      "productName": "ماسوره مجدول فضى",
+      "quantity": 372.33,
+      "productType": "accessories",
+      "currentPrice": 233.3333,
+      "price": 266,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00004",
+      "productName": "مواسير برونز سادة",
+      "quantity": 264.86,
+      "productType": "accessories",
+      "currentPrice": 233.03,
+      "price": 265.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00005",
+      "productName": "مواسير سادة أحمر",
+      "quantity": 190.55,
+      "productType": "accessories",
+      "currentPrice": 233.3333,
+      "price": 266,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00006",
+      "productName": "مواسير فضي سادة",
+      "quantity": 544.03,
+      "productType": "accessories",
+      "currentPrice": 233.03,
+      "price": 265.65,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00007",
+      "productName": "كابولي مشجر للمواسير",
+      "quantity": 257,
+      "productType": "accessories",
+      "currentPrice": 178.33,
+      "price": 203.3,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-13-00008",
+      "productName": "طبات مواسير",
+      "quantity": 332,
+      "productType": "accessories",
+      "currentPrice": 31.5789,
+      "price": 36,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-05-00001",
+      "productName": "حمالة كريستال وردة",
+      "quantity": 371,
+      "productType": "hooks",
+      "currentPrice": 101.7544,
+      "price": 116,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-05-00002",
+      "productName": "حمالة هوك سادة",
+      "quantity": 553,
+      "productType": "hooks",
+      "currentPrice": 45.614,
+      "price": 52,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-09-00001",
+      "productName": "شماعة ابليك كريستال",
+      "quantity": 171,
+      "productType": "hooks",
+      "currentPrice": 208.7719,
+      "price": 238,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-09-00002",
+      "productName": "شماعه ريشه",
+      "quantity": 368,
+      "productType": "hooks",
+      "currentPrice": 102.6316,
+      "price": 117,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-09-00003",
+      "productName": "شماعه اكرليك",
+      "quantity": 332,
+      "productType": "hooks",
+      "currentPrice": 280.7018,
+      "price": 320,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "270-10-0003-10-00001",
+      "productName": "فرنشة حرير",
+      "quantity": 26,
+      "productType": "cleats",
+      "currentPrice": 408.7719,
+      "price": 466,
+      "created_at": "10/20/2024",
+      "status": "active"
+    },
+    {
+      "id": "1",
+      "productName": "silia",
+      "productType": "havey",
+      "price": "120",
+      "created_at": "2024-10-21",
+      "status": "active",
+      "quantity": 0
     }
   ]
 }

@@ -8,13 +8,12 @@ function OrderRow({ order }) {
     const { id, status, generalInfo } = order
     const { customer: customerId, date, orderType } = generalInfo
     const { isLoadingCustomer, customer } = useGetCustomerById(customerId)
-
-
+    
     if (isLoadingCustomer) return null
 
     return (
         <Table.Row>
-            <div className="table__item w-16">{customer.name}</div>
+            <div className="table__item w-16">{customer.customerName}</div>
             <div className="table__item w-16">{date}</div>
             <div className="table__item w-16">{orderType}</div>
             <div className="table__item w-16">{id}</div>
