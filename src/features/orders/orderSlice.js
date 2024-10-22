@@ -26,9 +26,9 @@ const orderSlice = createSlice({
         setItemQuantity(state, action) {
             const item = state.items.find(item => item.code === action.payload.code)
             item.quantity = action.payload.quantity
-            /////////////////////////////////////////
-            const staticItem = state.items.find(item => item.code === action.payload.code)
-            staticItem.quantity = +action.payload.quantity + 1
+            /////////////////////////////////////////////////////////////////////
+            const staticItem = state.staticItems.find(item => item.code === action.payload.code)
+            staticItem.quantity = action.payload.quantity
         },
         editQuantity(state, action) {
             const item = state.items.find(item => item.productName === action.payload.product)
@@ -40,7 +40,7 @@ const orderSlice = createSlice({
             state.items = updatedItems
             //////////////////////////////////////
             const updatedStaticItems = state.staticItems.filter(item => item.code !== action.payload)
-            state.items = updatedStaticItems
+            state.staticItems = updatedStaticItems
         },
         addRoom(state, action) {
             state.rooms.push(action.payload)

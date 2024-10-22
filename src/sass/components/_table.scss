@@ -4,11 +4,11 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;
-    margin-top: 2rem;
     overflow: auto;
+    align-content: start;
 
     &__header {
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: space-between;
         border-top: 1px solid $color-grey-2;
@@ -22,13 +22,13 @@
     }
 
     &__row {
-        display: flex;
+        display: grid;
         margin-top: 1.5rem;
     }
 
     &__item {
         font-size: $font-extra-small;
-        color: $color-grey-2;
+        color: $color-grey-3;
         font-weight: 300;
         text-align: start;
     }

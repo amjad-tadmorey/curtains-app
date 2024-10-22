@@ -11,15 +11,14 @@ function CustomersTable() {
     if (isLoading || isCreating) return <Spinner />
 
     return (
-        <Table>
+        <Table cols="1fr 35rem repeat(4, 1fr)">
             <Table.Header>
-                <div className="w-16">Customer Name</div>
-                <div className="w-16">Adress</div>
-                <div className="w-16">Phone</div>
-                <div className="w-16">Orders</div>
-                <div className="w-16">Order Total</div>
-                <div className="w-16">Customer Since</div>
-                <div className="w-16">Status</div>
+                <div>Customer Name</div>
+                <div>Adress</div>
+                <div>Phone</div>
+                <div>Orders</div>
+                <div>Customer Since</div>
+                <div>Status</div>
             </Table.Header>
             <Table.Body data={customers} render={(customer => <CustomerRow key={customer.id} customer={customer} isLoading={isLoading} />)} />
         </Table>

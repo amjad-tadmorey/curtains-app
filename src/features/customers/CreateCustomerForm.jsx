@@ -13,6 +13,7 @@ function CreateCustomerForm({ onCloseModal }) {
 
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
     const { createCustomer } = useCreateCustomer()
+    const id = generateNumberId()
 
     function onSubmit() {
         alert("Are you sure you want to create a new customer ?")
@@ -22,13 +23,14 @@ function CreateCustomerForm({ onCloseModal }) {
             ...getValues(),
             adress: [getValues().adress],
             created_at: formatDate(new Date()),
-            id: generateNumberId(),
+            id,
             orders: [],
             status: "active"
         })
         reset()
         onCloseModal()
         toast.success("Customer Created Successfully")
+        navigate(`/customers/${id}`)
     }
 
     return (

@@ -7,14 +7,13 @@ function CustomerRow({ customer }) {
 
     return (
         <Table.Row>
-            <div className="table__item w-16">{customerName}</div>
-            <div className="table__item w-16">{adress[0]}</div>
-            <div className="table__item w-16">{phoneNumber}</div>
-            <div className="table__item w-16">{orders}</div>
-            <div className="table__item w-16">X</div>
-            <div className="table__item w-16">{created_at}</div>
-            <div className="w-16">
-                <Tag role="table__item w-16" status={status}>{status}</Tag>
+            <div className="table__item ">{customerName}</div>
+            <div className="table__item ">{adress[0]}</div>
+            <div className="table__item ">{phoneNumber}</div>
+            <div className="table__item ">{orders}</div>
+            <div className="table__item ">{created_at}</div>
+            <div className="">
+                <Tag role="table__item " status={status}>{status}</Tag>
             </div>
         </Table.Row>
     )

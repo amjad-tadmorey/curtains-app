@@ -21,7 +21,11 @@ function CreateOrderForm({ onCloseModal }) {
     const isItemsEmpty = useSelector(getItems).length === 0
     const [search, setSearch] = useState('')
 
-    const filteredItems = items?.filter((item) => item.productName.includes(search))
+    // items?.forEach((item) => {
+    //     if (!item.productName.includes(search)) {
+    //         console.log(item);
+    //     }
+    // })
 
     function onSubmit() {
         dispatch(addGeneralInfo(getValues()))
@@ -112,7 +116,7 @@ function CreateOrderForm({ onCloseModal }) {
                     <input type="search" placeholder='Search' className='search search--primary' value={search} onChange={(e) => setSearch(e.target.value)} />
                     <ul className="products-list__items">
                         {
-                            filteredItems.map(product => <ProductItem key={product.code} product={product} />)
+                            items.map(product => <ProductItem search={search} key={product.code} product={product} />)
                         }
                     </ul>
                 </div>

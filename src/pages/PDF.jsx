@@ -100,7 +100,7 @@ function PDFToPrint() {
             <div className="pdf__items">
                 <h3 className="heading-2 mb-3">المنتجات</h3>
 
-                <Table>
+                <Table cols="repeat(2, 1fr) auto">
                     <Table.Header>
                         <div className="fs-2">كود الصنف</div>
                         <div className="fs-2">اسم الصنف</div>

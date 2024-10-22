@@ -1,40 +1,49 @@
 /* eslint-disable react/prop-types */
 
-function Table({ children }) {
+import { createContext, useContext } from "react";
 
+const TableContext = createContext()
 
+function Table({ children, cols, test }) {
     return (
-        <table className="table">
-            {children}
-        </table>
+        <TableContext.Provider
+            value={{ cols }}
+        >
+            <table className="table">
+                {children}
+                <p>{test}</p>
+            </table>
+        </TableContext.Provider>
     )
 }
 
 function Header({ children }) {
-
-
-    return <div className="table__header">
+    const { cols } = useContext(TableContext)
+    return <div className="table__header" style={{ gridTemplateColumns: cols }}>
         {children}
     </div>
 }
 
 function Row({ children, linedRows, specialStyles }) {
+    const { cols } = useContext(TableContext)
     return <>
-        <div className="table__row" style={specialStyles ? specialStyles : null}>
+        <div className="table__row" style={{ gridTemplateColumns: cols }}>
             {children}
-        </div>
-        {linedRows && <hr />}
+        </div >
+        {linedRows && <hr />
+        }
     </>
 }
 
 function Body({ data = [], render }) {
 
+
     if (!data.length) return null
-    return <div className="table__body">
+    return <div className="table__body" >
         {
             data.map(render)
         }
-    </div>
+    </ div>
 }
 function StaticBody({ children }) {
     return (

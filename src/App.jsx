@@ -1,5 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+import { Toaster } from "react-hot-toast"
+
 import AppLayout from "./ui/AppLayout"
 import Dashboard from './pages/Dashboard'
 import Orders from './pages/Orders'
@@ -8,11 +12,10 @@ import Inventory from './pages/Inventory'
 import Settings from './pages/Settings'
 import Auth from "./pages/Auth"
 import PageNotFound from "./pages/PageNotFound"
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import OrderView from "./pages/OrderView"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
+import CustomerView from "./pages/CusomerView"
+import ItemView from "./pages/ItemView"
 import PDF from "./pages/PDF"
-import { Toaster } from "react-hot-toast"
 
 
 function App() {
@@ -56,7 +59,9 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="orders/:id" element={<OrderView />} />
             <Route path="customers" element={<Customers />} />
+            <Route path="customers/:customerId" element={<CustomerView />} />
             <Route path="inventory" element={<Inventory />} />
+            <Route path="inventory/:itemId" element={<ItemView />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="orders/PDF/:id" element={<PDF />} />
