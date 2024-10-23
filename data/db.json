@@ -370,62 +370,62 @@
   ],
   "customers": [
     {
-      "id": "957523748",
-      "customerName": "amjad tadmory",
-      "phoneNumber": "1227139914",
-      "email": "amjadtadmory@gmail.com",
-      "adress": [
-        "aaaa"
-      ],
-      "created_at": "2024-10-20",
-      "orders": [],
-      "status": "active"
-    },
-    {
-      "id": "957523748",
-      "customerName": "amjad tadmory",
-      "phoneNumber": "1227139914",
-      "email": "amjadtadmory@gmail.com",
-      "adress": [
-        "aaaa"
-      ],
-      "created_at": "2024-10-20",
-      "orders": [],
-      "status": "in-active"
-    },
-    {
-      "id": "463594645",
+      "id": "345279845",
       "customerName": "amjad tadmory",
       "phoneNumber": "01227139914",
       "email": "amjadtadmory@gmail.com",
       "adress": [
         "cairo, egypt, Alrehab: 70 - 7 - 2"
       ],
-      "created_at": "2024-10-21",
+      "created_at": "2024-10-23",
       "orders": [],
       "status": "active"
     },
     {
-      "id": "259089200",
+      "id": "72713538",
       "customerName": "amjad tadmory",
       "phoneNumber": "1227139914",
       "email": "amjadtadmory@gmail.com",
       "adress": [
         "cairo, egypt, Alrehab: 70 - 7 - 2"
       ],
-      "created_at": "2024-10-22",
+      "created_at": "2024-10-23",
       "orders": [],
       "status": "active"
     },
     {
-      "id": "850760438",
+      "id": "944883608",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "01228700216",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "kksksd dsds sa"
+      ],
+      "created_at": "2024-10-23",
+      "orders": [],
+      "status": "active"
+    },
+    {
+      "id": "839922274",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "1227139914",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "aaaa"
+      ],
+      "created_at": "2024-10-23",
+      "orders": [],
+      "status": "active"
+    },
+    {
+      "id": "971809476",
       "customerName": "amjad tadmory",
       "phoneNumber": "01227139914",
       "email": "amjadtadmory@gmail.com",
       "adress": [
-        "cairo, egypt, Alrehab: 70 - 7 - 2"
+        "kksksd dsds sa"
       ],
-      "created_at": "2024-10-22",
+      "created_at": "2024-10-23",
       "orders": [],
       "status": "active"
     }

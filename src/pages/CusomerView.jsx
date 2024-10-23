@@ -1,17 +1,19 @@
 import { useParams } from "react-router"
-import { useGetCustomerById } from "../features/customers/useGetCustomerById"
-import Spinner from "../ui/Spinner"
+import { getCustomerById } from "../services/customersApi";
+import { useEffect, useState } from "react";
 
 function CusomerView() {
+    const { customerId } = useParams()
+    const [customer, setCustomer] = useState()
 
-    const {customerId} = useParams()
-    console.log(customerId);
-
-    const { customer, isLoadingCustomer } = useGetCustomerById(customerId)
-
-    if(isLoadingCustomer) return <Spinner />
+    useEffect(() => {
+        async function getCustomer() {
+            const customerApi = await getCustomerById(customerId)
+            setCustomer(customerApi)
+        }
+        getCustomer()
+    }, [customerId])
     console.log(customer);
-    
     return (
         <div>
             CusomerView
