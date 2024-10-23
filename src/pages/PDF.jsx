@@ -32,10 +32,6 @@ function PDFToPrint() {
     const phoneNumber = customer?.phoneNumber
     const email = customer?.email
 
-
-
-
-
     return (
         <div className="" dir="rtl">
             <div className='flex justify-center align-center gap-2'>

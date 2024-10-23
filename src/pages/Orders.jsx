@@ -1,9 +1,9 @@
 import OrdersTable from "../features/orders/OrdersTable"
 import AddOrder from "../features/orders/AddOrder"
 import PageHeading from "../ui/PageHeading"
-import SectionStats from "../ui/SectionStats"
 import TableHeading from "../ui/TableHeading"
 import Wrapper from "../ui/Wrapper"
+import OrdersStat from "../features/orders/OrdersStat"
 
 
 function Orders() {
@@ -12,8 +12,7 @@ function Orders() {
             <PageHeading label={"Orders"}>
                 <AddOrder />
             </PageHeading>
-            <SectionStats />
-
+            <OrdersStat />
             <Wrapper >
                 <TableHeading label='Orders' />
                 <OrdersTable />

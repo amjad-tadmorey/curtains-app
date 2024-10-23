@@ -2,7 +2,7 @@ import { BASE_URL } from "./constants";
 
 export async function getCustomers() {
     try {
-        const res = await fetch(`${BASE_URL}/customers/`)
+        const res = await fetch(`${BASE_URL}/customers`)
         const data = await res.json()
         return await data
 

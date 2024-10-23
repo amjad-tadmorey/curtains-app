@@ -10,6 +10,7 @@ import ProductItem from "../../ui/ProductItem"
 import Modal from "../../ui/Modal"
 import RequiredMessage from "../../ui/RequiredMessage"
 import { useItems } from "../inventory/useItems"
+import Spinner from '../../ui/Spinner'
 
 
 function CreateOrderForm({ onCloseModal }) {
@@ -21,20 +22,16 @@ function CreateOrderForm({ onCloseModal }) {
     const isItemsEmpty = useSelector(getItems).length === 0
     const [search, setSearch] = useState('')
 
-    // items?.forEach((item) => {
-    //     if (!item.productName.includes(search)) {
-    //         console.log(item);
-    //     }
-    // })
-
     function onSubmit() {
         dispatch(addGeneralInfo(getValues()))
         setIsSubmited(true)
         reset()
     }
 
+    console.log(customers);
 
-    if (isLoadingItems || isLoadingCustomers) return null;
+
+    if (isLoadingItems || isLoadingCustomers) return <Spinner />;
 
     return (
         <div className='modal'>
@@ -59,7 +56,7 @@ function CreateOrderForm({ onCloseModal }) {
                                 })}>
                                     <option value="">Choose A Customer</option>
                                     {
-                                        customers.map(customer => <option key={customer.id} value={customer.id}>{customer.customerName}</option>)
+                                        customers?.map(customer => <option key={customer.id} value={customer.id}>{customer.customerName}</option>)
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}
@@ -83,9 +80,14 @@ function CreateOrderForm({ onCloseModal }) {
                                     required: "this field is required"
                                 })}>
                                     <option value="">Choose A sales Man</option>
-                                    <option value="sales-1">ٍSales 1</option>
-                                    <option value="sales-2">Sales 2</option>
-                                    <option value="sales-3">Sales 3</option>
+                                    <option value="abd al rahman ashmar">عبد الرحمن اشمر</option>
+                                    <option value="ridwan al khateeb">رضوان الخطيب</option>
+                                    <option value="asmaa abd al majeed">اسماء عبد المجيد</option>
+                                    <option value="yehia osama">يحيى اسامة</option>
+                                    <option value="abd al rahman ismaeel">عبد الرحمن اسماعيل</option>
+                                    <option value="abd al rahman sayied">عبد الرحمن سيد</option>
+                                    <option value="zakaria">زكريا كعكة</option>
+                                    <option value="ahmad abd al salam">احمد عبد السلام</option>
                                 </select>
                                 {errors.sales && <RequiredMessage>{errors.sales.message}</RequiredMessage>}
 
@@ -98,9 +100,11 @@ function CreateOrderForm({ onCloseModal }) {
                                     required: "this field is required"
                                 })}>
                                     <option value="">Choose A showroom</option>
-                                    <option value="90">90</option>
-                                    <option value="madinaty">Madinaty</option>
-                                    <option value="tagammo">Tagammo</option>
+                                    <option value="tagammo">التجمع الاول</option>
+                                    <option value="90-street">التسعين</option>
+                                    <option value="madinaty">مدينتي</option>
+                                    <option value="nasr-city">مدينة نصر</option>
+                                    <option value="shorook">الشروق</option>
                                 </select>
                                 {errors.showRoom && <RequiredMessage>{errors.showRoom.message}</RequiredMessage>}
                             </div>

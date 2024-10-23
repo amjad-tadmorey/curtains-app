@@ -7,7 +7,7 @@ export function useCreateCustomer() {
     const { mutate: createCustomer, isLoading: isCreating } = useMutation({
         mutationFn: createCustomerApi,
         onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ['customers'] })
+            queryClient.invalidateQueries({ queryKey: ['customer'] })
         }
     })
 
