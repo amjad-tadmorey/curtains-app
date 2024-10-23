@@ -1,44 +1,61 @@
-import { useDispatch, useSelector } from "react-redux"
-import { addItem, decreaseItemQuantity, getCurrentQuantityById, increaseItemQuantity, increaseItemQuantityByDecimal, increaseItemQuantityByTen, removeItem } from "../features/orders/orderSlice"
-import Button from "./Button"
-
 /* eslint-disable react/prop-types */
-function ProductItem({ product }) {
-    const { productName, id: code, productType } = product
-    const currentQuantity = useSelector(getCurrentQuantityById(code))
-    const isInCart = currentQuantity > 0
+import { useDispatch } from "react-redux"
+import { addItem, removeItem, setItemQuantity } from "../features/orders/orderSlice"
+import Button from "./Button"
+import { useEffect, useState } from "react"
 
+function ProductItem({ product, search }) {
+    const { productName, id: code, productType } = product
+    // const currentQuantity = useSelector(getCurrentQuantityById(code))
+    // const isInCart = currentQuantity > 0
+    const [quantity, setQuantity] = useState(1)
+    const [showQuantity, setShowQuantity] = useState(false)
+    const [disabled, setDisabled] = useState(false)
+    // const [isProductShown, setIsProductShown] = useState(product.productName.includes(search))
 
     const dispatch = useDispatch()
 
+    useEffect(() => {
+        if (showQuantity === true) {
+            if (quantity > 0) {
+                console.log(quantity);
+
+                dispatch(setItemQuantity({ code, quantity: Number(quantity) }))
+            } else {
+                dispatch(removeItem(code))
+                setQuantity(1)
+                setShowQuantity(false)
+                setDisabled(false)
+            }
+        }
+    }, [quantity, showQuantity]);
+
     function handleAddItem() {
+        setShowQuantity(true)
+        setDisabled(true)
+        if (+quantity === 0) {
+            setShowQuantity(false)
+            setDisabled(false)
+        }
         const newitem = {
             productName,
             code,
             productType,
-            quantity: 1,
+            quantity,
         }
         dispatch(addItem(newitem))
     }
 
     return (
-        <li className="products-list__item">
+        <li style={{ display: `${product.productName.includes(search) ? "flex" : "none"}` }} className="products-list__item">
             <span>{code}-{productName}</span>
-            <span></span>
-            {isInCart && <b>{Math.round(currentQuantity * 10) / 10}</b>}
-            {!isInCart && <Button onClick={handleAddItem} text="Add" type="primary" size="small" />}
-            {isInCart &&
-                <div>
-                    <Button onClick={() => dispatch(removeItem(code))} text="Remove" type="primary" size="small" />
-                    <Button onClick={() => {
-                        currentQuantity >= 2 ? dispatch(decreaseItemQuantity(code))
-                            : dispatch(removeItem(code))
-                    }} text="-" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantityByDecimal(code))} text="+ 0.1" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantity(code))} text="+ 1" type="primary" size="small" />
-                    <Button onClick={() => dispatch(increaseItemQuantityByTen(code))} text="+ 10" type="primary" size="small" />
-                </div>
+            <Button disabled={disabled} onClick={handleAddItem} text="Add" type="primary" size="small" />
+
+            {showQuantity && <div>
+                <input min={0} type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+            </div>
             }
+
         </li>
     )
 }

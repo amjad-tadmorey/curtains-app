@@ -177,6 +177,14 @@ body {
   gap: 3rem;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .mt-3 {
   margin-top: 3rem;
 }
@@ -227,6 +235,21 @@ body {
     transform: scale(1);
   }
 }
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.spinner {
+  margin: 4.8rem auto;
+  width: 6.4rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(farthest-side, #5570F1 94%, rgba(0, 0, 0, 0)) top/10px 10px no-repeat, conic-gradient(rgba(0, 0, 0, 0) 30%, #5570F1);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 10px), #000 0);
+  animation: spinner 1.5s infinite;
+}
+
 .heading-1 {
   font-size: 2.7rem;
   font-weight: 300;
@@ -530,11 +553,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2rem;
-  margin-top: 2rem;
   overflow: auto;
+  align-content: start;
 }
 .table__header {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid #BEC0CA;
@@ -547,12 +570,12 @@ body {
   padding: 1rem 0;
 }
 .table__row {
-  display: flex;
+  display: grid;
   margin-top: 1.5rem;
 }
 .table__item {
   font-size: 1.2rem;
-  color: #BEC0CA;
+  color: #5E6366;
   font-weight: 300;
   text-align: start;
 }
@@ -970,6 +993,7 @@ body {
   border-radius: 300px;
   padding: 0.5rem 1rem;
   color: white;
+  width: fit-content;
   text-align: center;
 }
 

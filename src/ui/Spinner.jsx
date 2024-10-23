@@ -1,7 +1,7 @@
 function Spinner() {
     return (
-        <div>
-            Loading Spinner Animation 
+        <div className="spinner">
+
         </div>
     )
 }

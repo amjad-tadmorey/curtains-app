@@ -6,6 +6,7 @@ import OrderRow from "./OrderRow"
 import Spinner from '../../ui/Spinner'
 
 
+
 function OrdersTable() {
     // just to take the loading state to handle the component
     const { isAdding } = useAddOrder()
@@ -16,14 +17,14 @@ function OrdersTable() {
     if (isAdding || isLoading) return <Spinner />
 
     return (
-        <Table >
+        <Table cols="repeat(6, 1fr)">
             <Table.Header>
-                <div className='w-16'>Customer Name</div>
-                <div className='w-16'>Order Date</div>
-                <div className='w-16'>Order Type</div>
-                <div className='w-16'>Tracking ID</div>
-                <div className='w-16'>Order Total</div>
-                <div className='w-16'>Status</div>
+                <div>Customer Name</div>
+                <div>Order Date</div>
+                <div>Order Type</div>
+                <div>Tracking ID</div>
+                <div>Order Total</div>
+                <div>Status</div>
             </Table.Header>
             <Table.Body data={orders} render={(order => <OrderRow key={order.id} order={order} isLoading={isLoading} />)} />
         </Table>

@@ -1,31 +1,41 @@
 /* eslint-disable react/prop-types */
-import { useForm } from "react-hook-form"
 import Button from "../../ui/Button"
-import RequiredMessage from "../../ui/RequiredMessage";
 import { useCreateItem } from "./useCreateItem";
 import { formatDate } from "../../utils/helpers";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 function CreateItemForm({ onCloseModal }) {
 
     const navigate = useNavigate()
+    const { createItem, isCreating } = useCreateItem()
 
-    const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
-    const { createItem } = useCreateItem()
+    const [itemId, setItemId] = useState("")
+    const [productName, setProductName] = useState("")
+    const [productType, setProductType] = useState("")
+    const [price, setPrice] = useState("")
 
-    function onSubmit() {
+
+    console.log(itemId);
+    function handleSubmit() {
         alert("Are you sure you want to create a new Item ?")
-
+        console.log(itemId);
         createItem({
-            ...getValues(),
+            id: itemId,
+            productName,
+            productType,
+            price,
             created_at: formatDate(new Date()),
             status: "active",
             quantity: 0
         })
-        reset()
         onCloseModal()
         toast.success("Item Created Successfully")
+        if(!isCreating) {
+            navigate(`/inventory/a`)
+        }
+
     }
 
     return (
@@ -37,7 +47,7 @@ function CreateItemForm({ onCloseModal }) {
 
 
             <div className="modal__wrapper">
-                <form className="w-100" onSubmit={handleSubmit(onSubmit)}>
+                <form className="w-100">
                     <div className=''>
                         <div className="create-form__heading">
                             <h4>Item Details</h4>
@@ -48,33 +58,21 @@ function CreateItemForm({ onCloseModal }) {
 
                                 <label htmlFor="id">
                                     <p className='label'>Product ID</p>
-                                    <input type="text" name="id" id="id" className="create-form__field" {...register('id', {
-                                        required: "this field is required"
-                                    })} />
-                                    {errors.id && <RequiredMessage>{errors.id.message}</RequiredMessage>}
+                                    <input type="text" name="id" id="id" className="create-form__field" value={itemId} onChange={(e) => setItemId(e.target.value)} />
                                 </label>
                                 <label htmlFor="productName">
                                     <p className='label'>Product Name</p>
-                                    <input type="text" name="productName" id="productName" className="create-form__field" {...register('productName', {
-                                        required: "this field is required"
-                                    })} />
-                                    {errors.productName && <RequiredMessage>{errors.productName.message}</RequiredMessage>}
+                                    <input type="text" name="productName" id="productName" className="create-form__field" value={productName} onChange={(e) => setProductName(e.target.value)} />
                                 </label>
 
                                 <label htmlFor="productType">
                                     <p className='label'>Product Type</p>
-                                    <input type="text" name="productType" id="productType" className="create-form__field" {...register('productType', {
-                                        required: "this field is required"
-                                    })} />
-                                    {errors.productType && <RequiredMessage>{errors.productType.message}</RequiredMessage>}
+                                    <input type="text" name="productType" id="productType" className="create-form__field" value={productType} onChange={(e) => setProductType(e.target.value)} />
                                 </label>
 
                                 <label htmlFor="price">
                                     <p className='label'>Product Price</p>
-                                    <input type="text" name="price" id="price" className="create-form__field" {...register('price', {
-                                        required: "this field is required"
-                                    })} />
-                                    {errors.price && <RequiredMessage>{errors.price.message}</RequiredMessage>}
+                                    <input type="text" name="price" id="price" className="create-form__field" value={price} onChange={(e) => setPrice(e.target.value)} />
                                 </label>
                             </div>
                         </div>
@@ -82,7 +80,7 @@ function CreateItemForm({ onCloseModal }) {
                     </div>
                     <div className="mt-3 flex justify-between">
                         <Button type={'primary-transparent'} text={'Cancel'} size={'big'} onClick={onCloseModal} />
-                        <Button type={'primary'} text={'submit'} size={'big'} />
+                        <Button type={'primary'} text={'submit'} size={'big'} onClick={handleSubmit} />
                     </div>
 
                 </form>
