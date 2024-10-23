@@ -33,9 +33,8 @@ function CreateItemForm({ onCloseModal }) {
         onCloseModal()
         toast.success("Item Created Successfully")
         if(!isCreating) {
-            navigate(`/inventory/a`)
+            navigate(`/inventory/${itemId}`)
         }
-
     }
 
     return (

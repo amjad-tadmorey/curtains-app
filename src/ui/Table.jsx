@@ -24,10 +24,10 @@ function Header({ children }) {
     </div>
 }
 
-function Row({ children, linedRows, specialStyles }) {
+function Row({ children, linedRows, withBorders }) {
     const { cols } = useContext(TableContext)
     return <>
-        <div className="table__row" style={{ gridTemplateColumns: cols }}>
+        <div className={`table__row ${withBorders ? "table__row--with-borders" : ""}`} style={{ gridTemplateColumns: cols }}>
             {children}
         </div >
         {linedRows && <hr />

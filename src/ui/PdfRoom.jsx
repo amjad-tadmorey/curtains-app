@@ -16,7 +16,7 @@ function PdfRoom({ room }) {
     const light = roomMaterials.filter((mat) => mat.productType === "light")
     const havey = roomMaterials.filter((mat) => mat.productType === "havey")
     const shammaat = roomMaterials.filter((mat) => mat.productType === "shammaat")
-    const oima = roomMaterials.filter((mat) => mat.productType === "oima")
+    const oima = roomMaterials.filter((mat) => mat.productType === "oyema")
     const migar = roomMaterials.filter((mat) => mat.productType === 'migar')
     const mawaseer = roomMaterials.filter((mat) => mat.productType === 'mawaseer')
 
@@ -40,37 +40,37 @@ function PdfRoom({ room }) {
                             <div className=" heading-2">نوع الخياطة</div>
                         </Table.Header>
                         <Table.StaticBody>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true} >
                                 <div className=" heading-2">بلاك :</div>
                                 <div className=" heading-2">{blackout[0]?.product || "_"}</div>
                                 <div className=" heading-2">{blackout[0]?.quantity || "_"}</div>
                                 <div className=" heading-2">{blackout[0]?.sewingType || "_"}</div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className=" heading-2">خفيف :</div>
                                 <div className=" heading-2">{light[0]?.product || "_"}</div>
                                 <div className=" heading-2">{light[0]?.quantity || "_"}</div>
                                 <div className=" heading-2">{light[0]?.sewingType || "_"}</div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className=" heading-2">ثقيل :</div>
                                 <div className=" heading-2">{havey[0]?.product || "_"}</div>
                                 <div className=" heading-2">{havey[0]?.quantity || "_"}</div>
                                 <div className=" heading-2">{havey[0]?.sewingType || "_"}</div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className=" heading-2">شماعات :</div>
                                 <div className=" heading-2">{shammaat[0]?.product || "_"}</div>
                                 <div className=" heading-2">{shammaat[0]?.quantity || "_"}</div>
                                 <div className=" heading-2">{shammaat[0]?.sewingType || "_"}</div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className=" heading-2">اويمة :</div>
                                 <div className=" heading-2">{oima[0]?.product || "_"}</div>
                                 <div className=" heading-2">{oima[0]?.quantity || "_"}</div>
                                 <div className=" heading-2">{oima[0]?.sewingType || "_"}</div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className=" heading-2">مجر :</div>
                                 <div className="w-75 flex gap-2 justify-start">
                                     {
@@ -78,7 +78,7 @@ function PdfRoom({ room }) {
                                     }
                                 </div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className="heading-2">مواسير :</div>
                                 <div className="flex gap-2 justify-start">
                                     {
@@ -86,7 +86,7 @@ function PdfRoom({ room }) {
                                     }
                                 </div>
                             </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
+                            <Table.Row withBorders={true}>
                                 <div className="heading-2">مرابط :</div>
                                 <div className="flex gap-2 justify-start">
                                     {roomCleats !== undefined ? roomCleats.map((el) => <span className="fs-2 fw-mid">{el.product} <sup className="fs-1">({el.quantity ? el.quantity + "m" : "From Height"})</sup> |</span>

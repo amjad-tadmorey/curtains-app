@@ -1,16 +1,21 @@
 import { useParams } from "react-router";
-import { useGetItemById } from '../features/inventory/useGetItemById'
-import Spinner from "../ui/Spinner";
+import { getItemById } from "../services/itemsApi";
+import { useEffect, useState } from "react";
 
 function ItemView() {
     const { itemId } = useParams()
-    console.log(itemId);
+    const [item, setitem] = useState()
 
-    const { item, isLoadingItem } = useGetItemById(itemId)
-
-    if (isLoadingItem) return <Spinner />
+    useEffect(() => {
+        async function getItem() {
+            const itemApi = await getItemById(itemId)
+            setitem(itemApi)
+        }
+        getItem()
+    }, [itemId])
 
     console.log(item);
+    
     return (
         <div>
             ItemView

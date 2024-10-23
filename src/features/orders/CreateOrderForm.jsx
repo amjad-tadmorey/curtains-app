@@ -10,6 +10,7 @@ import ProductItem from "../../ui/ProductItem"
 import Modal from "../../ui/Modal"
 import RequiredMessage from "../../ui/RequiredMessage"
 import { useItems } from "../inventory/useItems"
+import Spinner from '../../ui/Spinner'
 
 
 function CreateOrderForm({ onCloseModal }) {
@@ -21,20 +22,16 @@ function CreateOrderForm({ onCloseModal }) {
     const isItemsEmpty = useSelector(getItems).length === 0
     const [search, setSearch] = useState('')
 
-    // items?.forEach((item) => {
-    //     if (!item.productName.includes(search)) {
-    //         console.log(item);
-    //     }
-    // })
-
     function onSubmit() {
         dispatch(addGeneralInfo(getValues()))
         setIsSubmited(true)
         reset()
     }
 
+    console.log(customers);
 
-    if (isLoadingItems || isLoadingCustomers) return null;
+
+    if (isLoadingItems || isLoadingCustomers) return <Spinner />;
 
     return (
         <div className='modal'>
@@ -59,7 +56,7 @@ function CreateOrderForm({ onCloseModal }) {
                                 })}>
                                     <option value="">Choose A Customer</option>
                                     {
-                                        customers.map(customer => <option key={customer.id} value={customer.id}>{customer.customerName}</option>)
+                                        customers?.map(customer => <option key={customer.id} value={customer.id}>{customer.customerName}</option>)
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}

@@ -577,6 +577,13 @@ body {
   display: grid;
   margin-top: 1.5rem;
 }
+.table__row--with-borders {
+  border: 1px solid;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
 .table__item {
   font-size: 1.2rem;
   color: #5E6366;
