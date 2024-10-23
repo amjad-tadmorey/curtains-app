@@ -1,14 +1,16 @@
 .tag {
-    border-radius: 300px;
-    padding: .5rem 1rem;
+    display: block;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
     color: white;
-    width: fit-content;
+    width: 8rem;
     text-align: center;
 }
 
 .completed {
     background-color: $color-green;
 }
+
 .active {
     background-color: $color-green;
 }
@@ -18,5 +20,21 @@
 }
 
 .in-progress {
+    background-color: $color-blue;
+}
+
+.canceled {
     background-color: $color-red;
+}
+
+.returned {
+    background-color: $color-yellow;
+}
+
+.damaged {
+    background-color: $color-black;
+}
+
+.in-active {
+    background-color: $color-black;
 }

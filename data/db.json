@@ -182,6 +182,190 @@
         "technical": "محمود كامل",
         "showRoom": "90"
       }
+    },
+    {
+      "id": "581594397",
+      "created__at": "2024-10-22T09:33:58.155Z",
+      "status": "completed",
+      "staticItems": [
+        {
+          "productName": "قماش استرا اوف وايت - PC 2612",
+          "code": "270-10-0002-04-00002",
+          "productType": "havey",
+          "quantity": 1
+        },
+        {
+          "productName": "قماش استرا سلفر - PC 2612",
+          "code": "270-10-0002-04-00003",
+          "productType": "havey",
+          "quantity": 1
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "a",
+          "windows": [],
+          "roomMaterials": [
+            {
+              "product": "قماش استرا اوف وايت - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            },
+            {
+              "product": "قماش استرا سلفر - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "generalInfo": {
+        "customer": "957523748",
+        "date": "2024-10-09",
+        "orderType": "home-delivery",
+        "sales": "sales-1",
+        "technical": "محمود كامل",
+        "showRoom": "90"
+      }
+    },
+    {
+      "id": "581594397",
+      "created__at": "2024-10-22T09:33:58.155Z",
+      "status": "damaged",
+      "staticItems": [
+        {
+          "productName": "قماش استرا اوف وايت - PC 2612",
+          "code": "270-10-0002-04-00002",
+          "productType": "havey",
+          "quantity": 1
+        },
+        {
+          "productName": "قماش استرا سلفر - PC 2612",
+          "code": "270-10-0002-04-00003",
+          "productType": "havey",
+          "quantity": 1
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "a",
+          "windows": [],
+          "roomMaterials": [
+            {
+              "product": "قماش استرا اوف وايت - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            },
+            {
+              "product": "قماش استرا سلفر - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "generalInfo": {
+        "customer": "957523748",
+        "date": "2024-10-09",
+        "orderType": "home-delivery",
+        "sales": "sales-1",
+        "technical": "محمود كامل",
+        "showRoom": "90"
+      }
+    },
+    {
+      "id": "581594397",
+      "created__at": "2024-10-22T09:33:58.155Z",
+      "status": "canceled",
+      "staticItems": [
+        {
+          "productName": "قماش استرا اوف وايت - PC 2612",
+          "code": "270-10-0002-04-00002",
+          "productType": "havey",
+          "quantity": 1
+        },
+        {
+          "productName": "قماش استرا سلفر - PC 2612",
+          "code": "270-10-0002-04-00003",
+          "productType": "havey",
+          "quantity": 1
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "a",
+          "windows": [],
+          "roomMaterials": [
+            {
+              "product": "قماش استرا اوف وايت - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            },
+            {
+              "product": "قماش استرا سلفر - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "generalInfo": {
+        "customer": "957523748",
+        "date": "2024-10-09",
+        "orderType": "home-delivery",
+        "sales": "sales-1",
+        "technical": "محمود كامل",
+        "showRoom": "90"
+      }
+    },
+    {
+      "id": "581594397",
+      "created__at": "2024-10-22T09:33:58.155Z",
+      "status": "returned",
+      "staticItems": [
+        {
+          "productName": "قماش استرا اوف وايت - PC 2612",
+          "code": "270-10-0002-04-00002",
+          "productType": "havey",
+          "quantity": 1
+        },
+        {
+          "productName": "قماش استرا سلفر - PC 2612",
+          "code": "270-10-0002-04-00003",
+          "productType": "havey",
+          "quantity": 1
+        }
+      ],
+      "rooms": [
+        {
+          "roomName": "a",
+          "windows": [],
+          "roomMaterials": [
+            {
+              "product": "قماش استرا اوف وايت - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            },
+            {
+              "product": "قماش استرا سلفر - PC 2612",
+              "quantity": "1",
+              "productType": "havey"
+            }
+          ],
+          "notes": ""
+        }
+      ],
+      "generalInfo": {
+        "customer": "957523748",
+        "date": "2024-10-09",
+        "orderType": "home-delivery",
+        "sales": "sales-1",
+        "technical": "محمود كامل",
+        "showRoom": "90"
+      }
     }
   ],
   "customers": [
@@ -196,6 +380,18 @@
       "created_at": "2024-10-20",
       "orders": [],
       "status": "active"
+    },
+    {
+      "id": "957523748",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "1227139914",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "aaaa"
+      ],
+      "created_at": "2024-10-20",
+      "orders": [],
+      "status": "in-active"
     },
     {
       "id": "463594645",
@@ -3600,84 +3796,12 @@
       "status": "active"
     },
     {
-      "id": "erewqew",
-      "productName": "wewew",
-      "productType": "ewewew",
-      "price": "ewewew",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "2",
-      "productName": "rosa",
-      "productType": "dsds",
-      "price": "120",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
       "id": "1",
-      "productName": "rosa",
-      "productType": "dsds",
-      "price": "50",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "2",
-      "productName": "silia",
+      "productName": "test",
       "productType": "havey",
       "price": "80",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "a",
-      "productName": "silia",
-      "productType": "havey",
-      "price": "110",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "a",
-      "productName": "rosa",
-      "productType": "havey",
-      "price": "45",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "fdfdf",
-      "productName": "Produvt-1",
-      "productType": "ewewew",
-      "price": "90",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "amjadtadmory@gmail.com",
-      "productName": "silia",
-      "productType": "ewewew",
-      "price": "50",
-      "created_at": "2024-10-22",
-      "status": "active",
-      "quantity": 0
-    },
-    {
-      "id": "2",
-      "productName": "rosa",
-      "productType": "dsds",
-      "price": "120",
-      "created_at": "2024-10-22",
-      "status": "active",
+      "created_at": "2024-10-23",
+      "status": "in-active",
       "quantity": 0
     }
   ]

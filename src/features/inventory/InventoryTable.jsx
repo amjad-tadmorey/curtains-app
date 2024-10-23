@@ -11,14 +11,13 @@ function InventoryTable() {
 
     if (isLoading || isCreating) return <Spinner />
     return (
-        <Table cols="18rem 30rem repeat(5, 1fr)">
+        <Table cols="18rem 30rem repeat(4, 1fr)">
             <Table.Header>
                 <div>Product ID</div>
                 <div>Product Name</div>
                 <div>Product Type</div>
                 <div>Price</div>
                 <div>In-Stock</div>
-                <div>Created At</div>
                 <div>Status</div>
             </Table.Header>
             <Table.Body data={items} render={(item => <ItemsRow key={items.id} item={item} isLoading={isLoading} />)} />

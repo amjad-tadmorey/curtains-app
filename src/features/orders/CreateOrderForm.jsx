@@ -83,9 +83,14 @@ function CreateOrderForm({ onCloseModal }) {
                                     required: "this field is required"
                                 })}>
                                     <option value="">Choose A sales Man</option>
-                                    <option value="sales-1">ٍSales 1</option>
-                                    <option value="sales-2">Sales 2</option>
-                                    <option value="sales-3">Sales 3</option>
+                                    <option value="abd al rahman ashmar">عبد الرحمن اشمر</option>
+                                    <option value="ridwan al khateeb">رضوان الخطيب</option>
+                                    <option value="asmaa abd al majeed">اسماء عبد المجيد</option>
+                                    <option value="yehia osama">يحيى اسامة</option>
+                                    <option value="abd al rahman ismaeel">عبد الرحمن اسماعيل</option>
+                                    <option value="abd al rahman sayied">عبد الرحمن سيد</option>
+                                    <option value="zakaria">زكريا كعكة</option>
+                                    <option value="ahmad abd al salam">احمد عبد السلام</option>
                                 </select>
                                 {errors.sales && <RequiredMessage>{errors.sales.message}</RequiredMessage>}
 
@@ -98,9 +103,11 @@ function CreateOrderForm({ onCloseModal }) {
                                     required: "this field is required"
                                 })}>
                                     <option value="">Choose A showroom</option>
-                                    <option value="90">90</option>
-                                    <option value="madinaty">Madinaty</option>
-                                    <option value="tagammo">Tagammo</option>
+                                    <option value="tagammo">التجمع الاول</option>
+                                    <option value="90-street">التسعين</option>
+                                    <option value="madinaty">مدينتي</option>
+                                    <option value="nasr-city">مدينة نصر</option>
+                                    <option value="shorook">الشروق</option>
                                 </select>
                                 {errors.showRoom && <RequiredMessage>{errors.showRoom.message}</RequiredMessage>}
                             </div>

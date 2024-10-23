@@ -1,7 +1,7 @@
 import AddInventory from '../features/inventory/AddInventory'
+import InventoryStat from '../features/inventory/InventoryStat'
 import InventoryTable from '../features/inventory/InventoryTable'
 import PageHeading from '../ui/PageHeading'
-import SectionStats from '../ui/SectionStats'
 import TableHeading from '../ui/TableHeading'
 import Wrapper from '../ui/Wrapper'
 
@@ -11,7 +11,7 @@ function Inventory() {
             <PageHeading label={"Inventory"}>
                 <AddInventory />
             </PageHeading>
-            <SectionStats />
+            <InventoryStat />
 
             <Wrapper>
                 <TableHeading label={"Inventory"} />
