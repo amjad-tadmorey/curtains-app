@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { useDispatch, useSelector } from "react-redux"
 import { useCustomers } from "../customers/useCustomers"
@@ -56,7 +56,7 @@ function CreateOrderForm({ onCloseModal }) {
                                 })}>
                                     <option value="">Choose A Customer</option>
                                     {
-                                        customers?.map(customer => <option key={customer.id} value={customer.id}>{customer.customerName}</option>)
+                                        customers?.map(customer => <option key={customer.id} value={[ customer.customerName, customer.id ]}>{customer.customerName}</option>)
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}

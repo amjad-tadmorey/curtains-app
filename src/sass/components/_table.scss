@@ -6,19 +6,24 @@
     row-gap: 2rem;
     overflow: auto;
     align-content: start;
+    position: relative;
 
     &__header {
         display: grid;
         align-items: center;
         justify-content: space-between;
-        border-top: 1px solid $color-grey-2;
-        border-bottom: 1px solid $color-grey-2;
-        font-size: $font-extra-small;
-        color: $color-grey-3;
+        border-top: 1px solid #BEC0CA;
+        border-bottom: 1px solid #BEC0CA;
+        font-size: 1.2rem;
+        color: #5E6366;
         font-weight: 300;
         text-align: start;
         height: fit-content;
         padding: 1rem 0;
+    }
+
+    &__body {
+        margin-bottom: 2rem;
     }
 
     &__row {

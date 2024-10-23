@@ -117,8 +117,10 @@ export default function AddRoom({ setShowRoom, type }) {
         let btn = document.getElementById(btnId)
 
         const prevQuantity = prevRoomData?.roomMaterials?.filter((el) => el.product === product)[0].quantity
+        console.log(prevQuantity);
+        const compareVlaue = prevQuantity === undefined ? quantity : quantity - prevQuantity
 
-        if (selectedItem.quantity < quantity) {
+        if (selectedItem.quantity < compareVlaue) {
             return
             // must rendering error 
         }
@@ -145,8 +147,9 @@ export default function AddRoom({ setShowRoom, type }) {
         let btn = document.getElementById(btnId)
 
         const prevQuantity = prevRoomData?.roomCleates?.filter((el) => el.product === product)[0].quantity
+        const compareVlaue = prevQuantity === undefined ? quantity : quantity - prevQuantity
 
-        if (selectedItem.quantity < quantity) {
+        if (selectedItem.quantity < compareVlaue) {
             return
             // must rendering error 
         }
@@ -220,7 +223,7 @@ export default function AddRoom({ setShowRoom, type }) {
 
                     {
                         items.map((item) => {
-                            return <div className='flex gap-1 mt-1'>
+                            return <div key={item.code} className='flex gap-1 mt-1'>
                                 <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
                                 <input type="number" name="" id={item.code} min={0} />
                                 <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
@@ -242,7 +245,7 @@ export default function AddRoom({ setShowRoom, type }) {
 
                     {
                         items.map((item) => {
-                            return <div className='flex gap-1 mt-1'>
+                            return <div key={item.code} className='flex gap-1 mt-1'>
                                 <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
                                 <select name="" id="" onChange={(e) => {
                                     if (e.target.value === 'height') {
