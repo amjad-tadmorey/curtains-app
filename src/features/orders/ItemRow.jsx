@@ -12,7 +12,6 @@ function ItemRow({ item }) {
             <div className="table__item">X</div>
             <div className="table__item">X</div>
             <div className="table__item">X</div>
-            <div className="table__item">X</div>
         </Table.Row>
     )
 }

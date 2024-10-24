@@ -17,7 +17,7 @@ function OrdersTable() {
     if (isAdding || isLoading) return <Spinner />
 
     return (
-        <Table cols="repeat(6, 1fr)">
+        <Table cols="repeat(7, 1fr)">
             <Table.Header>
                 <div>Customer Name</div>
                 <div>Order Date</div>

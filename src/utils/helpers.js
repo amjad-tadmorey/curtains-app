@@ -50,3 +50,24 @@ export function formatDate(dateString) {
     const formattedDate = dateObject.toISOString().split('T')[0];
     return formattedDate
 }
+
+export function getRecentSevenDays(arr) {
+    // Get today's date
+    const today = new Date();
+
+    // Get the date 7 days ago
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(today.getDate() - 7);
+
+    console.log(today);
+    console.log(sevenDaysAgo);
+
+
+    // Filter orders that were created in the last 7 days
+    const recent = arr.filter(order => {
+        const orderDate = new Date(order.created__at);
+        return orderDate >= sevenDaysAgo && orderDate <= today;
+    });
+
+    return recent
+}

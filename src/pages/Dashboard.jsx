@@ -1,8 +1,11 @@
+import DashboardStat from "../features/dashboard/DashBoardStat"
+
+
 function Dashboard() {
     return (
-        <div>
-            Dashboard
-        </div>
+        <>
+            <DashboardStat />
+        </>
     )
 }
 
