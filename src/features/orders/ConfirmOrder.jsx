@@ -17,6 +17,10 @@ function ConfirmOrder({ onCloseModal }) {
     const generalInfo = useSelector(getGeneralInfo)
     const staticItems = useSelector(getStaticItems)
     const rooms = useSelector(getRooms)
+    console.log(staticItems);
+    console.log(staticItems);
+
+    const orderTotal = staticItems.reduce((acc, cur) => acc + (cur.price * cur.quantity), 0)
 
     const dispatch = useDispatch()
 
@@ -28,6 +32,7 @@ function ConfirmOrder({ onCloseModal }) {
             staticItems,
             rooms,
             generalInfo,
+            orderTotal
         }
         addOrder(newOrder, {
             onSuccess: () => {

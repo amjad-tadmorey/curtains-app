@@ -26,7 +26,6 @@ function CusomerView() {
 
     const { adress, customerName, email, id, phoneNumber, status } = customer
     const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[1] === id)
-    console.log(customerOrders);
 
     const totalOrders = customerOrders
     const allOrders = customerOrders.length
@@ -35,13 +34,6 @@ function CusomerView() {
     const returnedOrders = customerOrders.filter((order) => order.status === 'returned').length
     const canceledOrders = customerOrders.filter((order) => order.status === 'canceled').length
     const damagedOrders = customerOrders.filter((order) => order.status === 'damaged').length
-
-    console.log(allOrders);
-    console.log(pendingOrders);
-    console.log(completedOrders);
-    console.log(returnedOrders);
-    console.log(canceledOrders);
-    console.log(damagedOrders);
 
 
     return (

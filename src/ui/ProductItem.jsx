@@ -5,7 +5,7 @@ import Button from "./Button"
 import { useEffect, useState } from "react"
 
 function ProductItem({ product, search }) {
-    const { productName, id: code, productType } = product
+    const { productName, id: code, productType, price } = product
     // const currentQuantity = useSelector(getCurrentQuantityById(code))
     // const isInCart = currentQuantity > 0
     const [quantity, setQuantity] = useState(1)
@@ -42,6 +42,7 @@ function ProductItem({ product, search }) {
             code,
             productType,
             quantity,
+            price
         }
         dispatch(addItem(newitem))
     }

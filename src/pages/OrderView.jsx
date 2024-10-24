@@ -27,7 +27,7 @@ function OrderView() {
     console.log(order);
     
 
-    const { id: orderId, created__at, generalInfo: { orderType, date }, staticItems, rooms, status } = order
+    const { id: orderId, created__at, generalInfo: { orderType, date }, staticItems, rooms, status, orderTotal } = order
     const customerId = customer?.id
     const customerName = customer?.name
     const adress = customer?.adress
@@ -74,13 +74,12 @@ function OrderView() {
                 </Card>
             </div>
             <Wrapper>
-                <Table>
+                <Table cols="repeat(6, 1fr)">
                     <Table.Header>
                         <div>Product Name</div>
                         <div>Unit Price</div>
                         <div>Qty</div>
                         <div>Discount</div>
-                        <div>Order Total</div>
                         <div>Action</div>
                         <div>Status</div>
                     </Table.Header>
