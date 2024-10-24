@@ -1,12 +1,12 @@
 /* eslint-disable react/prop-types */
+import toast from "react-hot-toast"
+import { clearState, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
+import { useAddOrder } from "./useAddOrder"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router"
-import { useAddOrder } from "./useAddOrder"
-
-import { clearState, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
-import Button from "../../ui/Button"
 import { generateNumberId } from "../../utils/helpers"
-import toast from "react-hot-toast"
+
+import Button from "../../ui/Button"
 
 
 function ConfirmOrder({ onCloseModal }) {

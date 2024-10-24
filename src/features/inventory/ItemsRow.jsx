@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router"
 import Table from "../../ui/Table"
 import Tag from "../../ui/Tag"
+import Button from "../../ui/Button"
 
 /* eslint-disable react/prop-types */
 function ItemsRow({ item }) {
+    const navigate = useNavigate()
     const { id, productName, productType, price, status, quantity, created_at } = item
 
     return (
@@ -15,6 +18,7 @@ function ItemsRow({ item }) {
             <div className="">
                 <Tag role="table__item " status={status}>{status}</Tag>
             </div>
+            <Button text={"View"} type={"primary"} size={"medium"} onClick={() => navigate(`/inventory/${id}`)}>View</Button>
         </Table.Row>
     )
 }

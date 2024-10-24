@@ -4,14 +4,13 @@ import { createContext, useContext } from "react";
 
 const TableContext = createContext()
 
-function Table({ children, cols, test }) {
+function Table({ children, cols }) {
     return (
         <TableContext.Provider
             value={{ cols }}
         >
             <table className="table">
                 {children}
-                <p>{test}</p>
             </table>
         </TableContext.Provider>
     )

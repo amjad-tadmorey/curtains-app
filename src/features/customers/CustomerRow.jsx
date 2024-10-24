@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router";
 import Table from "../../ui/Table"
 import Tag from "../../ui/Tag";
+import Button from "../../ui/Button";
 
 function CustomerRow({ customer }) {
     const navigate = useNavigate()
@@ -17,7 +18,7 @@ function CustomerRow({ customer }) {
             <div className="">
                 <Tag role="table__item " status={status}>{status}</Tag>
             </div>
-            <button onClick={() => navigate(`/customers/${id}`)}>View</button>
+            <Button text={"View"} type={"primary"} size={"medium"} onClick={() => navigate(`/customers/${id}`)}>View</Button>
         </Table.Row>
     )
 }

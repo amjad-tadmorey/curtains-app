@@ -8,7 +8,6 @@ export async function getCustomers() {
 
     } catch (err) {
         console.log(err.message)
-
     }
 }
 

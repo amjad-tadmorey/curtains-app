@@ -19,6 +19,7 @@ function CustomersTable() {
                 <div>Orders</div>
                 <div>Customer Since</div>
                 <div>Status</div>
+                <div>Actions</div>
             </Table.Header>
             <Table.Body data={customers} render={(customer => <CustomerRow key={customer.id} customer={customer} isLoading={isLoading} />)} />
         </Table>
