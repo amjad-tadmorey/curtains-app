@@ -50,7 +50,7 @@ function ProductItem({ product, search }) {
     return (
         <li style={{ display: `${product.productName.includes(search) ? "flex" : "none"}` }} className="products-list__item">
             <span>{code}-{productName}</span>
-            <Button disabled={disabled} onClick={handleAddItem} text="Add" type="primary" size="small" />
+            <Button disabled={disabled} onClick={handleAddItem} text="Add" type="primary-transparent" size="small" />
 
             {showQuantity && <div>
                 <input min={0} type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />

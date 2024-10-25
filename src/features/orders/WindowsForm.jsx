@@ -35,7 +35,7 @@ function WindowsForm({ onCloseModal }) {
                 </div>
 
                 <div className="flex align-center gap-1">
-                    <Button text={'Add Room'} type={'primary'} size={"big"} onClick={() => {
+                    <Button text={'Add Room'} type={'black'} size={"big"} onClick={() => {
                         setShowRoom(true)
                         setIsEditSession(false)
                     }} />

@@ -9,13 +9,13 @@ function SelectedItem({ item }) {
 
     return (
         <div className="selected-item">
-            <div className="flex justify-between align-center w-150px">
+            <div className="flex justify-between align-center" style={{ width: "20rem" }}>
                 <p>{code}</p>
-                <p>{productName}</p>
-            </div>
-            <div className="flex justify-between align-center w-150px">
-                <img src={icon} alt="" className="w-25px" />
                 <p>{Math.round(quantity * 10) / 10}</p>
+            </div>
+            <div className="flex justify-between align-center" style={{ width: "20rem" }}>
+                <p>{productName}</p>
+                <img src={icon} alt="" className="w-25px" />
             </div>
         </div>
     )

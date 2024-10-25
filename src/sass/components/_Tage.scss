@@ -2,41 +2,67 @@
     display: block;
     border-radius: 0.5rem;
     padding: 0.5rem 1rem;
-    color: white;
     width: 8rem;
     text-align: center;
 }
 
 .completed {
-    background-color: $color-green;
+    background-color: $color-label-green-light;
+    color: $color-label-green;
 }
 
 .active {
-    background-color: $color-green;
+    background-color: $color-label-green-light;
+    color: $color-label-green;
 }
+
 .published {
-    background-color: $color-green;
+    background-color: $color-label-blue-light;
+    color: $color-label-blue;
 }
+
 .pending {
-    background-color: $color-secondary;
+    background-color: $color-label-yellow-light;
+    color: $color-label-yellow;
 }
 
 .in-progress {
-    background-color: $color-blue;
+    background-color: $color-label-blue-light;
+    color: $color-label-blue;
 }
 
 .canceled {
-    background-color: $color-red;
+    background-color: $color-label-red-light;
+    color: $color-label-red;
 }
 
 .returned {
-    background-color: $color-yellow;
+    background-color: $color-label-red-light;
+    color: $color-label-red;
 }
 
 .damaged {
-    background-color: $color-black;
+    background-color: $color-label-red-light;
+    color: $color-label-red;
 }
 
 .in-active {
-    background-color: $color-black;
+    background-color: $color-label-dark;
+    color: #fff;
+}
+
+.closed {
+    background-color: $color-label-dark;
+    color: #fff;
+}
+
+.tool-icon {
+    opacity: .5;
+    transition: .3s ease;
+    cursor: pointer;
+    width: 2rem;
+
+    &:hover {
+        opacity: 1;
+    }
 }

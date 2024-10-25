@@ -1,7 +1,24 @@
 .header {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    
+
     display: flex;
     flex-direction: column;
+
+    &__info {
+        border-bottom: 1px solid $color-grey-3;
+        padding: 2rem 2rem 1rem;
+    }
+
+    &__routes {
+        margin-top: 1rem;
+        padding: 0 2rem;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+
+        img {
+            cursor: pointer;
+        }
+    }
 }

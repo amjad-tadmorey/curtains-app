@@ -211,8 +211,14 @@ export default function AddRoom({ setShowRoom, type }) {
                             {rooms.map((el) => <option key={el.roomName} value={el.roomName}>{el.roomName}</option>)}
                         </select>
                 }
-                <Button text={'Add Materials'} type={'primary'} size={'big'} onClick={() => setShowMaterialsForm(!showMaterialsForm)} />
-                <Button text={'Add Cleats'} type={'primary'} size={'big'} onClick={() => setShowCleatsForm(!showCleatsForm)} />
+                <Button text={'Add Materials'} type={'red-light'} size={'big'} onClick={() => {
+                    setShowMaterialsForm(true)
+                    setShowCleatsForm(false)
+                }} />
+                <Button text={'Add Cleats'} type={'red-light'} size={'big'} onClick={() => {
+                    setShowCleatsForm(true)
+                    setShowMaterialsForm(false)
+                }} />
             </div>
 
             {
@@ -220,6 +226,8 @@ export default function AddRoom({ setShowRoom, type }) {
                     e.preventDefault()
                     setShowMaterialsForm(false)
                 }}>
+
+                    <h3 className='heading-3'>Materials</h3>
 
                     {
                         items.map((item) => {
@@ -233,7 +241,14 @@ export default function AddRoom({ setShowRoom, type }) {
                             </div>
                         })
                     }
-                    <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
+                    <div className='flex align-center gap-1'>
+                        <div className='mt-2'><Button text={"Cancel"} type={"primary-transparent"} size={"small"} onClick={(e) => {
+                            e.preventDefault()
+                            setShowMaterialsForm(false)
+                        }} />
+                        </div>
+                        <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
+                    </div>
                 </form>
             }
             {/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
@@ -242,6 +257,8 @@ export default function AddRoom({ setShowRoom, type }) {
                     e.preventDefault()
                     setShowCleatsForm(false)
                 }}>
+
+                    <h3 className='heading-3'>Cleats</h3>
 
                     {
                         items.map((item) => {
@@ -266,12 +283,19 @@ export default function AddRoom({ setShowRoom, type }) {
                             </div>
                         })
                     }
-                    <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
+                    <div className='flex align-center gap-1'>
+                        <div className='mt-2'><Button text={"Cancel"} type={"primary-transparent"} size={"small"} onClick={(e) => {
+                            e.preventDefault()
+                            setShowCleatsForm(false)
+                        }} />
+                        </div>
+                        <div className='mt-2'><Button text={"Done"} type={"primary"} size={"small"} /></div>
+                    </div>
                 </form>
             }
 
             <div>
-                <div className="flex align-center gap-2" style={{ overflowX: "auto", margin: "2rem" }}>
+                <div className="flex align-center gap-2" style={{ overflowX: "auto", margin: "2rem", padding: "1rem 0 " }}>
                     {
                         fakeData.map(window => <Window window={window} key={window.imageId} />)
                     }
@@ -291,7 +315,7 @@ export default function AddRoom({ setShowRoom, type }) {
                 </div>
             </div>
 
-            <Button type={'primary'} text={'Add'} onClick={handleSubmitRoom} size={'big'} />
+            <Button type={'black'} text={'Add'} onClick={handleSubmitRoom} size={'big'} />
         </div>
     )
 }

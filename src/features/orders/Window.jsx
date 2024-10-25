@@ -3,6 +3,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addWindow } from "./orderSlice"
 import Button from "../../ui/Button"
+import { createPortal } from "react-dom"
 
 function Window({ window }) {
     const { imageId, src } = window
@@ -37,13 +38,14 @@ function Window({ window }) {
     */
 
     return (
-        <div className="flex flex-col position-relative" style={{borderRight: ".5rem solid", paddingRight: "3rem"}}>
-            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} />
+        <div className="flex flex-col position-relative" style={{ borderRight: ".5rem solid", paddingRight: "3rem" }}>
+            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} style={{cursor: "pointer"}}/>
 
             {/* Window Materials */}
             {showForm &&
-                <div className="windows-options">
+                createPortal(<div className="windows-options">
                     <form className="" action="" onSubmit={handleSubmit} >
+                        {/* <button className='modal__close position-static ml-auto' onClick={() => setShowForm(false)}>x</button> */}
                         <div className="flex">
                             <div className="windows-options__row">
                                 <div className="flex align-center gap-1">
@@ -67,9 +69,18 @@ function Window({ window }) {
 
                             </div>
                         </div>
-                        <Button disabled={disAbleDone} text={'Done'} size={'small'} type={'primary'} />
+                        <div className="flex gap-1">
+                            <Button text={'cancel'} size={'small'} type={'primary-transparent'}
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    setShowForm(false)
+
+                                }}
+                            />
+                            <Button disabled={disAbleDone} text={'Done'} size={'small'} type={'primary'} />
+                        </div>
                     </form>
-                </div>
+                </div>, document.body)
             }
         </div>
     )

@@ -27,7 +27,7 @@ function CusomerView() {
     const { adress, customerName, email, id, phoneNumber, status } = customer
     const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[1] === id)
 
-    const totalOrders = customerOrders
+    const totalOrders = customerOrders.reduce((acc, cur) => acc + cur.orderTotal, 0)
     const allOrders = customerOrders.length
     const pendingOrders = customerOrders.filter((order) => order.status === 'pending').length
     const completedOrders = customerOrders.filter((order) => order.status === 'completed').length
@@ -46,6 +46,9 @@ function CusomerView() {
                             <h2>{customerName}</h2>
                             <p>Last order X</p>
                         </div>
+                        <div className="ml-auto">
+                            <Card.Padge status={status}>{status}</Card.Padge>
+                        </div>
                     </Card.Header>
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
@@ -57,16 +60,13 @@ function CusomerView() {
                             <h2>{email}</h2>
                         </div>
                     </Card.Row>
-                </Card>
-                <Card>
-                    <Card.Header>
-                        <img src='/src/assets/icons/pin.svg' />
-                    </Card.Header>
+                    <hr className="mt-1" />
                     <Card.Row>
                         {
                             adress.map((el) =>
-                                <div key={adress.indexOf(el)} className='flex flex-col gap-1'>
-                                    <p>Home Adress - {adress.indexOf(el) + 1}</p>
+                                <div key={adress.indexOf(el)} className='flex flex-col gap-1 mt-1'>
+
+                                    <p className="flex align-center"> <img src="/src/assets/icons/pin.svg" alt="" className="w-25px" /> Home Adress - {adress.indexOf(el) + 1}</p>
                                     <h2>{el}</h2>
                                 </div>
                             )
@@ -75,21 +75,14 @@ function CusomerView() {
                 </Card>
                 <Card>
                     <Card.Header>
-                        <img src='/src/assets/icons/pie.svg' />
-                    </Card.Header>
-                    <Card.Row>
-
-                        <div className='flex flex-col gap-1'>
-                            <p>Total Orders</p>
-                            <h2>X</h2>
-                        </div>
-                    </Card.Row>
-                </Card>
-            </div>
-            <div className="flex justify-center align-center gap-2 mt-2">
-                <Card>
-                    <Card.Header>
                         <img src='/src/assets/icons/small-bag.svg' />
+                        <div className="ml-auto flex align-center gap-1">
+                            <img src='/src/assets/icons/pie.svg' />
+                            <div className='flex flex-col gap-1'>
+                                <p>Total Sales</p>
+                                <h2>{totalOrders}</h2>
+                            </div>
+                        </div>
                     </Card.Header>
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
@@ -105,13 +98,9 @@ function CusomerView() {
                             <h2>{completedOrders}</h2>
                         </div>
                     </Card.Row>
-                </Card>
-                <Card>
-                    <Card.Header>
-                        <img src='/src/assets/icons/small-bag.svg' />
-                    </Card.Header>
+                    <hr className="mt-1" />
                     <Card.Row>
-                        <div className='flex flex-col gap-1'>
+                        <div className='flex flex-col gap-1 mt-1'>
                             <p>Canceled</p>
                             <h2>{canceledOrders}</h2>
                         </div>
@@ -125,6 +114,18 @@ function CusomerView() {
                         </div>
                     </Card.Row>
                 </Card>
+                {/* <Card>
+                    <Card.Header>
+                        <img src='/src/assets/icons/pie.svg' />
+                    </Card.Header>
+                    <Card.Row>
+
+                        <div className='flex flex-col gap-1'>
+                            <p>Total Orders</p>
+                            <h2>X</h2>
+                        </div>
+                    </Card.Row>
+                </Card> */}
             </div>
 
             <Wrapper>
