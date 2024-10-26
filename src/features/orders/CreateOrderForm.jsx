@@ -9,13 +9,13 @@ import Button from "../../ui/Button"
 import ProductItem from "../../ui/ProductItem"
 import Modal from "../../ui/Modal"
 import RequiredMessage from "../../ui/RequiredMessage"
-import { useItems } from "../inventory/useItems"
 import Spinner from '../../ui/Spinner'
+import { useProducts } from "../inventory/useProducts"
 
 
 function CreateOrderForm({ onCloseModal }) {
     const dispatch = useDispatch()
-    const { items, isLoading: isLoadingItems } = useItems()
+    const { items, isLoading: isLoadingItems } = useProducts()
     const { customers, isLoading: isLoadingCustomers } = useCustomers()
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
     const [isSubmited, setIsSubmited] = useState(false)

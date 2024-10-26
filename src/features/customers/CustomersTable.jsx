@@ -11,7 +11,7 @@ function CustomersTable() {
     if (isLoading || isCreating) return <Spinner />
 
     return (
-        <Table cols="1fr 35rem repeat(5, 1fr)">
+        <Table cols="13rem 22rem repeat(5, 1fr)">
             <Table.Header>
                 <div>Customer Name</div>
                 <div>Adress</div>

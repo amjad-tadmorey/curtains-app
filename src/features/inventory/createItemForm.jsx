@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import Button from "../../ui/Button"
-import { useCreateItem } from "./useCreateItem";
-import { formatDate } from "../../utils/helpers";
+import { useCreateProduct } from "./useCreateProduct";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -9,31 +8,30 @@ import { useState } from "react";
 function CreateItemForm({ onCloseModal }) {
 
     const navigate = useNavigate()
-    const { createItem, isCreating } = useCreateItem()
+    const { createProduct, isCreating } = useCreateProduct()
 
-    const [itemId, setItemId] = useState("")
+    const [sapID, setSapID] = useState("")
+    const [oldID, setOldID] = useState("")
     const [productName, setProductName] = useState("")
     const [productType, setProductType] = useState("")
     const [price, setPrice] = useState("")
 
 
-    console.log(itemId);
     function handleSubmit() {
         alert("Are you sure you want to create a new Item ?")
-        console.log(itemId);
-        createItem({
-            id: itemId,
+        createProduct({
+            sapID,
+            oldID,
             productName,
             productType,
             price,
-            created_at: formatDate(new Date()),
             status: "active",
-            quantity: 0
+            inStock: 0
         })
         onCloseModal()
         toast.success("Item Created Successfully")
-        if(!isCreating) {
-            navigate(`/inventory/${itemId}`)
+        if (!isCreating) {
+            // navigate(`/inventory/${itemId}`)
         }
     }
 
@@ -55,9 +53,13 @@ function CreateItemForm({ onCloseModal }) {
                         <div>
                             <div className='create-form'>
 
-                                <label htmlFor="id">
-                                    <p className='label'>Product ID</p>
-                                    <input type="text" name="id" id="id" className="create-form__field" value={itemId} onChange={(e) => setItemId(e.target.value)} />
+                                <label htmlFor="sapID">
+                                    <p className='label'>Sap ID</p>
+                                    <input type="text" name="id" id="id" className="create-form__field" value={sapID} onChange={(e) => setSapID(e.target.value)} />
+                                </label>
+                                <label htmlFor="oldID">
+                                    <p className='label'>Old ID</p>
+                                    <input type="text" name="id" id="id" className="create-form__field" value={oldID} onChange={(e) => setOldID(e.target.value)} />
                                 </label>
                                 <label htmlFor="productName">
                                     <p className='label'>Product Name</p>

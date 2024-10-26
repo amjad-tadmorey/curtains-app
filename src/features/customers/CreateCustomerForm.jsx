@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form"
 import Button from "../../ui/Button"
 import RequiredMessage from "../../ui/RequiredMessage";
 import { useCreateCustomer } from "./useCreateCustomer";
-import { formatDate, generateNumberId } from "../../utils/helpers";
+import { generateNumberId } from "../../utils/helpers";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
@@ -13,7 +13,6 @@ function CreateCustomerForm({ onCloseModal }) {
 
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
     const { createCustomer } = useCreateCustomer()
-    const id = generateNumberId()
 
     function onSubmit() {
         alert("Are you sure you want to create a new customer ?")
@@ -21,15 +20,14 @@ function CreateCustomerForm({ onCloseModal }) {
         console.log("creating");
         createCustomer({
             ...getValues(),
-            adress: [getValues().adress],
-            created_at: formatDate(new Date()),
-            id,
+            adresses: [getValues().adress],
             orders: [],
             status: "active"
         }, {
             onSuccess: () => {
                 toast.success("Customer Created Successfuly")
-                navigate(`/customers/${id}`)
+                reset()
+                // navigate(`/customers/${id}`)
             }
         })
 
@@ -74,12 +72,12 @@ function CreateCustomerForm({ onCloseModal }) {
                                     <input type="text" name="email" id="email" className="create-form__field" {...register('email')} />
                                 </label>
 
-                                <label htmlFor="adress">
-                                    <p className='label'>Adress</p>
-                                    <input type="text" name="adress" id="adress" className="create-form__field" {...register('adress', {
+                                <label htmlFor="adresses">
+                                    <p className='label'>Adresses</p>
+                                    <input type="text" name="adresses" id="adresses" className="create-form__field" {...register('adresses', {
                                         required: "this field is required"
                                     })} />
-                                    {errors.adress && <RequiredMessage>{errors.adress.message}</RequiredMessage>}
+                                    {errors.adresses && <RequiredMessage>{errors.adresses.message}</RequiredMessage>}
                                 </label>
 
                             </div>

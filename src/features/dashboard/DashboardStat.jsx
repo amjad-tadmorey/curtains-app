@@ -2,18 +2,18 @@ import { AreaChart, XAxis, YAxis, Tooltip, Area, CartesianGrid, PieChart, Pie, C
 
 import { useOrders } from "../orders/useOrders"
 import { useCustomers } from "../customers/useCustomers"
-import { useItems } from "../inventory/useItems"
 
 
 import Card from '../../ui/Card'
 import Spinner from '../../ui/Spinner'
 import { getRecentSevenDays, getTotalOrdersByDate, summarizeOrders } from "../../utils/helpers"
+import { useProducts } from '../inventory/useProducts';
 
 export default function DashboardStat() {
 
     const { orders, isLoading: isLoadingOrders } = useOrders()
     const { customers, isLoading: isLoadingCustomers } = useCustomers()
-    const { items, isLoading: isLoadingItems } = useItems()
+    const { items, isLoading: isLoadingItems } = useProducts()
 
     if (isLoadingOrders || isLoadingCustomers || isLoadingItems) return <Spinner />
 

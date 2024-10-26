@@ -1,15 +1,16 @@
 import Spinner from "../../ui/Spinner"
 import Table from "../../ui/Table"
 import ItemsRow from "./ItemsRow"
-import { useCreateItem } from "./useCreateItem"
-import { useItems } from "./useItems"
+import { useCreateProduct } from "./useCreateProduct"
+import { useProducts } from "./useProducts"
 
 function InventoryTable() {
 
-    const { isCreating } = useCreateItem()
-    const { items, isLoading } = useItems()
+    const { isCreating } = useCreateProduct()
+    const { products, isLoading } = useProducts()
 
     if (isLoading || isCreating) return <Spinner />
+    
     return (
         <Table cols="18rem 30rem repeat(5, 1fr)">
             <Table.Header>
@@ -21,7 +22,7 @@ function InventoryTable() {
                 <div>Status</div>
                 <div>Action</div>
             </Table.Header>
-            <Table.Body data={items} render={(item => <ItemsRow key={items.id} item={item} isLoading={isLoading} />)} />
+            <Table.Body data={products} render={(product => <ItemsRow key={products.id} product={product} isLoading={isLoading} />)} />
         </Table>
     )
 }
