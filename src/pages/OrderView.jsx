@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { getCustomerById } from '../services/customersApi'
 import Card from '../ui/Card'
 import Table from '../ui/Table'
+import Spinner from '../ui/Spinner'
 import ItemRow from '../features/orders/ItemRow'
 import Wrapper from '../ui/Wrapper'
 import Button from '../ui/Button'
@@ -22,10 +23,10 @@ function OrderView() {
         getCustomer()
     }, [order])
 
-    if (isLoadingOrder) return null
+    if (isLoadingOrder) return <Spinner />
 
     console.log(order);
-    
+
 
     const { id: orderId, created__at, generalInfo: { orderType, date }, staticItems, rooms, status, orderTotal } = order
     const customerId = customer?.id

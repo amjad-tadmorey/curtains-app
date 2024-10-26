@@ -7,6 +7,7 @@ import { useNavigate } from "react-router"
 import { generateNumberId } from "../../utils/helpers"
 
 import Button from "../../ui/Button"
+import { getOrderById } from "../../services/ordersApi"
 
 
 function ConfirmOrder({ onCloseModal }) {
@@ -17,8 +18,6 @@ function ConfirmOrder({ onCloseModal }) {
     const generalInfo = useSelector(getGeneralInfo)
     const staticItems = useSelector(getStaticItems)
     const rooms = useSelector(getRooms)
-    console.log(staticItems);
-    console.log(staticItems);
 
     const orderTotal = staticItems.reduce((acc, cur) => acc + (cur.price * cur.quantity), 0)
 
@@ -26,8 +25,6 @@ function ConfirmOrder({ onCloseModal }) {
 
     function handleCreateOrder() {
         const newOrder = {
-            created__at: new Date(),
-            id: generateNumberId(),
             status: "pending",
             staticItems,
             rooms,
@@ -40,7 +37,9 @@ function ConfirmOrder({ onCloseModal }) {
                     dispatch(clearState())
                 onCloseModal()
                 toast.success("order created successfuly")
-                navigate(`/orders/${newOrder.id}`)
+                // navigate(`/orders/${newOrder.id}`)
+                console.log(newOrder);
+
             }
         })
     }

@@ -18,7 +18,7 @@ function CustomerRow({ customer }) {
             <div className="">
                 <Tag role="table__item " status={status}>{status}</Tag>
             </div>
-            <Button text={"View"} type={"primary"} size={"medium"} onClick={() => navigate(`/customers/${id}`)}>View</Button>
+            <img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/customers/${id}`)} className="tool-icon" />
         </Table.Row>
     )
 }

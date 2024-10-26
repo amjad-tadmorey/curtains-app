@@ -1,39 +1,43 @@
-import { BASE_URL } from "./constants";
+// import { BASE_URL } from "./constants";
+
+import supabase from "./supabase";
 
 export async function getOrders() {
-    try {
-        const res = await fetch(`${BASE_URL}/orders`)
-        const data = await res.json()
-        return await data
-
-    } catch (err) {
-        throw new Error(err.message)
+    console.log("a");
+    const { data: orders, error } = await supabase
+        .from('orders')
+        .select('*')
+    if (error) {
+        console.log(error);
+        throw new Error('Orders could not be loaded')
     }
+    return orders
+
 }
 
 export async function getOrderById(id) {
-    try {
-        const res = await fetch(`${BASE_URL}/orders/${id}`)
-        const data = await res.json()
-        return await data
-
-    } catch (err) {
-        console.log(err.message)
-
+    const { data: order, error } = await supabase
+        .from('orders').select("*")
+        .eq("id", id)
+    if (error) {
+        console.log(error);
+        throw new Error('Orders could not be loaded')
     }
+    return order[0]
 }
 
 export async function addOrder(newOrder) {
-    try {
-        const res = await fetch(`${BASE_URL}/orders`, {
-            method: "POST",
-            body: JSON.stringify(newOrder),
-        })
-        const data = await res.json()
-        return await data
-
-    } catch (err) {
-        throw new Error(err.message)
+    const { data, error } = await supabase
+        .from('orders')
+        .insert([
+            newOrder,
+        ])
+        .select()
+    if (error) {
+        console.log(error);
+        throw new Error('Orders could not be loaded')
     }
+
+    return data
 }
 

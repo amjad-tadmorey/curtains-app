@@ -77,11 +77,11 @@ export const summarizeOrders = (orders) => {
 
     // Define color mapping for showrooms
     const colors = {
-        "tagammo": "#ea5545",
-        "90-street": "#87bc45",
-        "madinaty": "#ef9b20",
-        "nasr-city": "#edbf33",
-        "shorook": "#ede15b"
+        "tagammo": "#519DE9",
+        "90-street": "#7CC674",
+        "madinaty": "#C9190B",
+        "nasr-city": "#EF9234",
+        "shorook": "#F6D173"
     };
 
     orders.forEach(order => {
