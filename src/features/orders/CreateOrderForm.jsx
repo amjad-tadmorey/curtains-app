@@ -56,17 +56,17 @@ function CreateOrderForm({ onCloseModal }) {
                                 })}>
                                     <option value="">Choose A Customer</option>
                                     {
-                                        customers?.map(customer => <option key={customer.id} value={[ customer.customerName, customer.id ]}>{customer.customerName}</option>)
+                                        customers?.map(customer => <option key={customer.id} value={[customer.customerName, customer.id]}>{customer.customerName}</option>)
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}
-                                <label htmlFor="date">
+                                {/* <label htmlFor="date">
                                     <p className='label'>Order Time & Date</p>
                                     <input type="date" name="date" id="date" placeholder='12/12/2020' className='create-form__field' {...register("date", {
                                         required: "this field is required"
                                     })} />
                                     {errors.date && <RequiredMessage>{errors.date.message}</RequiredMessage>}
-                                </label>
+                                </label> */}
                                 <select name="customers" id="orderType" className='create-form__field' {...register("orderType", {
                                     required: "this field is required"
                                 })}>

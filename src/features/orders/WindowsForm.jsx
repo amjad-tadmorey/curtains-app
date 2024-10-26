@@ -8,6 +8,7 @@ import AddRoom from "./AddRoom";
 import SelectedItem from "./SelectedItem";
 import Button from "../../ui/Button"
 import Modal from "../../ui/Modal";
+import ScheduleForm from "./ScheduleForm";
 
 
 function WindowsForm({ onCloseModal }) {
@@ -43,20 +44,33 @@ function WindowsForm({ onCloseModal }) {
                         setShowRoom(true)
                         setIsEditSession(true)
                     }} />}
+                    {/* {!showRoom && <div className="ml-auto"><Button type={'black'} text={'Put in schedule'} size={'big'} disabled={remainingItems || isRoomsEmpty} /></div>} */}
+                    {!showRoom && <div className="ml-auto">
+                        <Modal>
+                            <Modal.Open opens='schedule-form'>
+                                <Button type={'black'} text={'Put in schedule'} size={'big'} disabled={remainingItems || isRoomsEmpty} />
+                            </Modal.Open>
+                            <Modal.Window name="schedule-form">
+                                <ScheduleForm />
+                            </Modal.Window>
+                        </Modal>
+                    </div>}
                 </div>
 
                 {
                     showRoom && <AddRoom type={roomType} setShowRoom={setShowRoom} />
                 }
+
+
             </div>
 
             <div className="modal__submit">
                 <Button type={'primary-transparent'} text={'Cancel'} size={'big'} onClick={onCloseModal} />
                 <Modal.Open opens={'confirm'}>
-                    <Button type={'primary'} text={'Next'} size={'big'} disabled={remainingItems || isRoomsEmpty} />
+                    <Button type={'primary'} text={'Next'} size={'big'} /*disabled={remainingItems || isRoomsEmpty}*/ disabled={false} />
                 </Modal.Open>
             </div>
-        </div>
+        </div >
     )
 }
 

@@ -4,8 +4,7 @@ import { getOrders } from "../../services/ordersApi";
 export function useOrders() {
     const { isLoading, data: orders } = useQuery({
         queryKey: ['orders'],
-        queryFn: getOrders
+        queryFn: getOrders,
     })
-
     return { isLoading, orders }
 }

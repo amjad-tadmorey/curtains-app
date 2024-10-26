@@ -1,16 +1,23 @@
 import OrdersTable from "../features/orders/OrdersTable"
 import AddOrder from "../features/orders/AddOrder"
+import OrdersStat from '../features/orders/OrdersStat'
 import PageHeading from "../ui/PageHeading"
 import TableHeading from "../ui/TableHeading"
 import Wrapper from "../ui/Wrapper"
-import OrdersStat from "../features/orders/OrdersStat"
+import AddSchedule from "../features/orders/AddSchedule"
+import { useEffect } from "react"
+import { getOrders } from "../services/ordersApi"
+import { useQuery } from "@tanstack/react-query"
+import { useOrders } from "../features/orders/useOrders"
 
 
 function Orders() {
+    
     return (
         <>
             <PageHeading label={"Orders"}>
                 <AddOrder />
+                <AddSchedule />
             </PageHeading>
             <OrdersStat />
             <Wrapper >
