@@ -25,6 +25,7 @@ function OrdersTable() {
                 <div>Tracking ID</div>
                 <div>Order Total</div>
                 <div>Status</div>
+                <div>ِActions</div>
             </Table.Header>
             <Table.Body data={orders} render={(order => <OrderRow key={order.id} order={order} isLoading={isLoading} />)} />
         </Table>

@@ -21,7 +21,8 @@ function OrderRow({ order }) {
             <div className="table__item">{id}</div>
             <div className="table__item">{orderTotal}</div>
             <Tag role="table__item" status={status}>{status}</Tag>
-            <Button text={"View"} type={"primary"} size={"medium"} onClick={() => navigate(`/orders/${id}`)}>View</Button>
+            <img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/orders/${id}`)} className="tool-icon"/>
+            {/* <Button text={"View"} type={"primary"} size={"medium"} onClick={() => navigate(`/orders/${id}`)}>View</Button> */}
         </Table.Row>
     )
 }

@@ -116,8 +116,8 @@ function CreateOrderForm({ onCloseModal }) {
 
                 </form>
                 <div className='products-list'>
-                    <h4>Items</h4>
-                    <input type="search" placeholder='Search' className='search search--primary' value={search} onChange={(e) => setSearch(e.target.value)} />
+                    <h3 className="heading-3">Items</h3>
+                    <input type="search" placeholder='Search' className='search search--primary mt-2' value={search} onChange={(e) => setSearch(e.target.value)} />
                     <ul className="products-list__items">
                         {
                             items.map(product => <ProductItem search={search} key={product.code} product={product} />)

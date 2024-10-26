@@ -1,4 +1,4 @@
-import { AreaChart, XAxis, YAxis, Tooltip, Area, CartesianGrid, PieChart, Pie, Cell, Legend } from 'recharts';
+import { AreaChart, XAxis, YAxis, Tooltip, Area, CartesianGrid, PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts';
 
 import { useOrders } from "../orders/useOrders"
 import { useCustomers } from "../customers/useCustomers"
@@ -7,7 +7,7 @@ import { useItems } from "../inventory/useItems"
 
 import Card from '../../ui/Card'
 import Spinner from '../../ui/Spinner'
-import { getRecentSevenDays } from "../../utils/helpers"
+import { getRecentSevenDays, getTotalOrdersByDate, summarizeOrders } from "../../utils/helpers"
 
 export default function DashboardStat() {
 
@@ -36,105 +36,14 @@ export default function DashboardStat() {
 
     const recentOrders = getRecentSevenDays(orders)
 
-    console.log(recentOrders);
+    // Function to summarize the totals by showroom and include color property
 
-    const data = [
-        {
-            "time": "Page A",
-            "sales": 4000,
-            "pv": 2400,
-            "amt": 2400
-        },
-        {
-            "time": "Page B",
-            "sales": 3000,
-            "pv": 1398,
-            "amt": 2210
-        },
-        {
-            "time": "Page C",
-            "sales": 2000,
-            "pv": 9800,
-            "amt": 2290
-        },
-        {
-            "time": "Page D",
-            "sales": 2780,
-            "pv": 3908,
-            "amt": 2000
-        },
-        {
-            "time": "Page E",
-            "sales": 1890,
-            "pv": 4800,
-            "amt": 2181
-        },
-        {
-            "time": "Page F",
-            "sales": 2390,
-            "pv": 3800,
-            "amt": 2500
-        },
-        {
-            "time": "Page G",
-            "sales": 3490,
-            "pv": 4300,
-            "amt": 2100
-        }
-    ]
 
-    const data01 = [
-        {
-            "name": "Group A",
-            "value": 400
-        },
-        {
-            "name": "Group B",
-            "value": 300
-        },
-        {
-            "name": "Group C",
-            "value": 300
-        },
-        {
-            "name": "Group D",
-            "value": 200
-        },
-        {
-            "name": "Group E",
-            "value": 278
-        },
-        {
-            "name": "Group F",
-            "value": 189
-        }
-    ];
-    const data02 = [
-        {
-            "name": "Group A",
-            "value": 2400
-        },
-        {
-            "name": "Group B",
-            "value": 45
-        },
-        {
-            "name": "Group C",
-            "value": 1398
-        },
-        {
-            "name": "Group D",
-            "value": 9800
-        },
-        {
-            "name": "Group E",
-            "value": 3908
-        },
-        {
-            "name": "Group F",
-            "value": 4800
-        }
-    ];
+
+    const showroomOrdersPie = (summarizeOrders(orders));
+    const ordersSalesByDate = getTotalOrdersByDate(orders)
+
+    console.log(ordersSalesByDate);
 
     return (
         <div className='dashboard'>
@@ -188,18 +97,20 @@ export default function DashboardStat() {
                     <h3 className='heading-2'>Branches</h3>
                 </Card.Header>
                 <Card.Row>
+                    <div style={{ width: '100%', height: '100%' }}>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <PieChart >
+                                <Legend verticalAlign="middle" align="right" width="30%" layout="vertical" iconSize={15} iconType="circle" />
+                                <Pie data={showroomOrdersPie} dataKey="value" nameKey="showRoom" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" >
+                                    {showroomOrdersPie.map((entry) => <Cell fill={entry.color} stroke={entry.color} key={entry.duaration} />)}
+                                </Pie>
+                                <Tooltip />
+                            </PieChart>
+                        </ResponsiveContainer>
 
-                    <PieChart width={200} height={250}>
-                        <Legend />
-                        {/* <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" /> */}
-                        <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" >
-                            {data02.map((entry) => <Cell fill={entry.color} stroke={entry.color} key={entry.duaration} />)}
-                        </Pie>
-                        <Tooltip />
-                    </PieChart>
-
+                    </div>
                 </Card.Row>
-            </Card>
+            </Card >
             <Card color={'primary'}>
                 <Card.Header>
                     <img src="/src/assets/icons/small-folder.svg" alt="" />
@@ -237,7 +148,7 @@ export default function DashboardStat() {
 
 
                 {
-                    recentOrders.map((order) => <Card.Row>
+                    recentOrders.map((order) => <Card.Row key={recentOrders.indexOf(order)}>
                         <p>{order.generalInfo.customer.split(',')[0]}</p>
                         <p>{order.orderTotal}</p>
                         <p>{order.status}</p>
@@ -247,25 +158,29 @@ export default function DashboardStat() {
             </Card>
             <Card>
                 <Card.Header>
-                    <h3 className='heading-2'>Sales Summary</h3>
+                    <h3 className='heading-2'>Sales Summary - Last 7 Days</h3>
                 </Card.Header>
                 <Card.Row>
-                    <AreaChart width={730} height={250} data={data}
-                        margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                        <defs>
-                            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-                            </linearGradient>
-                        </defs>
-                        <XAxis dataKey="time" />
-                        <YAxis />
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <Tooltip />
-                        <Area type="monotone" dataKey="sales" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
-                    </AreaChart>
+                    <div style={{ width: '100%', height: `100%` }}>
+                        <ResponsiveContainer width="100%" height="100%">
+                            <AreaChart width={730} height={250} data={ordersSalesByDate}
+                                margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                                <defs>
+                                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                                        <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                                    </linearGradient>
+                                </defs>
+                                <XAxis dataKey="time" />
+                                <YAxis />
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <Tooltip />
+                                <Area type="monotone" dataKey="totalOrders" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                            </AreaChart>
+                        </ResponsiveContainer>
+                    </div>
                 </Card.Row>
             </Card>
-        </div>
+        </div >
     )
 }

@@ -31,9 +31,14 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $color-primary;
+    background: $color-label-red-light;
     border-radius: 10000px;
     cursor: pointer;
+    transition: .3s ease;
+
+    &:hover {
+        background: $color-primary;
+    }
 }
 
 .overlay {
@@ -54,6 +59,4 @@ body {
     margin-left: 2rem;
 }
 
-.spinner {
-    
-}
+.spinner {}

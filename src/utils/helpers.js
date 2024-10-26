@@ -71,3 +71,53 @@ export function getRecentSevenDays(arr) {
 
     return recent
 }
+
+export const summarizeOrders = (orders) => {
+    const result = {};
+
+    // Define color mapping for showrooms
+    const colors = {
+        "tagammo": "#ea5545",
+        "90-street": "#87bc45",
+        "madinaty": "#ef9b20",
+        "nasr-city": "#edbf33",
+        "shorook": "#ede15b"
+    };
+
+    orders.forEach(order => {
+        const showroom = order.generalInfo.showRoom;
+        const total = order.orderTotal;
+
+        if (result[showroom]) {
+            result[showroom] += total;
+        } else {
+            result[showroom] = total;
+        }
+    });
+
+    // Return array with showroom, value, and color
+    return Object.keys(result).map(showRoom => ({
+        showRoom,
+        // value: currencyFormatter.format(result[showRoom]),
+        value: result[showRoom],
+        color: colors[showRoom] || '#000000' // default color if showroom is not in the list
+    }));
+};
+
+export function getTotalOrdersByDate(orders) {
+    const totalByDate = {};
+
+    orders.forEach(order => {
+        const date = new Date(order.created__at).toISOString().split('T')[0]; // Get date in YYYY-MM-DD format
+        if (!totalByDate[date]) {
+            totalByDate[date] = 0; // Initialize total for the date
+        }
+        totalByDate[date] += order.orderTotal; // Add order total to the respective date
+    });
+
+    // Convert the totalByDate object into an array
+    return Object.entries(totalByDate).map(([time, totalOrders]) => ({
+        time,
+        totalOrders
+    }));
+}
