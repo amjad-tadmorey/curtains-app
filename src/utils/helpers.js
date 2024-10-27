@@ -130,3 +130,26 @@ export function getTotalOrdersByDate(orders) {
         totalOrders
     }));
 }
+
+
+export function generateScheduleForSixMonths() {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const schedule = [];
+    const today = new Date();
+    const sixMonthsFromNow = new Date(today);
+    sixMonthsFromNow.setMonth(today.getMonth() + 6);
+
+    let currentDate = new Date(today);
+
+    while (currentDate <= sixMonthsFromNow) {
+        const dayOfWeek = daysOfWeek[currentDate.getDay()];
+        const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+
+        schedule.push({ day: dayOfWeek, date: dateStr, boxes: 4, status: 'available' });
+
+        // Move to the next day
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    return schedule;
+}

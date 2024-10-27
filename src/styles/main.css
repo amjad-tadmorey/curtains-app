@@ -72,6 +72,26 @@ body {
   padding: 1.5rem;
 }
 
+.date {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border: 1px solid #BEC0CA;
+  transition: 0.3s ease;
+}
+.date:focus {
+  outline: none;
+}
+.date--primary:focus {
+  border: 1px solid #e52a3b;
+}
+.date--green:focus {
+  border: 1px solid #519C66;
+}
+.date--red:focus {
+  border: 1px solid #CC5F5F;
+}
+
 .w-fit {
   width: fit-content !important;
 }

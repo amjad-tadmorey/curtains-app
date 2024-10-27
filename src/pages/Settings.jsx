@@ -3,13 +3,43 @@ import { convertToIsoStringCompatible } from "../utils/helpers"
 
 function Settings() {
 
-    const x = convertToIsoStringCompatible("2024-10-27T08:04:44.298541+00:00")
+     function generateScheduleForSixMonths() {
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        const schedule = [];
+        const today = new Date();
+        const sixMonthsFromNow = new Date(today);
+        sixMonthsFromNow.setMonth(today.getMonth() + 6);
+
+        let currentDate = new Date(today);
+
+        while (currentDate <= sixMonthsFromNow) {
+            const dayOfWeek = daysOfWeek[currentDate.getDay()];
+            const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+
+            schedule.push({ day: dayOfWeek, date: dateStr, boxes: 4, status: 'available' });
+
+            // Move to the next day
+            currentDate.setDate(currentDate.getDate() + 1);
+        }
+
+        return schedule;
+    }
+
+    const x = generateScheduleForSixMonths()
     console.log(x);
     
+    async function handleClick() {
+        const { data, error } = await supabase
+            .from('schedule')
+            .insert(x)
+            .select()
+        return data
+    }
+
     return (
         <div>
             Settings
-            <button>Add Product</button>
+            <button onClick={handleClick}>Add Product</button>
         </div>
     )
 }

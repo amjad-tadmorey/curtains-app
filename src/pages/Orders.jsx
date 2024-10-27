@@ -4,11 +4,6 @@ import OrdersStat from '../features/orders/OrdersStat'
 import PageHeading from "../ui/PageHeading"
 import TableHeading from "../ui/TableHeading"
 import Wrapper from "../ui/Wrapper"
-import AddSchedule from "../features/orders/AddSchedule"
-import { useEffect } from "react"
-import { getOrders } from "../services/ordersApi"
-import { useQuery } from "@tanstack/react-query"
-import { useOrders } from "../features/orders/useOrders"
 
 
 function Orders() {
@@ -17,7 +12,7 @@ function Orders() {
         <>
             <PageHeading label={"Orders"}>
                 <AddOrder />
-                <AddSchedule />
+                {/* <AddSchedule /> */}
             </PageHeading>
             <OrdersStat />
             <Wrapper >
