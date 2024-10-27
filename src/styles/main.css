@@ -65,6 +65,13 @@ body {
   gap: 0.5rem;
 }
 
+.bordered-cards .card {
+  border: 1px solid #1C1D22;
+  height: 18rem;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+}
+
 .w-fit {
   width: fit-content !important;
 }

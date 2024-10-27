@@ -9,6 +9,7 @@ import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 import Button from "../ui/Button"
 import { formatDate } from "../utils/helpers"
+import Spinner from "../ui/Spinner"
 
 function PDFToPrint() {
     const { isLoadingOrder, order } = useGetOrderById()
@@ -16,25 +17,29 @@ function PDFToPrint() {
 
     useEffect(() => {
         async function getCustomer() {
-            const customerApi = await getCustomerById(order?.generalInfo?.customer)
+            if (isLoadingOrder) return
+            const customerApi = await getCustomerById(order?.generalInfo?.customer.split(',')[1])
             setCustomer(customerApi)
         }
         getCustomer()
     }, [order])
 
-    if (isLoadingOrder) return null
+    if (isLoadingOrder) return <Spinner />
 
 
-    const { id: orderId, created__at, generalInfo: { orderType, date, sales, showRoom, technical }, staticItems, rooms, status } = order
+    const { id: orderId, created_at, generalInfo: { orderType, date, sales, showRoom, technical }, staticItems, rooms, status } = order
     const customerId = customer?.id
-    const customerName = customer?.name
-    const adress = customer?.adress
+    const customerName = customer?.customerName
+    const adress = customer?.adresses
     const phoneNumber = customer?.phoneNumber
     const email = customer?.email
 
     return (
         <div className="" dir="rtl">
-            <div className='flex justify-center align-center gap-2'>
+            <div className="flex align-center mt-2">
+                <img src="/src/assets/Logo.png" alt="" style={{width: "25rem"}}/>
+            </div>
+            <div className='flex justify-center align-center gap-2 bordered-cards mt-2'>
                 <Card>
                     <Card.Header>
                         <img src='/src/assets/icons/profile.svg' />
@@ -88,7 +93,7 @@ function PDFToPrint() {
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">تاريخ التعاقد</h2>
-                            <h2>{formatDate(created__at)}</h2>
+                            <h2>{formatDate(created_at)}</h2>
                         </div>
                     </Card.Row>
                 </Card>

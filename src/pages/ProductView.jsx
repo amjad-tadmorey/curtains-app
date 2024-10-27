@@ -6,29 +6,29 @@ import TableHeading from "../ui/TableHeading";
 import Table from "../ui/Table";
 import Card from "../ui/Card";
 import Spinner from "../ui/Spinner";
+import { formatDate } from "../utils/helpers";
 
 function ItemView() {
     const { productId } = useParams()
     const [item, setitem] = useState()
 
     useEffect(() => {
-        async function getItem() {
+        async function getProduct() {
             const itemApi = await getProductById(productId)
             setitem(itemApi)
         }
-        getItem()
+        getProduct()
     }, [productId])
 
     if (item === undefined) return <Spinner />
 
-    console.log(item);
-    const { created_at, id, price, productName, quantity, status } = item
+    const { created_at, id, sapID, price, productName, inStock, status } = item
 
     return (
         <>
             <div className="flex gap-2 p-2">
-                <h2 className="heading-2">{id} - {productName}</h2>
-                <h2 className="heading-2">Date Added: {created_at}</h2>
+                <h2 className="heading-2">{sapID} - {productName}</h2>
+                <h2 className="heading-2">Date Added: {formatDate(created_at)}</h2>
             </div>
 
 
@@ -49,7 +49,7 @@ function ItemView() {
                         </div>
                         <div className='flex flex-col gap-1'>
                             <p>In-Stock</p>
-                            <h2>{quantity}</h2>
+                            <h2>{inStock}</h2>
                         </div>
                     </Card.Row>
                 </Card>

@@ -5,13 +5,10 @@ import Button from "./Button"
 import { useEffect, useState } from "react"
 
 function ProductItem({ product, search }) {
-    const { productName, id: code, productType, price } = product
-    // const currentQuantity = useSelector(getCurrentQuantityById(code))
-    // const isInCart = currentQuantity > 0
+    const { productName, id: code, oldID, productType, price } = product
     const [quantity, setQuantity] = useState(1)
     const [showQuantity, setShowQuantity] = useState(false)
     const [disabled, setDisabled] = useState(false)
-    // const [isProductShown, setIsProductShown] = useState(product.productName.includes(search))
 
     const dispatch = useDispatch()
 
@@ -40,6 +37,7 @@ function ProductItem({ product, search }) {
         const newitem = {
             productName,
             code,
+            oldID,
             productType,
             quantity,
             price
@@ -49,7 +47,7 @@ function ProductItem({ product, search }) {
 
     return (
         <li style={{ display: `${product.productName.includes(search) ? "flex" : "none"}` }} className="products-list__item">
-            <span>{code}-{productName}</span>
+            <span>{oldID} - {productName}</span>
             <Button disabled={disabled} onClick={handleAddItem} text="Add" type="primary-transparent" size="small" />
 
             {showQuantity && <div>

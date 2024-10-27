@@ -13,9 +13,9 @@ export default function DashboardStat() {
 
     const { orders, isLoading: isLoadingOrders } = useOrders()
     const { customers, isLoading: isLoadingCustomers } = useCustomers()
-    const { items, isLoading: isLoadingItems } = useProducts()
+    const { products, isLoading: isLoadingProducts } = useProducts()
 
-    if (isLoadingOrders || isLoadingCustomers || isLoadingItems) return <Spinner />
+    if (isLoadingOrders || isLoadingCustomers || isLoadingProducts) return <Spinner />
 
     const totalOrders = orders.reduce((acc, cur) => acc + cur.orderTotal, 0)
     const allOrders = orders.length
@@ -27,23 +27,15 @@ export default function DashboardStat() {
     const activeCustomers = customers.filter((customer) => customer.status === 'active').length
 
 
-    const allItems = items.length
-    const activeItems = items.filter((item) => item.status === 'active').length
-
-    console.log(totalOrders);
-    console.log(orders);
-
+    const allItems = products.length
+    const activeItems = products.filter((item) => item.status === 'active').length
 
     const recentOrders = getRecentSevenDays(orders)
 
     // Function to summarize the totals by showroom and include color property
-
-
-
+    
     const showroomOrdersPie = (summarizeOrders(orders));
     const ordersSalesByDate = getTotalOrdersByDate(orders)
-
-    console.log(ordersSalesByDate);
 
     return (
         <div className='dashboard'>

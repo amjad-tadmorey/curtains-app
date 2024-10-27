@@ -3,7 +3,6 @@
 import supabase from "./supabase";
 
 export async function getOrders() {
-    console.log("a");
     const { data: orders, error } = await supabase
         .from('orders')
         .select('*')

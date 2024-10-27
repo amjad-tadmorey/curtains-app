@@ -44,7 +44,6 @@ function WindowsForm({ onCloseModal }) {
                         setShowRoom(true)
                         setIsEditSession(true)
                     }} />}
-                    {/* {!showRoom && <div className="ml-auto"><Button type={'black'} text={'Put in schedule'} size={'big'} disabled={remainingItems || isRoomsEmpty} /></div>} */}
                     {!showRoom && <div className="ml-auto">
                         <Modal>
                             <Modal.Open opens='schedule-form'>

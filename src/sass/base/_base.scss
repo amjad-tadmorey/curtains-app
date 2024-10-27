@@ -67,3 +67,12 @@ body {
     flex-direction: column;
     gap: .5rem;
 }
+
+.bordered-cards {
+    .card {
+        border: 1px solid #1C1D22;
+        height: 18rem;
+        font-size: 1.3rem;
+        padding: 1.5rem;
+    }
+}

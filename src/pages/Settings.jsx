@@ -1,16 +1,15 @@
 import supabase from "../services/supabase"
+import { convertToIsoStringCompatible } from "../utils/helpers"
 
 function Settings() {
 
-    async function handleAdd() {
-
-    }
-
-
+    const x = convertToIsoStringCompatible("2024-10-27T08:04:44.298541+00:00")
+    console.log(x);
+    
     return (
         <div>
             Settings
-            <button onClick={handleAdd}>Add Product</button>
+            <button>Add Product</button>
         </div>
     )
 }

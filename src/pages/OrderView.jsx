@@ -15,9 +15,11 @@ function OrderView() {
     const { isLoadingOrder, order } = useGetOrderById()
     const [customer, setCustomer] = useState()
 
+
     useEffect(() => {
         async function getCustomer() {
-            const customerApi = await getCustomerById(order?.generalInfo?.customer)
+            if (isLoadingOrder) return
+            const customerApi = await getCustomerById(order?.generalInfo?.customer.split(',')[1])
             setCustomer(customerApi)
         }
         getCustomer()
@@ -25,15 +27,15 @@ function OrderView() {
 
     if (isLoadingOrder) return <Spinner />
 
-    console.log(order);
-
-
-    const { id: orderId, created__at, generalInfo: { orderType, date }, staticItems, rooms, status, orderTotal } = order
+    const { id: orderId, created_at, generalInfo: { orderType, date }, staticItems, rooms, status, orderTotal } = order
     const customerId = customer?.id
-    const customerName = customer?.name
-    const adress = customer?.adress
+    const customerName = customer?.customerName
+    const adress = customer?.adresses
     const phoneNumber = customer?.phoneNumber
     const email = customer?.email
+
+    console.log(order);
+
 
     function handleToPDF() {
         navigate(`/orders/PDF/${orderId}`)
@@ -50,6 +52,9 @@ function OrderView() {
                             <h2>{customerName}</h2>
                             <p>Last order X</p>
                         </div>
+                        <div className='ml-auto'>
+                            <Card.Padge status={status}>{status}</Card.Padge>
+                        </div>
                     </Card.Header>
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
@@ -59,6 +64,10 @@ function OrderView() {
                         <div className='flex flex-col gap-1'>
                             <p>Email</p>
                             <h2>{email}</h2>
+                        </div>
+                        <div className='flex flex-col gap-1'>
+                            <p>Date</p>
+                            <h2>{date} X</h2>
                         </div>
                     </Card.Row>
                 </Card>

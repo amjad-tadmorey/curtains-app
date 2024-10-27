@@ -12,16 +12,17 @@ export async function getCustomers() {
 }
 
 export async function getCustomerById(id) {
-    const { data, error } = await supabase
+    const { data: customer, error } = await supabase
         .from('customers')
-        .select("*").eq('id', id)
+        .select("*")
+        .eq('id', id)
 
     if (error) {
         console.log(error);
-        throw new Error('Orders could not be loaded')
+        throw new Error('Customer could not be loaded')
     }
 
-    return data
+    return customer[0]
 }
 
 export async function createCustomer(newCustomer) {
