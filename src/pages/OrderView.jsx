@@ -27,14 +27,12 @@ function OrderView() {
 
     if (isLoadingOrder) return <Spinner />
 
-    const { id: orderId, created_at, generalInfo: { orderType, date }, staticItems, rooms, status, orderTotal } = order
+    const { id: orderId, created_at, generalInfo: { orderType }, staticItems, rooms, status, orderTotal, orderDate } = order
     const customerId = customer?.id
     const customerName = customer?.customerName
     const adress = customer?.adresses
     const phoneNumber = customer?.phoneNumber
     const email = customer?.email
-
-    console.log(order);
 
 
     function handleToPDF() {
@@ -67,7 +65,7 @@ function OrderView() {
                         </div>
                         <div className='flex flex-col gap-1'>
                             <p>Date</p>
-                            <h2>{date} X</h2>
+                            <h2>{orderDate}</h2>
                         </div>
                     </Card.Row>
                 </Card>
@@ -84,14 +82,14 @@ function OrderView() {
                 </Card>
             </div>
             <Wrapper>
-                <Table cols="repeat(6, 1fr)">
+                <Table cols="repeat(3, 1fr)">
                     <Table.Header>
                         <div>Product Name</div>
                         <div>Unit Price</div>
                         <div>Qty</div>
-                        <div>Discount</div>
+                        {/* <div>Discount</div>
                         <div>Action</div>
-                        <div>Status</div>
+                        <div>Status</div> */}
                     </Table.Header>
                     <Table.Body data={staticItems} render={(item => <ItemRow key={item.code} item={item} />)} />
                 </Table>

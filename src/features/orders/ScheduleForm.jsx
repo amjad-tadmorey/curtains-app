@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+/* eslint-disable react/prop-types */
+import { useState } from 'react'
 import Button from '../../ui/Button'
 import Spinner from '../../ui/Spinner'
 import { useUpdateSchedule } from './useUpdateSchedule'
-import { updateSchedule as updateScheduleApi } from '../../services/scheduleApi'
 import { useSelector } from 'react-redux'
 import { getRooms } from './orderSlice'
 import supabase from '../../services/supabase'
@@ -11,9 +11,13 @@ import Modal from '../../ui/Modal'
 import { useSchedule } from './useSchedule'
 import Table from '../../ui/Table'
 import ScheduleRow from './ScheduleRow'
+import { sortArrayByDate } from '../../utils/helpers'
+import { useOrderDate } from '../../context/OrderDateContext'
 
 export default function ScheduleForm({ onCloseModal }) {
-    const [disableButton, setDisableButton] = useState(true)
+    const { orderDate, setOrderDate } = useOrderDate()
+
+    const [disableButton, setDisableButton] = useState(false)
     const [date, setDate] = useState('')
     const rooms = useSelector(getRooms)
     const { updateSchedule, isUpdating } = useUpdateSchedule()
@@ -21,8 +25,6 @@ export default function ScheduleForm({ onCloseModal }) {
     const { schedule, isLoading } = useSchedule()
 
     if (isLoading) return <Spinner />
-    console.log(schedule);
-
 
     function getAllWindows(rooms) {
         return rooms.flatMap(room => room.windows);
@@ -37,14 +39,17 @@ export default function ScheduleForm({ onCloseModal }) {
         takenBoxes = 3
     } else if (windows.length > 18 && windows.length <= 24) {
         takenBoxes = 4
+    } else {
+        takenBoxes = 0
     }
 
+    const sortedSchedule = sortArrayByDate(schedule)
 
     if (isLoading) return <Spinner />
 
 
     async function handleUpdateSchedule() {
-        let { data: scheduleDay, error } = await supabase
+        let { data: scheduleDay } = await supabase
             .from('schedule')
             .select("*")
             .eq('date', date)
@@ -55,15 +60,21 @@ export default function ScheduleForm({ onCloseModal }) {
             return
         }
 
+
         let newStatus = boxes - takenBoxes > 0 ? "available" : "un-available"
         const newDayData = {
             boxes: boxes - takenBoxes,
             status: newStatus,
         }
-        updateSchedule(date, newDayData)
-        toast.success("the order has been added to schedule successfuly")
-        setDisableButton(false)
+        updateSchedule({ date, newDayData }, {
+            onSuccess: () => {
+                setDisableButton(true)
+                setOrderDate(date)
+            }
+        })
     }
+
+
 
     return (
         <div className='modal'>
@@ -80,7 +91,7 @@ export default function ScheduleForm({ onCloseModal }) {
                     </label>
                 </div>
 
-                <div className='w-fit mt-2'><Button type={'black'} text={'Add'} size={'medium'} onClick={handleUpdateSchedule} /></div>
+                <div className='w-fit mt-2'><Button disabled={disableButton} type={'black'} text={'Add'} size={'medium'} onClick={handleUpdateSchedule} /></div>
             </div>
 
             <div style={{ height: "60vh" }}>
@@ -91,14 +102,14 @@ export default function ScheduleForm({ onCloseModal }) {
                         <div>Boxes</div>
                         <div>Status</div>
                     </Table.Header>
-                    <Table.Body data={schedule} render={(day => <ScheduleRow key={day.id} day={day} />)} />
+                    <Table.Body data={sortedSchedule} render={(day => <ScheduleRow key={day.id} day={day} />)} />
                 </Table>
             </div>
 
             <div className="modal__submit">
                 <Button type={'primary-transparent'} text={'Cancel'} size={'big'} onClick={onCloseModal} />
                 <Modal.Open opens={'confirm'}>
-                    <Button type={'primary'} text={'Next'} size={'big'} disabled={disableButton} />
+                    <Button type={'primary'} text={'Next'} size={'big'} />
                 </Modal.Open>
             </div>
         </div>

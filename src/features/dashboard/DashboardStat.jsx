@@ -33,9 +33,11 @@ export default function DashboardStat() {
     const recentOrders = getRecentSevenDays(orders)
 
     // Function to summarize the totals by showroom and include color property
-    
+
     const showroomOrdersPie = (summarizeOrders(orders));
     const ordersSalesByDate = getTotalOrdersByDate(orders)
+    console.log(ordersSalesByDate);
+    
 
     return (
         <div className='dashboard'>

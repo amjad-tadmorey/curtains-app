@@ -4,7 +4,7 @@ import Table from '../../ui/Table'
 export default function ScheduleRow({ day }) {
     const { date, day: selectedDay, boxes, status } = day
     return (
-        <Table.Row>
+        <Table.Row linedRows={true}>
             <div className="table__item">{date}</div>
             <div className="table__item">{selectedDay}</div>
             <div className="table__item">{boxes}</div>

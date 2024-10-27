@@ -92,6 +92,21 @@ body {
   border: 1px solid #CC5F5F;
 }
 
+a.active {
+  background-color: transparent;
+  color: white;
+}
+
+a.active p {
+  background-color: transparent;
+  color: white;
+}
+
+li:has(a.active) {
+  background-color: #e52a3b;
+  color: #fff;
+}
+
 .w-fit {
   width: fit-content !important;
 }

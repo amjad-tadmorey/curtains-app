@@ -7,8 +7,8 @@ import Tag from "../../ui/Tag"
 function OrderRow({ order }) {
     const navigate = useNavigate()
 
-    const { id, status, generalInfo, orderTotal } = order
-    const { customer, date, orderType } = generalInfo
+    const { id, status, generalInfo, orderTotal, orderDate } = order
+    const { customer, orderType } = generalInfo
     const [customerName, customerId] = customer.split(",")
     console.log(customerId);
 
@@ -16,12 +16,12 @@ function OrderRow({ order }) {
     return (
         <Table.Row>
             <div className="table__item">{customerName}</div>
-            <div className="table__item">{date}</div>
+            <div className="table__item">{orderDate}</div>
             <div className="table__item">{orderType}</div>
             <div className="table__item">{id}</div>
             <div className="table__item">{orderTotal}</div>
             <Tag role="table__item" status={status}>{status}</Tag>
-            <img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/orders/${id}`)} className="tool-icon"/>
+            <img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/orders/${id}`)} className="tool-icon" />
         </Table.Row>
     )
 }

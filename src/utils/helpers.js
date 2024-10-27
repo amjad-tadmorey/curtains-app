@@ -132,16 +132,16 @@ export function getTotalOrdersByDate(orders) {
 }
 
 
-export function generateScheduleForSixMonths() {
+export function generateSchedule() {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const schedule = [];
     const today = new Date();
-    const sixMonthsFromNow = new Date(today);
-    sixMonthsFromNow.setMonth(today.getMonth() + 6);
+    const mounths = new Date(today);
+    mounths.setMonth(today.getMonth() + 3);
 
     let currentDate = new Date(today);
 
-    while (currentDate <= sixMonthsFromNow) {
+    while (currentDate <= mounths) {
         const dayOfWeek = daysOfWeek[currentDate.getDay()];
         const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 
@@ -152,4 +152,8 @@ export function generateScheduleForSixMonths() {
     }
 
     return schedule;
+}
+
+export function sortArrayByDate(array) {
+    return array.sort((a, b) => new Date(a.date) - new Date(b.date));
 }
