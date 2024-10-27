@@ -20,7 +20,17 @@ export async function getOrderById(id) {
         .eq("id", id)
     if (error) {
         console.log(error);
-        throw new Error('Orders could not be loaded')
+        throw new Error('Order could not be loaded')
+    }
+    return order[0]
+}
+export async function getOrderByDate(date) {
+    const { data: order, error } = await supabase
+        .from('orders').select("*")
+        .eq("orderDate", date)
+    if (error) {
+        console.log(error);
+        throw new Error('Order could not be loaded')
     }
     return order[0]
 }

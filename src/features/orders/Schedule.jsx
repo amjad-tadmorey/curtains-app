@@ -1,13 +1,27 @@
-import Spinner from "../../ui/Spinner"
-import { useOrders } from "./useOrders"
-
 /* eslint-disable react/prop-types */
+import { useOrders } from "./useOrders"
+import { useSchedule } from "./useSchedule"
+import Spinner from "../../ui/Spinner"
+import Table from "../../ui/Table"
+import { groupOrdersByWeek } from "../../utils/helpers"
+import ScheduleDay from "./ScheduleDay"
+
 function Schedule({ onCloseModal }) {
 
-    const { orders, isLoading } = useOrders()
+    const { orders, isLoading: isLoadingOrders } = useOrders()
+    const { schedule, isLoading: isLoadingSchedule } = useSchedule()
 
-    if (isLoading) return <Spinner />
+    if (isLoadingOrders || isLoadingSchedule) return <Spinner />
     console.log(orders);
+    console.log(schedule);
+
+
+
+
+    const groupedSchedule = groupOrdersByWeek(schedule);
+    console.log(groupedSchedule);
+
+
 
     return (
         <div className='modal'>
@@ -19,6 +33,30 @@ function Schedule({ onCloseModal }) {
 
             <div className="modal__wrapper">
 
+                {/* <Table cols="repeat(4, 1fr)">
+                    <Table.Header>
+                        <div>Box-1</div>
+                        <div>Box-2</div>
+                        <div>Box-3</div>
+                        <div>Box-4</div>
+                    </Table.Header>
+                </Table> */}
+
+                <div className="flex flex-col w-100 mt-3" style={{ overflowY: "auto", height: "65vh" }}>
+                    {
+                        groupedSchedule.map((sched) => <Table overFlow={false} cols="repeat(6, 1fr)" key={groupedSchedule.indexOf(sched)}>
+                            <Table.Header>
+                                <div>Date</div>
+                                <div>Day</div>
+                                <div>Box-1</div>
+                                <div>Box-2</div>
+                                <div>Box-3</div>
+                                <div>Box-4</div>
+                            </Table.Header>
+                            <Table.Body data={sched} render={(day) => <ScheduleDay day={day} />} />
+                        </Table>)
+                    }
+                </div>
 
             </div>
 

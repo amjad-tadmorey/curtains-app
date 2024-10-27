@@ -4,15 +4,19 @@ import { createContext, useContext } from "react";
 
 const TableContext = createContext()
 
-function Table({ children, cols }) {
+function Table({ children, cols, overFlow }) {
+    let overflow
+    if (overFlow === undefined) overflow = "auto"
+    else if (overFlow === false) overflow = "none"
+
     return (
         <TableContext.Provider
             value={{ cols }}
         >
-            <table className="table">
+            <table className="table" style={{ overflow: overflow }}>
                 {children}
             </table>
-        </TableContext.Provider>
+        </TableContext.Provider >
     )
 }
 
