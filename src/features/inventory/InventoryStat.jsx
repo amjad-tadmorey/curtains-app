@@ -1,16 +1,16 @@
 import { LOW_STOCK } from "../../services/constants";
 import SectionStats from "../../ui/SectionStats";
 import Spinner from "../../ui/Spinner";
-import { useItems } from "./useItems";
+import { useProducts } from "./useProducts";
 
 export default function InventoryStat() {
-    const { items, isLoading } = useItems()
+    const { products, isLoading } = useProducts()
     if (isLoading) return <Spinner />
 
-    const allItems = items.length
-    const activeItems = items.filter((item) => item.status === 'active').length
-    const inActiveItems = items.filter((item) => item.status === 'in-active').length
-    const lowStockItems = items.filter((item) => item.quantity < LOW_STOCK).length
+    const allItems = products.length
+    const activeItems = products.filter((item) => item.status === 'active').length
+    const inActiveItems = products.filter((item) => item.status === 'in-active').length
+    const lowStockItems = products.filter((item) => item.quantity < LOW_STOCK).length
 
     return <SectionStats cards={[
         {

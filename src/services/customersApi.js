@@ -1,39 +1,42 @@
-import { BASE_URL } from "./constants";
+import supabase from "./supabase";
 
 export async function getCustomers() {
-    try {
-        const res = await fetch(`${BASE_URL}/customers`)
-        const data = await res.json()
-        return await data
-
-    } catch (err) {
-        console.log(err.message)
+    const { data: customers, error } = await supabase
+        .from('customers')
+        .select('*')
+    if (error) {
+        console.log(error);
+        throw new Error('Orders could not be loaded')
     }
+    return customers
 }
 
 export async function getCustomerById(id) {
-    try {
-        if (!id) return
-        const res = await fetch(`${BASE_URL}/customers/${id}`)
-        const data = await res.json()
-        return await data
+    const { data, error } = await supabase
+        .from('customers')
+        .select("*").eq('id', id)
 
-    } catch (err) {
-        console.log(err.message)
-
+    if (error) {
+        console.log(error);
+        throw new Error('Orders could not be loaded')
     }
+
+    return data
 }
 
 export async function createCustomer(newCustomer) {
-    try {
-        const res = await fetch(`${BASE_URL}/customers`, {
-            method: "POST",
-            body: JSON.stringify(newCustomer),
-        })
-        const data = await res.json()
-        return await data
+    const { data, error } = await supabase
+        .from('customers')
+        .insert([
+            newCustomer,
+        ])
+        .select()
 
-    } catch (err) {
-        throw new Error(err.message)
+    if (error) {
+        console.log(error);
+        throw new Error('Customers could not be loaded')
     }
+
+    return data
+
 }

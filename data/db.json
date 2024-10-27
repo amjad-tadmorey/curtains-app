@@ -487,6 +487,17 @@
       "created_at": "2024-10-23",
       "orders": [],
       "status": "active"
+    },
+    {
+      "id": "f7a5",
+      "customerName": "amjad tadmory",
+      "phoneNumber": "01228700216",
+      "email": "amjadtadmory@gmail.com",
+      "adress": [
+        "cairo, egypt, Alrehab: 70 - 7 - 2"
+      ],
+      "orders": [],
+      "status": "active"
     }
   ],
   "items": [

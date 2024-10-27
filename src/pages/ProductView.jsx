@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import { getItemById } from "../services/itemsApi";
+import { getProductById } from "../services/productsApi";
 import { useEffect, useState } from "react";
 import Wrapper from "../ui/Wrapper";
 import TableHeading from "../ui/TableHeading";
@@ -8,16 +8,16 @@ import Card from "../ui/Card";
 import Spinner from "../ui/Spinner";
 
 function ItemView() {
-    const { itemId } = useParams()
+    const { productId } = useParams()
     const [item, setitem] = useState()
 
     useEffect(() => {
         async function getItem() {
-            const itemApi = await getItemById(itemId)
+            const itemApi = await getProductById(productId)
             setitem(itemApi)
         }
         getItem()
-    }, [itemId])
+    }, [productId])
 
     if (item === undefined) return <Spinner />
 

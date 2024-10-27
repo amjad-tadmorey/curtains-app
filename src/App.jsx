@@ -14,7 +14,7 @@ import Auth from "./pages/Auth"
 import PageNotFound from "./pages/PageNotFound"
 import OrderView from "./pages/OrderView"
 import CustomerView from "./pages/CusomerView"
-import ItemView from "./pages/ItemView"
+import ProductView from "./pages/ProductView"
 import PDF from "./pages/PDF"
 
 
@@ -61,7 +61,7 @@ function App() {
             <Route path="customers" element={<Customers />} />
             <Route path="customers/:customerId" element={<CustomerView />} />
             <Route path="inventory" element={<Inventory />} />
-            <Route path="inventory/:itemId" element={<ItemView />} />
+            <Route path="inventory/:itemId" element={<ProductView />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="orders/PDF/:id" element={<PDF />} />
