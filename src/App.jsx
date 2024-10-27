@@ -61,7 +61,7 @@ function App() {
             <Route path="customers" element={<Customers />} />
             <Route path="customers/:customerId" element={<CustomerView />} />
             <Route path="inventory" element={<Inventory />} />
-            <Route path="inventory/:itemId" element={<ProductView />} />
+            <Route path="inventory/:productId" element={<ProductView />} />
             <Route path="settings" element={<Settings />} />
           </Route>
           <Route path="orders/PDF/:id" element={<PDF />} />

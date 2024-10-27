@@ -16,15 +16,15 @@ export async function getProducts() {
 
 export async function getProductById(id) {
     const { data: product, error } = await supabase
-        .from('products')
-        .select("*").eq('id', id)
+        .from('products').select("*")
+        .eq('id', id)
 
     if (error) {
         console.log(error);
         throw new Error('product could not be loaded')
     }
 
-    return product
+    return product[0]
 }
 
 export async function createProduct(newProduct) {

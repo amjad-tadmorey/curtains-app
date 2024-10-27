@@ -19,10 +19,13 @@ export function renderItemIcon(productType) {
     if (productType === "black-out") icon = "/src/assets/icons/fabric-black.svg"
     if (productType === "light") icon = "/src/assets/icons/fabric-white.svg"
     if (productType === "havey") icon = "/src/assets/icons/fabric-black.svg"
-    if (productType === "roller") icon = "/src/assets/icons/pipe.svg"
-    if (productType === "accessories ") icon = "/src/assets/icons/pipe.svg"
-    if (productType === "hooks") icon = "/src/assets/icons/hook.svg"
-    if (productType === "oyema") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "roll") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "rod") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "rail") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "accessory") icon = "/src/assets/icons/pipe.svg"
+    if (productType === "cleats") icon = "/src/assets/icons/hook.svg"
+    if (productType === "hook") icon = "/src/assets/icons/hook.svg"
+    if (productType === "oima") icon = "/src/assets/icons/pipe.svg"
 
     return icon
 }
@@ -59,13 +62,10 @@ export function getRecentSevenDays(arr) {
     const sevenDaysAgo = new Date();
     sevenDaysAgo.setDate(today.getDate() - 7);
 
-    console.log(today);
-    console.log(sevenDaysAgo);
-
 
     // Filter orders that were created in the last 7 days
     const recent = arr.filter(order => {
-        const orderDate = new Date(order.created__at);
+        const orderDate = new Date(order.created_at);
         return orderDate >= sevenDaysAgo && orderDate <= today;
     });
 
@@ -104,11 +104,20 @@ export const summarizeOrders = (orders) => {
     }));
 };
 
+export function convertToIsoStringCompatible(dateString) {
+    // Use a regular expression to match and trim microseconds
+    const trimmedDateString = dateString.replace(/\.\d{3,6}(?=\+|Z|$)/, match => match.slice(0, 4));
+
+    // Convert to a Date object and return in ISO format
+    return new Date(trimmedDateString).toISOString();
+}
+
 export function getTotalOrdersByDate(orders) {
     const totalByDate = {};
 
     orders.forEach(order => {
-        const date = new Date(order.created__at).toISOString().split('T')[0]; // Get date in YYYY-MM-DD format
+        const orderDate = convertToIsoStringCompatible(order.created_at)
+        const date = new Date(orderDate).toISOString().split('T')[0]; // Get date in YYYY-MM-DD format
         if (!totalByDate[date]) {
             totalByDate[date] = 0; // Initialize total for the date
         }
@@ -120,4 +129,27 @@ export function getTotalOrdersByDate(orders) {
         time,
         totalOrders
     }));
+}
+
+
+export function generateScheduleForSixMonths() {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const schedule = [];
+    const today = new Date();
+    const sixMonthsFromNow = new Date(today);
+    sixMonthsFromNow.setMonth(today.getMonth() + 6);
+
+    let currentDate = new Date(today);
+
+    while (currentDate <= sixMonthsFromNow) {
+        const dayOfWeek = daysOfWeek[currentDate.getDay()];
+        const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+
+        schedule.push({ day: dayOfWeek, date: dateStr, boxes: 4, status: 'available' });
+
+        // Move to the next day
+        currentDate.setDate(currentDate.getDate() + 1);
+    }
+
+    return schedule;
 }

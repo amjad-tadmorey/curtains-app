@@ -24,7 +24,7 @@ function CusomerView() {
 
     if (customer === undefined || isLoading) return <Spinner />
 
-    const { adress, customerName, email, id, phoneNumber, status } = customer
+    const { adresses, customerName, email, id, phoneNumber, status } = customer
     const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[1] === id)
 
     const totalOrders = customerOrders.reduce((acc, cur) => acc + cur.orderTotal, 0)
@@ -63,10 +63,10 @@ function CusomerView() {
                     <hr className="mt-1" />
                     <Card.Row>
                         {
-                            adress.map((el) =>
-                                <div key={adress.indexOf(el)} className='flex flex-col gap-1 mt-1'>
+                            adresses.map((el) =>
+                                <div key={adresses.indexOf(el)} className='flex flex-col gap-1 mt-1'>
 
-                                    <p className="flex align-center"> <img src="/src/assets/icons/pin.svg" alt="" className="w-25px" /> Home Adress - {adress.indexOf(el) + 1}</p>
+                                    <p className="flex align-center gap-1"> <img src="/src/assets/icons/pin.svg" alt="" className="w-25px" /> Home Adress - {adresses.indexOf(el) + 1}</p>
                                     <h2>{el}</h2>
                                 </div>
                             )
@@ -114,18 +114,6 @@ function CusomerView() {
                         </div>
                     </Card.Row>
                 </Card>
-                {/* <Card>
-                    <Card.Header>
-                        <img src='/src/assets/icons/pie.svg' />
-                    </Card.Header>
-                    <Card.Row>
-
-                        <div className='flex flex-col gap-1'>
-                            <p>Total Orders</p>
-                            <h2>X</h2>
-                        </div>
-                    </Card.Row>
-                </Card> */}
             </div>
 
             <Wrapper>

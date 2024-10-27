@@ -1,67 +1,105 @@
 import React, { useState } from 'react'
 import Button from '../../ui/Button'
-import { useOrders } from './useOrders'
 import Spinner from '../../ui/Spinner'
+import { useUpdateSchedule } from './useUpdateSchedule'
+import { updateSchedule as updateScheduleApi } from '../../services/scheduleApi'
+import { useSelector } from 'react-redux'
+import { getRooms } from './orderSlice'
+import supabase from '../../services/supabase'
+import toast from 'react-hot-toast'
+import Modal from '../../ui/Modal'
+import { useSchedule } from './useSchedule'
 import Table from '../../ui/Table'
+import ScheduleRow from './ScheduleRow'
 
 export default function ScheduleForm({ onCloseModal }) {
-    const [showOrdersList, setShowOrdersList] = useState(false)
-    const [searchInput, setSearchInput] = useState("")
+    const [disableButton, setDisableButton] = useState(true)
+    const [date, setDate] = useState('')
+    const rooms = useSelector(getRooms)
+    const { updateSchedule, isUpdating } = useUpdateSchedule()
 
-    const { orders: allOrders, isLoading } = useOrders()
+    const { schedule, isLoading } = useSchedule()
 
     if (isLoading) return <Spinner />
-    const orders = allOrders.filter((order) => order.status === 'pending' || order.status === 'returned' || order.status === 'damaged')
-    console.log(orders);
-
-    function generateScheduleForSixMonths() {
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-        const schedule = [];
-        const today = new Date();
-        const sixMonthsFromNow = new Date(today);
-        sixMonthsFromNow.setMonth(today.getMonth() + 6);
-
-        let currentDate = new Date(today);
-
-        while (currentDate <= sixMonthsFromNow) {
-            const dayOfWeek = daysOfWeek[currentDate.getDay()];
-            const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
-
-            schedule.push({ day: dayOfWeek, date: dateStr, boxes: 4, status: 'available' });
-
-            // Move to the next day
-            currentDate.setDate(currentDate.getDate() + 1);
-        }
-
-        return schedule;
-    }
-
-    // Example usage
-    const schedule = generateScheduleForSixMonths();
     console.log(schedule);
 
+
+    function getAllWindows(rooms) {
+        return rooms.flatMap(room => room.windows);
+    }
+    const windows = getAllWindows(rooms)
+    let takenBoxes
+    if (windows.length > 0 && windows.length <= 6) {
+        takenBoxes = 1
+    } else if (windows.length > 6 && windows.length <= 12) {
+        takenBoxes = 2
+    } else if (windows.length > 12 && windows.length <= 18) {
+        takenBoxes = 3
+    } else if (windows.length > 18 && windows.length <= 24) {
+        takenBoxes = 4
+    }
+
+
+    if (isLoading) return <Spinner />
+
+
+    async function handleUpdateSchedule() {
+        let { data: scheduleDay, error } = await supabase
+            .from('schedule')
+            .select("*")
+            .eq('date', date)
+
+        const { boxes } = scheduleDay[0]
+        if (boxes < takenBoxes) {
+            toast.error("the windows do not fit this day boxes try to choose another day")
+            return
+        }
+
+        let newStatus = boxes - takenBoxes > 0 ? "available" : "un-available"
+        const newDayData = {
+            boxes: boxes - takenBoxes,
+            status: newStatus,
+        }
+        updateSchedule(date, newDayData)
+        toast.success("the order has been added to schedule successfuly")
+        setDisableButton(false)
+    }
 
     return (
         <div className='modal'>
 
             <button className='modal__close' onClick={onCloseModal}>x</button>
 
-            <h1 className='heading-2'>Start a New Schedule</h1>
+            <h1 className='heading-2'>Schedule</h1>
 
-            <div className='mt-3 flex align-center justify-between schedule'>
-                <Button disabled={true} type={'black'} text={'Edit Schedule'} size={'big'} onClick={() => setShowOrdersList(!showOrdersList)} />
+            <div className='flex align-end gap-2'>
+                <div className='mt-3 flex align-center justify-between schedule'>
+                    <label htmlFor="" className='flex flex-col gap-1 heading-3'>
+                        Choose a date
+                        <input type="date" name="" id="" className='date date--primary' value={date} onChange={(e) => setDate(e.target.value)} />
+                    </label>
+                </div>
 
-                <label htmlFor="" className='flex flex-col gap-1 heading-3'>
-                    Choose a date
-                    <input type="date" name="" id="" className='search' />
-                </label>
+                <div className='w-fit mt-2'><Button type={'black'} text={'Add'} size={'medium'} onClick={handleUpdateSchedule} /></div>
             </div>
 
-            <div className='ml-auto w-fit mt-2'><Button type={'black'} text={'Add'} size={'medium'} /></div>
+            <div style={{ height: "60vh" }}>
+                <Table cols='repeat(4, 1fr)'>
+                    <Table.Header>
+                        <div>Date</div>
+                        <div>Day</div>
+                        <div>Boxes</div>
+                        <div>Status</div>
+                    </Table.Header>
+                    <Table.Body data={schedule} render={(day => <ScheduleRow key={day.id} day={day} />)} />
+                </Table>
+            </div>
 
             <div className="modal__submit">
                 <Button type={'primary-transparent'} text={'Cancel'} size={'big'} onClick={onCloseModal} />
-                <Button type={'primary'} text={'Done'} size={'big'} disabled={true} />
+                <Modal.Open opens={'confirm'}>
+                    <Button type={'primary'} text={'Next'} size={'big'} disabled={disableButton} />
+                </Modal.Open>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ import { useProducts } from "../inventory/useProducts"
 
 function CreateOrderForm({ onCloseModal }) {
     const dispatch = useDispatch()
-    const { items, isLoading: isLoadingItems } = useProducts()
+    const { products, isLoading: isLoadingProducts } = useProducts()
     const { customers, isLoading: isLoadingCustomers } = useCustomers()
     const { register, handleSubmit, reset, getValues, formState: { errors } } = useForm()
     const [isSubmited, setIsSubmited] = useState(false)
@@ -28,10 +28,8 @@ function CreateOrderForm({ onCloseModal }) {
         reset()
     }
 
-    console.log(customers);
 
-
-    if (isLoadingItems || isLoadingCustomers) return <Spinner />;
+    if (isLoadingProducts || isLoadingCustomers) return <Spinner />;
 
     return (
         <div className='modal'>
@@ -60,13 +58,6 @@ function CreateOrderForm({ onCloseModal }) {
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}
-                                {/* <label htmlFor="date">
-                                    <p className='label'>Order Time & Date</p>
-                                    <input type="date" name="date" id="date" placeholder='12/12/2020' className='create-form__field' {...register("date", {
-                                        required: "this field is required"
-                                    })} />
-                                    {errors.date && <RequiredMessage>{errors.date.message}</RequiredMessage>}
-                                </label> */}
                                 <select name="customers" id="orderType" className='create-form__field' {...register("orderType", {
                                     required: "this field is required"
                                 })}>
@@ -120,7 +111,7 @@ function CreateOrderForm({ onCloseModal }) {
                     <input type="search" placeholder='Search' className='search search--primary mt-2' value={search} onChange={(e) => setSearch(e.target.value)} />
                     <ul className="products-list__items">
                         {
-                            items.map(product => <ProductItem search={search} key={product.code} product={product} />)
+                            products.map(product => <ProductItem search={search} key={product.code} product={product} />)
                         }
                     </ul>
                 </div>

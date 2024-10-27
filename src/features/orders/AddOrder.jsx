@@ -3,6 +3,7 @@ import Button from "../../ui/Button"
 import CreateOrderForm from "./CreateOrderForm"
 import WindowsForm from "./WindowsForm"
 import ConfirmOrder from "./ConfirmOrder"
+import ScheduleForm from "./ScheduleForm"
 
 function AddOrder() {
     return (
@@ -19,10 +20,14 @@ function AddOrder() {
                     <WindowsForm />
                 </Modal.Window>
 
+                <Modal.Window name="schedule-form">
+                    <ScheduleForm />
+                </Modal.Window>
+
                 <Modal.Window name="confirm">
                     <ConfirmOrder />
                 </Modal.Window>
-                
+
             </Modal>
         </>
     )

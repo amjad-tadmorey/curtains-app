@@ -110,11 +110,18 @@ export default function AddRoom({ setShowRoom, type }) {
     const rooms = useSelector(getRooms)
     const prevRoomData = useSelector(getRoomByName(selectedRoom))
 
+
+
     function handleAddMaterial(item, numId, btnId) {
-        const { productName: product, productType, sewingType } = item
+        const { productName: product, productType } = item
+        console.log(item);
+        
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
+        let sewingType = document.getElementById(`${item.code}-2`).value
         let btn = document.getElementById(btnId)
+        console.log(sewingType);
+        
 
         const prevQuantity = prevRoomData?.roomMaterials?.filter((el) => el.product === product)[0].quantity
         console.log(prevQuantity);
@@ -234,6 +241,11 @@ export default function AddRoom({ setShowRoom, type }) {
                             return <div key={item.code} className='flex gap-1 mt-1'>
                                 <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
                                 <input type="number" name="" id={item.code} min={0} />
+                                <select name="" id={`${item.code}-2`}>
+                                    <option value="type-1">type-1</option>
+                                    <option value="type-2">type-2</option>
+                                    <option value="type-3">type-3</option>
+                                </select>
                                 <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
                                     e.preventDefault()
                                     handleAddMaterial(item, item.code, item.productName)
