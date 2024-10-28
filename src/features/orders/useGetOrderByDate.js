@@ -1,12 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
-import { getOrderByDate } from "../../services/ordersApi";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { getOrdersByDate } from "../../services/ordersApi";
 
-export function useGetOrderByDate() {
-    const { isLoading: isLoadingOrder, data: order } = useQuery({
+export function useGetOrderByDate(date) {
+    const { isLoading: isLoadingOrder, data: orders } = useQuery({
         queryKey: ['order'],
-        queryFn: getOrderByDate,
+        queryFn: () => getOrdersByDate(date),
         retry: false
     })
-
-    return { isLoadingOrder, order }
+    return { isLoadingOrder, orders }
 }

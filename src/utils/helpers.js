@@ -189,3 +189,11 @@ function getWeekNumber(date) {
     const days = Math.floor((date - startOfYear) / (24 * 60 * 60 * 1000));
     return Math.ceil((days + startOfYear.getDay() + 1) / 7);
 }
+
+export function getAllWindows(rooms) {
+    return rooms.flatMap(room => room.windows);
+}
+
+export function sortByDate(array) {
+    return array.sort((a, b) => new Date(a.date) - new Date(b.date));
+}

@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { createContext, useContext } from "react";
+import { sortByDate } from "../utils/helpers";
 
 const TableContext = createContext()
 
@@ -22,31 +23,35 @@ function Table({ children, cols, overFlow }) {
 
 function Header({ children }) {
     const { cols } = useContext(TableContext)
-    return <div className="table__header" style={{ gridTemplateColumns: cols }}>
+    return <thead className="table__header" style={{ gridTemplateColumns: cols }}>
         {children}
-    </div>
+    </thead>
 }
 
 function Row({ children, linedRows, withBorders }) {
     const { cols } = useContext(TableContext)
     return <>
-        <div className={`table__row ${withBorders ? "table__row--with-borders" : ""}`} style={{ gridTemplateColumns: cols }}>
+        <tr className={`table__row ${withBorders ? "table__row--with-borders" : ""}`} style={{ gridTemplateColumns: cols }}>
             {children}
-        </div >
+        </tr >
         {linedRows && <hr />
         }
     </>
 }
 
-function Body({ data = [], render }) {
+function Body({ data = [], render, sort }) {
+
+    if (sort === true) {
+        sortByDate(data)
+    }
 
 
     if (!data.length) return null
-    return <div className="table__body" >
+    return <tbody className="table__body" >
         {
             data.map(render)
         }
-    </ div>
+    </ tbody>
 }
 function StaticBody({ children }) {
     return (

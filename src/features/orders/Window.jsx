@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 import { addWindow } from "./orderSlice"
 import Button from "../../ui/Button"
 import { createPortal } from "react-dom"
+import { generateNumberId } from "../../utils/helpers"
 
 function Window({ window }) {
     const { imageId, src } = window
@@ -18,8 +19,7 @@ function Window({ window }) {
 
     function handleSubmit() {
         const newWindow = {
-            windowId: Math.random(),
-            imageId,
+            windowId: generateNumberId(),
             src,
             width,
             height,
@@ -39,7 +39,7 @@ function Window({ window }) {
 
     return (
         <div className="flex flex-col position-relative" style={{ borderRight: ".5rem solid", paddingRight: "3rem" }}>
-            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} style={{cursor: "pointer"}}/>
+            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }} />
 
             {/* Window Materials */}
             {showForm &&

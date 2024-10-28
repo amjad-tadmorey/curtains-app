@@ -24,15 +24,15 @@ export async function getOrderById(id) {
     }
     return order[0]
 }
-export async function getOrderByDate(date) {
-    const { data: order, error } = await supabase
+export async function getOrdersByDate(date) {
+    const { data: orders, error } = await supabase
         .from('orders').select("*")
         .eq("orderDate", date)
     if (error) {
         console.log(error);
         throw new Error('Order could not be loaded')
     }
-    return order[0]
+    return orders
 }
 
 export async function addOrder(newOrder) {

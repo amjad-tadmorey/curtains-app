@@ -1,3 +1,4 @@
+import { generateNumberId } from '../utils/helpers'
 import Card from './Card'
 
 function SectionStats({ cards }) {
@@ -7,7 +8,7 @@ function SectionStats({ cards }) {
             {
                 cards.map((card) => <Card>
                     <Card.Header>
-                        <img key={"1"} src={card.icon} alt="" />
+                        <img src={card.icon} alt="" />
                     </Card.Header>
                     <Card.Row>
                         {
