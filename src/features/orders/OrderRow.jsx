@@ -1,17 +1,31 @@
 import { useNavigate } from "react-router"
-import Button from "../../ui/Button"
 import Table from "../../ui/Table"
 import Tag from "../../ui/Tag"
 import Menus from "../../ui/Menus"
 import Modal from "../../ui/Modal"
+import { updateOrderState } from "../../services/ordersApi"
+import { useQueryClient } from "@tanstack/react-query"
+import toast from "react-hot-toast"
+// import { useUpdateOrderStatus } from "./useUpdateOrderStatus"
 
 /* eslint-disable react/prop-types */
 function OrderRow({ order }) {
     const navigate = useNavigate()
+    // const { updateOrderState, isUpdating } = useUpdateOrderStatus()
+    const queryClient = useQueryClient()
 
     const { id, status, generalInfo, orderTotal, orderDate } = order
     const { customer, orderType } = generalInfo
     const [customerName, customerId] = customer.split(",")
+
+    function handleAction(e) {
+        console.log(e.target.className);
+        console.log(id);
+
+        updateOrderState(id, e.target.className)
+        queryClient.invalidateQueries({ queryKey: ['orders'] })
+        toast.success("the order status has been updated successfuly")
+    }
 
 
     return (
@@ -28,10 +42,10 @@ function OrderRow({ order }) {
                     <Menus>
                         <Menus.Toggle id={id}></Menus.Toggle>
                         <Menus.List id={id}>
-                            <Menus.Button icon={'/src/assets/icons/show.svg'}>mark as Completed</Menus.Button>
-                            <Menus.Button icon={'/src/assets/icons/show.svg'}>mark as Returned</Menus.Button>
-                            <Menus.Button icon={'/src/assets/icons/show.svg'}>mark as Damaged</Menus.Button>
-                            <Menus.Button icon={'/src/assets/icons/show.svg'}>mark as Closed</Menus.Button>
+                            <Menus.Button onClick={handleAction} status={'completed'} icon={'/src/assets/icons/completed.svg'}>mark as Completed</Menus.Button>
+                            <Menus.Button onClick={handleAction} status={'returned'} icon={'/src/assets/icons/returned.svg'}>mark as Returned</Menus.Button>
+                            <Menus.Button onClick={handleAction} status={'damaged'} icon={'/src/assets/icons/damaged.svg'}>mark as Damaged</Menus.Button>
+                            <Menus.Button onClick={handleAction} status={'closed'} icon={'/src/assets/icons/closed.svg'}>mark as Closed</Menus.Button>
                         </Menus.List>
                     </Menus>
                 </Modal>

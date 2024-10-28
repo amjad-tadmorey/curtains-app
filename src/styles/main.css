@@ -1373,12 +1373,16 @@ li:has(a.active) {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 .menus__list li img {
   cursor: pointer;
-  width: 2rem;
+  width: 2.5rem;
   opacity: 0.5;
   transition: 0.2s ease;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
 .menus__list li img:hover {
   opacity: 1;
