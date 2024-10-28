@@ -11,7 +11,7 @@ import Modal from '../../ui/Modal'
 import { useSchedule } from './useSchedule'
 import Table from '../../ui/Table'
 import ScheduleRow from './ScheduleRow'
-import { sortArrayByDate } from '../../utils/helpers'
+import { getAllWindows, sortArrayByDate } from '../../utils/helpers'
 import { useOrderDate } from '../../context/OrderDateContext'
 
 export default function ScheduleForm({ onCloseModal }) {
@@ -26,10 +26,9 @@ export default function ScheduleForm({ onCloseModal }) {
 
     if (isLoading) return <Spinner />
 
-    function getAllWindows(rooms) {
-        return rooms.flatMap(room => room.windows);
-    }
+
     const windows = getAllWindows(rooms)
+    
     let takenBoxes
     if (windows.length > 0 && windows.length <= 6) {
         takenBoxes = 1

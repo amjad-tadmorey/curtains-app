@@ -10,18 +10,17 @@ function OrderRow({ order }) {
     const { id, status, generalInfo, orderTotal, orderDate } = order
     const { customer, orderType } = generalInfo
     const [customerName, customerId] = customer.split(",")
-    console.log(customerId);
 
 
     return (
         <Table.Row>
-            <div className="table__item">{customerName}</div>
-            <div className="table__item">{orderDate}</div>
-            <div className="table__item">{orderType}</div>
-            <div className="table__item">{id}</div>
-            <div className="table__item">{orderTotal}</div>
-            <Tag role="table__item" status={status}>{status}</Tag>
-            <img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/orders/${id}`)} className="tool-icon" />
+            <td className="table__item">{customerName}</td>
+            <td className="table__item">{orderDate}</td>
+            <td className="table__item">{orderType}</td>
+            <td className="table__item">{id}</td>
+            <td className="table__item">{orderTotal}</td>
+            <td><Tag role="table__item" status={status}>{status}</Tag></td>
+            <td><img src="/src/assets/icons/show.svg" alt="" onClick={() => navigate(`/orders/${id}`)} className="tool-icon" /></td>
         </Table.Row>
     )
 }

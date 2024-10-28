@@ -4,6 +4,7 @@ import { useOrders } from './useOrders'
 import Table from "../../ui/Table"
 import OrderRow from "./OrderRow"
 import Spinner from '../../ui/Spinner'
+import NoData from '../../ui/NoData'
 
 
 
@@ -16,16 +17,18 @@ function OrdersTable() {
 
     if (isAdding || isLoading) return <Spinner />
 
+    if (orders.length === 0) return <NoData resource={'Orders'} icon={'src/assets/icons/bag.svg'} />
+
     return (
         <Table cols="repeat(7, 1fr)">
             <Table.Header>
-                <div>Customer Name</div>
-                <div>Order Date</div>
-                <div>Order Type</div>
-                <div>Tracking ID</div>
-                <div>Order Total</div>
-                <div>Status</div>
-                <div>ِActions</div>
+                <tr><td>Customer Name</td></tr>
+                <tr><td>Order Date</td></tr>
+                <tr><td>Order Type</td></tr>
+                <tr><td>Tracking ID</td></tr>
+                <tr><td>Order Total</td></tr>
+                <tr><td>Status</td></tr>
+                <tr><td>View</td></tr>
             </Table.Header>
             <Table.Body data={orders} render={(order => <OrderRow key={order.id} order={order} isLoading={isLoading} />)} />
         </Table>

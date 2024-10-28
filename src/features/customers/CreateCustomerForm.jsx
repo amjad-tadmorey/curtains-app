@@ -20,13 +20,14 @@ function CreateCustomerForm({ onCloseModal }) {
         console.log("creating");
         createCustomer({
             ...getValues(),
-            adresses: [getValues().adress],
+            adresses: [getValues().adresses],
             orders: [],
             status: "active"
         }, {
             onSuccess: () => {
                 toast.success("Customer Created Successfuly")
                 reset()
+                onCloseModal()
                 // navigate(`/customers/${id}`)
             }
         })

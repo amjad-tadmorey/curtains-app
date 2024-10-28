@@ -35,6 +35,8 @@ function CusomerView() {
     const canceledOrders = customerOrders.filter((order) => order.status === 'canceled').length
     const damagedOrders = customerOrders.filter((order) => order.status === 'damaged').length
 
+    console.log(adresses);
+
 
     return (
         <>
