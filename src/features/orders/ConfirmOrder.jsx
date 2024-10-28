@@ -8,10 +8,11 @@ import { generateNumberId } from "../../utils/helpers"
 
 import Button from "../../ui/Button"
 import { getOrderById } from "../../services/ordersApi"
+import { useOrderDate } from "../../context/OrderDateContext"
 
 
 function ConfirmOrder({ onCloseModal }) {
-
+    const { orderDate } = useOrderDate()
     const { addOrder, isAdding } = useAddOrder()
     const navigate = useNavigate()
 
@@ -29,6 +30,7 @@ function ConfirmOrder({ onCloseModal }) {
             staticItems,
             rooms,
             generalInfo,
+            orderDate,
             orderTotal
         }
         addOrder(newOrder, {

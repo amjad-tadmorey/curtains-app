@@ -107,3 +107,17 @@ body {
         }
     }
 }
+
+a.active {
+    background-color: transparent;
+    color: white;
+}
+a.active p {
+    background-color: transparent;
+    color: white;
+}
+
+li:has(a.active) {
+    background-color: $color-primary;
+    color: #fff;
+}

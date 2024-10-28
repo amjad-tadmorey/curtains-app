@@ -1,5 +1,6 @@
 import OrdersTable from "../features/orders/OrdersTable"
 import AddOrder from "../features/orders/AddOrder"
+import ViewSchedule from "../features/orders/ViewSchedule"
 import OrdersStat from '../features/orders/OrdersStat'
 import PageHeading from "../ui/PageHeading"
 import TableHeading from "../ui/TableHeading"
@@ -12,7 +13,7 @@ function Orders() {
         <>
             <PageHeading label={"Orders"}>
                 <AddOrder />
-                {/* <AddSchedule /> */}
+                <ViewSchedule />
             </PageHeading>
             <OrdersStat />
             <Wrapper >

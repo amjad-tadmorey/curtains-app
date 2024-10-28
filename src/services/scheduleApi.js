@@ -15,9 +15,12 @@ export async function getSchedule() {
 }
 
 export async function updateSchedule(dayDate, updatedDay) {
+    console.log(dayDate);
+    console.log(updatedDay);
+
     const { data, error } = await supabase
         .from('schedule')
-        .update(updatedDay)
+        .update({ ...updatedDay })
         .eq('date', dayDate)
         .single()
     if (error) {

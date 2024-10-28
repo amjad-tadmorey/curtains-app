@@ -27,7 +27,7 @@ function PDFToPrint() {
     if (isLoadingOrder) return <Spinner />
 
 
-    const { id: orderId, created_at, generalInfo: { orderType, date, sales, showRoom, technical }, staticItems, rooms, status } = order
+    const { id: orderId, created_at, generalInfo: { orderType, sales, showRoom, technical }, staticItems, rooms, status, orderDate } = order
     const customerId = customer?.id
     const customerName = customer?.customerName
     const adress = customer?.adresses
@@ -37,7 +37,7 @@ function PDFToPrint() {
     return (
         <div className="" dir="rtl">
             <div className="flex align-center mt-2">
-                <img src="/src/assets/Logo.png" alt="" style={{width: "25rem"}}/>
+                <img src="/src/assets/Logo.png" alt="" style={{ width: "25rem" }} />
             </div>
             <div className='flex justify-center align-center gap-2 bordered-cards mt-2'>
                 <Card>
@@ -89,7 +89,7 @@ function PDFToPrint() {
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">تاريخ التسليم</h2>
-                            <h2>{date}</h2>
+                            <h2>{orderDate}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">تاريخ التعاقد</h2>

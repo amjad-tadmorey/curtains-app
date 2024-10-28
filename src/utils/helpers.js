@@ -132,16 +132,16 @@ export function getTotalOrdersByDate(orders) {
 }
 
 
-export function generateScheduleForSixMonths() {
+export function generateSchedule() {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const schedule = [];
     const today = new Date();
-    const sixMonthsFromNow = new Date(today);
-    sixMonthsFromNow.setMonth(today.getMonth() + 6);
+    const mounths = new Date(today);
+    mounths.setMonth(today.getMonth() + 3);
 
     let currentDate = new Date(today);
 
-    while (currentDate <= sixMonthsFromNow) {
+    while (currentDate <= mounths) {
         const dayOfWeek = daysOfWeek[currentDate.getDay()];
         const dateStr = currentDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 
@@ -152,4 +152,40 @@ export function generateScheduleForSixMonths() {
     }
 
     return schedule;
+}
+
+export function sortArrayByDate(array) {
+    return array.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
+
+export function groupOrdersByWeek(schedule) {
+    const weeks = {};
+
+    schedule.forEach(day => {
+        // Parse the day date
+        const orderDate = new Date(day.date); // Assuming the date property is a string in a recognizable format
+        const year = orderDate.getFullYear();
+        const weekNumber = getWeekNumber(orderDate); // Custom function to get the week number
+
+        // Create a key for the specific week
+        const weekKey = `${year}-W${weekNumber}`;
+
+        // Initialize the week array if it doesn't exist
+        if (!weeks[weekKey]) {
+            weeks[weekKey] = [];
+        }
+
+        // Add the day to the corresponding week
+        weeks[weekKey].push(day);
+    });
+
+    // Convert the weeks object to an array of arrays
+    return Object.values(weeks);
+}
+
+// Helper function to get the week number of the year
+function getWeekNumber(date) {
+    const startOfYear = new Date(date.getFullYear(), 0, 1);
+    const days = Math.floor((date - startOfYear) / (24 * 60 * 60 * 1000));
+    return Math.ceil((days + startOfYear.getDay() + 1) / 7);
 }
