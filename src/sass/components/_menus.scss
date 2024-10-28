@@ -1,0 +1,29 @@
+.menus {
+
+    &__list {
+        position: fixed;
+        background-color: $color-grey-1;
+        border-radius: 1rem;
+        padding: 1rem;
+        color: $color-grey-4;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+
+            img {
+                cursor: pointer;
+                width: 2rem;
+                opacity: .5;
+                transition: .2s ease;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

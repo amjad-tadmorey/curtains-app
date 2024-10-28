@@ -34,7 +34,6 @@ export default function ShecduleBox({ order }) {
         <div className={`schedule-box col-${takenBoxes}`}>
             <span>{customer?.customerName}</span>
             <span>{customer?.adresses}</span>
-
         </div>
     )
 }
