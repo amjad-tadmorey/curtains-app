@@ -1018,7 +1018,7 @@ li:has(a.active) {
 
 .widows-preview {
   background-color: #EEF0FA;
-  height: 10rem;
+  height: 12rem;
   padding: 2rem;
   display: flex;
   justify-content: center;

@@ -8,6 +8,7 @@ import { generateNumberId } from "../../utils/helpers"
 
 function Window({ window }) {
     const { imageId, src } = window
+    
     const [showForm, setShowForm] = useState(false)
     const [width, setWidth] = useState('')
     const [height, setHeight] = useState('')

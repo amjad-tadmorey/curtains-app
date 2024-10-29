@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form"
 import Button from "../../ui/Button"
 import RequiredMessage from "../../ui/RequiredMessage";
 import { useCreateCustomer } from "./useCreateCustomer";
-import { generateNumberId } from "../../utils/helpers";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
@@ -60,12 +59,18 @@ function CreateCustomerForm({ onCloseModal }) {
                                     {errors.customerName && <RequiredMessage>{errors.customerName.message}</RequiredMessage>}
                                 </label>
 
-                                <label htmlFor="phoneNumber">
-                                    <p className='label'>Phone Number</p>
-                                    <input type="text" name="phoneNumber" id="phoneNumber" className="create-form__field" {...register('phoneNumber', {
+                                <label htmlFor="phoneNumber_1">
+                                    <p className='label'>Phone Number 1</p>
+                                    <input type="text" name="phoneNumber_1" id="phoneNumber_1" className="create-form__field" {...register('phoneNumber_1', {
                                         required: "this field is required"
                                     })} />
-                                    {errors.phoneNumber && <RequiredMessage>{errors.phoneNumber.message}</RequiredMessage>}
+                                    {errors.phoneNumber_1 && <RequiredMessage>{errors.phoneNumber_1.message}</RequiredMessage>}
+                                </label>
+                                <label htmlFor="phoneNumber_2">
+                                    <p className='label'>Phone Number 2 (Optional)</p>
+                                    <input type="text" name="phoneNumber_2" id="phoneNumber_2" className="create-form__field" {...register('phoneNumber_2', {
+                                        required: "this field is required"
+                                    })} />
                                 </label>
 
                                 <label htmlFor="email">

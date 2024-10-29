@@ -8,7 +8,6 @@ import AddRoom from "./AddRoom";
 import SelectedItem from "./SelectedItem";
 import Button from "../../ui/Button"
 import Modal from "../../ui/Modal";
-import ScheduleForm from "./ScheduleForm";
 
 
 function WindowsForm({ onCloseModal }) {

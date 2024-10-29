@@ -115,13 +115,13 @@ export default function AddRoom({ setShowRoom, type }) {
     function handleAddMaterial(item, numId, btnId) {
         const { productName: product, productType } = item
         console.log(item);
-        
+
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
-        let sewingType = document.getElementById(`${item.code}-2`).value
+        let variation = document.getElementById(`${item.code}-2`).value
         let btn = document.getElementById(btnId)
-        console.log(sewingType);
-        
+
+        if (quantity === '' || variation === '') return
 
         const prevQuantity = prevRoomData?.roomMaterials?.filter((el) => el.product === product)[0].quantity
         console.log(prevQuantity);
@@ -134,11 +134,13 @@ export default function AddRoom({ setShowRoom, type }) {
 
         btn.disabled = true
 
+
+
         dispatch(addRoomMaterials({
             product,
             quantity,
             productType,
-            sewingType
+            variation
         }))
         if (type === "add") {
             dispatch(editQuantity({ product, quantity }))
@@ -148,10 +150,13 @@ export default function AddRoom({ setShowRoom, type }) {
     }
 
     function handleAddCleats(item, numId, btnId) {
-        const { productName: product, productType, sewingType } = item
+        const { productName: product, productType } = item
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
+        let variation = document.getElementById(`${item.code}-2`).value
         let btn = document.getElementById(btnId)
+
+        if (quantity === '' || variation === '') return
 
         const prevQuantity = prevRoomData?.roomCleates?.filter((el) => el.product === product)[0].quantity
         const compareVlaue = prevQuantity === undefined ? quantity : quantity - prevQuantity
@@ -167,7 +172,7 @@ export default function AddRoom({ setShowRoom, type }) {
             product,
             quantity,
             productType,
-            sewingType
+            variation
         }))
         if (type === "add") {
             dispatch(editQuantity({ product, quantity }))
@@ -238,14 +243,36 @@ export default function AddRoom({ setShowRoom, type }) {
 
                     {
                         items.map((item) => {
+                            console.log(item.productType);
+
                             return <div key={item.code} className='flex gap-1 mt-1'>
                                 <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
-                                <input type="number" name="" id={item.code} min={0} />
-                                <select name="" id={`${item.code}-2`}>
-                                    <option value="type-1">type-1</option>
-                                    <option value="type-2">type-2</option>
-                                    <option value="type-3">type-3</option>
-                                </select>
+                                <input type="number" name="" id={item.code} min={0} step={"0.01"} />
+                                {item.productType === "black-out" || item.productType === 'havey' || item.productType === 'light' ?
+                                    <select name="" id={`${item.code}-2`}>
+                                        <option disabled={true} value="">Choose</option>
+                                        <option value="عادي">عادي</option>
+                                        <option value="حلق">حلق</option>
+                                        <option value="تكسير">تكسير</option>
+                                        <option value="ويفي">ويفي</option>
+                                        <option value="شوكة">شوكة</option>
+                                        <option value="تدكيك">تدكيك</option>
+                                        <option value="ايكيا">ايكيا</option>
+                                    </select> : null
+                                }
+                                {item.productType === "accessory" || item.productType === "hook" ?
+                                    <select name="" id={`${item.code}-2`}>
+                                        <option disabled={true} value="">Choose</option>
+                                        <option value="فضي">فضي</option>
+                                        <option value="برونز">برونز</option>
+                                        <option value="احمر">احمر</option>
+                                    </select> : null
+                                }
+                                {item.productType === "rail" || item.productType === 'rod' || item.productType === 'oima' || item.productType === 'cleats' || item.productType === 'roll' ?
+                                    <select name="" id={`${item.code}-2`}>
+                                        <option disabled={true} value="">Closed</option>
+                                    </select> : null
+                                }
                                 <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
                                     e.preventDefault()
                                     handleAddMaterial(item, item.code, item.productName)
@@ -274,25 +301,33 @@ export default function AddRoom({ setShowRoom, type }) {
 
                     {
                         items.map((item) => {
-                            return <div key={item.code} className='flex gap-1 mt-1'>
-                                <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
-                                <select name="" id="" onChange={(e) => {
-                                    if (e.target.value === 'height') {
-                                        document.getElementById(item.code).disabled = true;
-                                    } else {
-                                        document.getElementById(item.code).disabled = false;
-                                    }
-                                }}>
-                                    <option value="width">Width</option>
-                                    <option value="height">height</option>
-                                </select>
+                            console.log(item.productType);
 
-                                <input type="number" name="" id={item.code} min={0} />
-                                <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
-                                    e.preventDefault()
-                                    handleAddCleats(item, item.code, item.productName)
-                                }} />
-                            </div>
+                            return item.productType === "black-out" || item.productType === 'havey' || item.productType === 'light' ?
+                                <div key={item.code} className='flex gap-1 mt-1'>
+                                    <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
+                                    <select name="" id="" onChange={(e) => {
+                                        if (e.target.value === 'height') {
+                                            document.getElementById(item.code).disabled = true;
+                                        } else {
+                                            document.getElementById(item.code).disabled = false;
+                                        }
+                                    }}>
+                                        <option value="width">Width</option>
+                                        <option value="height">height</option>
+                                    </select>
+
+                                    <input type="number" name="" id={item.code} min={0} step={"0.01"} />
+                                    <select name="" id={`${item.code}-2`}>
+                                        <option disabled={true} value="">Choose</option>
+                                        <option value="عادي">عادي</option>
+                                        <option value="سكوتش">سكوتش</option>
+                                    </select>
+                                    <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
+                                        e.preventDefault()
+                                        handleAddCleats(item, item.code, item.productName)
+                                    }} />
+                                </div> : null
                         })
                     }
                     <div className='flex align-center gap-1'>
@@ -315,7 +350,14 @@ export default function AddRoom({ setShowRoom, type }) {
 
                 <div className="widows-preview">
                     {
-                        windows.map(window => <img className="w-50px" src={window.src} key={window.windowId} />)
+                        windows.map(window => {
+                            return <div className="window-details" key={'1'}>
+                                <span className="window-width"> {window.width + " Cm"} <i className="window-line"></i></span>
+                                <span className="window-height"> {window.height + " Cm"} <span className="window-line"></span></span>
+                                <span className="window-heightType"> {window.heightType} <span className="window-line"></span></span>
+                                <img src={window.src} alt="" style={{width: "6rem"}} />
+                            </div>
+                        })
                     }
                 </div>
 
