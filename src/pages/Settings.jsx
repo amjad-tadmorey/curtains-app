@@ -2,9 +2,7 @@ import supabase from "../services/supabase"
 
 function Settings() {
     async function handleClick() {
-
-
-
+                                                                                                                                                                                        
     }
     return (
         <div>

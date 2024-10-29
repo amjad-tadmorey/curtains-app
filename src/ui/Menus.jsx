@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useContext } from "react"
 import { useState } from "react"
 import { createContext } from "react"
@@ -50,15 +51,15 @@ function List({ id, children }) {
         , document.body
     )
 }
-function Button({ children, icon, onClick }) {
+function Button({ children, icon, onClick, status }) {
     const { close } = useContext(MenusContext)
-    function handleClick() {
-        onClick?.()
+    function handleClick(e) {
+        onClick?.(e)
         close()
     }
-    return <li onClick={handleClick} >
+    return <li>
         <span>{children}</span>
-        <img src={icon} alt="" />
+        <img onClick={handleClick} className={status} src={icon} alt="" />
     </li>
 }
 

@@ -50,3 +50,18 @@ export async function addOrder(newOrder) {
     return data
 }
 
+
+export async function updateOrderState(id, newStatus) {
+
+    const { data, error } = await supabase
+        .from('orders')
+        .update({ status: newStatus })
+        .eq('id', id)
+        .select()
+    if (error) {
+        console.log(error);
+        throw new Error('could not be updated')
+    }
+
+    return data
+}

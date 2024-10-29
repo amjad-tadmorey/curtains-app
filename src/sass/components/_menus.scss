@@ -12,13 +12,17 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
 
 
             img {
                 cursor: pointer;
-                width: 2rem;
-                opacity: .5;
-                transition: .2s ease;
+                width: 2.5rem;
+                opacity: 0.5;
+                transition: 0.2s ease;
+                border-radius: .5rem;
+                padding: .5rem;
 
                 &:hover {
                     opacity: 1;

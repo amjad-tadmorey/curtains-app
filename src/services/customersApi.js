@@ -41,3 +41,18 @@ export async function createCustomer(newCustomer) {
     return data
 
 }
+
+export async function updateCustomerState(id, newStatus) {
+
+    const { data, error } = await supabase
+        .from('customers')
+        .update({ status: newStatus })
+        .eq('id', id)
+        .select()
+    if (error) {
+        console.log(error);
+        throw new Error('could not be updated')
+    }
+
+    return data
+}
