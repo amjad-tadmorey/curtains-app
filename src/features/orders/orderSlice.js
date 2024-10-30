@@ -5,6 +5,7 @@ const initialState = {
     items: [],
     staticItems: [],
     rooms: [],
+    cuttedOffItems: [],
 
     //reset after add room
     windows: [],
@@ -22,6 +23,9 @@ const orderSlice = createSlice({
         addItem(state, action) {
             state.items.push(action.payload)
             state.staticItems.push(action.payload)
+        },
+        addCuttedOffItem(state, action) {
+            state.cuttedOffItems.push(action.payload)
         },
         setItemQuantity(state, action) {
             const item = state.items.find(item => item.code === action.payload.code)
@@ -80,6 +84,7 @@ const orderSlice = createSlice({
 export const {
     addGeneralInfo,
     addItem,
+    addCuttedOffItem,
     setItemQuantity,
     editQuantity,
     removeItem,
@@ -97,6 +102,7 @@ export default orderSlice.reducer
 
 export const getGeneralInfo = (state) => state.order.generalInfo;
 export const getItems = (state) => state.order.items;
+export const getCuttedOffItems = (state) => state.order.cuttedOffItems;
 export const getItemByName = (product) => state => state.order.items.find(item => item.productName === product)
 export const getStaticItems = (state) => state.order.staticItems;
 export const getCurrentQuantityById = (id) => state => state.order.items.find(item => item.code === id)?.quantity ?? 0;

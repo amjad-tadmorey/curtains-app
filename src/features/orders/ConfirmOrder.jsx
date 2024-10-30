@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import toast from "react-hot-toast"
-import { clearState, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
+import { clearState, getCuttedOffItems, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
 import { useAddOrder } from "./useAddOrder"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router"
@@ -19,6 +19,7 @@ function ConfirmOrder({ onCloseModal }) {
     const generalInfo = useSelector(getGeneralInfo)
     const staticItems = useSelector(getStaticItems)
     const rooms = useSelector(getRooms)
+    const cuttedOffItems = useSelector(getCuttedOffItems)
 
     const orderTotal = staticItems.reduce((acc, cur) => acc + (cur.price * cur.quantity), 0)
 
@@ -31,7 +32,8 @@ function ConfirmOrder({ onCloseModal }) {
             rooms,
             generalInfo,
             orderDate,
-            orderTotal
+            orderTotal,
+            cuttedOffItems
         }
         addOrder(newOrder, {
             onSuccess: () => {

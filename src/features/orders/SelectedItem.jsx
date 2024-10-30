@@ -6,7 +6,6 @@ function SelectedItem({ item }) {
     const { code, oldID, productName, quantity, productType } = item
 
     const icon = renderItemIcon(productType)
-    console.log(item);
 
 
     return (

@@ -111,10 +111,8 @@ export default function AddRoom({ setShowRoom, type }) {
     const prevRoomData = useSelector(getRoomByName(selectedRoom))
 
 
-
     function handleAddMaterial(item, numId, btnId) {
         const { productName: product, productType } = item
-        console.log(item);
 
         const selectedItem = items.find(item => item.productName === product)
         let quantity = document.getElementById(numId).value
@@ -219,7 +217,7 @@ export default function AddRoom({ setShowRoom, type }) {
                         <input type="text" value={roomName} onChange={(e) => setRoomName(e.target.value)} />
                     </label> :
                         <select name="" id="" value={selectedRoom} onChange={(e) => setSelectedRoom(e.target.value)}>
-                            <option disabled={true} value="">Choose</option>
+                            <option disabled={false}>Choose</option>
                             {rooms.map((el) => <option key={el.roomName} value={el.roomName}>{el.roomName}</option>)}
                         </select>
                 }
@@ -243,8 +241,6 @@ export default function AddRoom({ setShowRoom, type }) {
 
                     {
                         items.map((item) => {
-                            console.log(item.productType);
-
                             return <div key={item.code} className='flex gap-1 mt-1'>
                                 <input key={items.indexOf(item)} disabled={true} value={item.productName} type="text" name="" id="" />
                                 <input type="number" name="" id={item.code} min={0} step={"0.01"} />
@@ -270,7 +266,7 @@ export default function AddRoom({ setShowRoom, type }) {
                                 }
                                 {item.productType === "rail" || item.productType === 'rod' || item.productType === 'oima' || item.productType === 'cleats' || item.productType === 'roll' ?
                                     <select name="" id={`${item.code}-2`}>
-                                        <option disabled={true} value="">Closed</option>
+                                        <option value="closed">Closed</option>
                                     </select> : null
                                 }
                                 <Button text={"Add"} id={item.productName} type={"primary"} size={"small"} onClick={(e) => {
@@ -355,7 +351,7 @@ export default function AddRoom({ setShowRoom, type }) {
                                 <span className="window-width"> {window.width + " Cm"} <i className="window-line"></i></span>
                                 <span className="window-height"> {window.height + " Cm"} <span className="window-line"></span></span>
                                 <span className="window-heightType"> {window.heightType} <span className="window-line"></span></span>
-                                <img src={window.src} alt="" style={{width: "6rem"}} />
+                                <img src={window.src} alt="" style={{ width: "6rem" }} />
                             </div>
                         })
                     }
