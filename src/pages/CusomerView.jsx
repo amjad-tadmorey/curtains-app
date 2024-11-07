@@ -24,7 +24,7 @@ function CusomerView() {
 
     if (customer === undefined || isLoading) return <Spinner />
 
-    const { adresses, customerName, email, id, phoneNumber, status } = customer
+    const { adresses, customerName, email, id, phoneNumber_1, phoneNumber_2, status } = customer
     const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[1] === id)
 
     const totalOrders = customerOrders.reduce((acc, cur) => acc + cur.orderTotal, 0)
@@ -55,7 +55,7 @@ function CusomerView() {
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
                             <p>Phone</p>
-                            <h2>{phoneNumber}</h2>
+                            <h2>{phoneNumber_1} {phoneNumber_2 && "/" + phoneNumber_2}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <p>Email</p>

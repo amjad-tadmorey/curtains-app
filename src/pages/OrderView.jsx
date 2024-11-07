@@ -27,12 +27,15 @@ function OrderView() {
 
     if (isLoadingOrder) return <Spinner />
 
-    const { id: orderId, created_at, generalInfo: { orderType }, staticItems, rooms, status, orderTotal, orderDate } = order
+    const { id: orderId, created_at, generalInfo: { orderType }, staticItems, rooms, status, orderTotal, orderDate, cuttedOffItems } = order
     const customerId = customer?.id
     const customerName = customer?.customerName
     const adress = customer?.adresses
     const phoneNumber = customer?.phoneNumber
     const email = customer?.email
+
+    console.log(cuttedOffItems);
+
 
 
     function handleToPDF() {
@@ -93,6 +96,15 @@ function OrderView() {
                     </Table.Header>
                     <Table.Body data={staticItems} render={(item => <ItemRow key={item.code} item={item} />)} />
                 </Table>
+                <div>
+                    {cuttedOffItems.map(el =>
+                        <div>
+                            <h1>Cutted Off Quantity (Must Style)</h1>
+                            <p>{el.product}</p>
+                            <p className='mt-2'>{el.quantity}</p>
+                        </div>
+                    )}
+                </div>
                 <div className='ml-auto p-2'>
                     <Button type='primary' text="Preview As PDF" size="big" onClick={handleToPDF} />
                 </div>

@@ -1,4 +1,9 @@
 .schedule {
+
+    .table {
+        margin-bottom: 5rem;
+    }
+
     .table__row--with-borders {
         padding: 0 0 0 1rem !important;
         align-items: center;
@@ -25,17 +30,17 @@
 
 
 .col-1 {
-    width: 100%;
+    width: 25%;
 }
 
 .col-2 {
-    width: 200%;
+    width: 50%;
 }
 
 .col-3 {
-    width: 300%;
+    width: 75%;
 }
 
 .col-4 {
-    width: 400%;
+    width: 100%;
 }

@@ -1018,7 +1018,7 @@ li:has(a.active) {
 
 .widows-preview {
   background-color: #EEF0FA;
-  height: 10rem;
+  height: 12rem;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -1316,6 +1316,9 @@ li:has(a.active) {
   grid-row: 4/5;
 }
 
+.schedule .table {
+  margin-bottom: 5rem;
+}
 .schedule .table__row--with-borders {
   padding: 0 0 0 1rem !important;
   align-items: center;
@@ -1339,19 +1342,19 @@ li:has(a.active) {
 }
 
 .col-1 {
-  width: 100%;
+  width: 25%;
 }
 
 .col-2 {
-  width: 200%;
+  width: 50%;
 }
 
 .col-3 {
-  width: 300%;
+  width: 75%;
 }
 
 .col-4 {
-  width: 400%;
+  width: 100%;
 }
 
 .no-data {

@@ -12,7 +12,7 @@ import { updateCustomerState } from "../../services/customersApi";
 function CustomerRow({ customer }) {
     const navigate = useNavigate()
     const queryClient = useQueryClient()
-    const { id, customerName, adresses, phoneNumber, orders, created_at, status } = customer
+    const { id, customerName, adresses, phoneNumber_1, orders, created_at, status } = customer
 
 
     function handleAction(e) {
@@ -28,7 +28,7 @@ function CustomerRow({ customer }) {
         <Table.Row>
             <td className="table__item ">{customerName}</td>
             <td className="table__item ">{adresses[0]}</td>
-            <td className="table__item ">{phoneNumber}</td>
+            <td className="table__item ">{phoneNumber_1}</td>
             <td className="table__item ">{orders}</td>
             <td className="table__item ">{formatDate(created_at)}</td>
             <td className="">

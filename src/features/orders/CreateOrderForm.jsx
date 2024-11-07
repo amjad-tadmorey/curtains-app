@@ -58,12 +58,22 @@ function CreateOrderForm({ onCloseModal }) {
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}
+
+                                <select name="customers" id="deliveryType" className='create-form__field' {...register("deliveryType", {
+                                    required: "this field is required"
+                                })}>
+                                    <option value="">Choose A Delivery Type</option>
+                                    <option value="home-delivery">Home Delivery</option>
+                                    <option value="showroom-delivery">Showroom Delivey</option>
+                                </select>
+                                {errors.deliveryType && <RequiredMessage>{errors.deliveryType.message}</RequiredMessage>}
+
                                 <select name="customers" id="orderType" className='create-form__field' {...register("orderType", {
                                     required: "this field is required"
                                 })}>
-                                    <option value="">Choose A Type</option>
-                                    <option value="home-delivery">Home Delivery</option>
-                                    <option value="showroom-delivery">Showroom Delivey</option>
+                                    <option value="">Choose An Order Type</option>
+                                    <option value="installation">installation</option>
+                                    <option value="raw">raw</option>
                                 </select>
                                 {errors.orderType && <RequiredMessage>{errors.orderType.message}</RequiredMessage>}
 
