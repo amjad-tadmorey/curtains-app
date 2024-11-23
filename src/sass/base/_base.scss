@@ -112,6 +112,7 @@ a.active {
     background-color: transparent;
     color: white;
 }
+
 a.active p {
     background-color: transparent;
     color: white;
@@ -120,4 +121,28 @@ a.active p {
 li:has(a.active) {
     background-color: $color-primary;
     color: #fff;
+}
+
+.cutted {
+    background-color: $color-label-red-light;
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-left: 2rem;
+
+    h1 {
+        color: $color-red;
+        font-size: 1.6rem;
+        margin-bottom: .8rem;
+    }
+
+    .flex {
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        border-top: 1px solid;
+        padding-top: 1rem;
+        font-weight: bold;
+        color: $color-grey-3;
+    }
 }

@@ -31,11 +31,11 @@ function PDFToPrint() {
     const customerId = customer?.id
     const customerName = customer?.customerName
     const adress = customer?.adresses
-    const phoneNumber = customer?.phoneNumber
+    const phoneNumber_1 = customer?.phoneNumber_1
     const email = customer?.email
 
     return (
-        <div className="" dir="rtl">
+        <div className="p-3" dir="rtl">
             <div className="flex align-center mt-2">
                 <img src="/src/assets/Logo.png" alt="" style={{ width: "25rem" }} />
             </div>
@@ -51,7 +51,7 @@ function PDFToPrint() {
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">رقم الهاتف</h2>
-                            <h2>{phoneNumber}</h2>
+                            <h2>{phoneNumber_1}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">العنوان</h2>
@@ -103,9 +103,9 @@ function PDFToPrint() {
 
                 <Table cols="repeat(2, 1fr) auto">
                     <Table.Header>
-                        <div className="fs-2">كود الصنف</div>
-                        <div className="fs-2">اسم الصنف</div>
                         <div className="fs-2">الكمية</div>
+                        <div className="fs-2">اسم الصنف</div>
+                        <div className="fs-2">كود الصنف</div>
                     </Table.Header>
                     <Table.Body data={staticItems} render={(item => <PdfItem item={item} />)} />
                 </Table>

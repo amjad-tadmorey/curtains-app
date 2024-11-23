@@ -37,7 +37,7 @@ export default function DashboardStat() {
     const showroomOrdersPie = (summarizeOrders(orders));
     const ordersSalesByDate = getTotalOrdersByDate(orders)
     console.log(ordersSalesByDate);
-    
+
 
     return (
         <div className='dashboard'>
@@ -120,18 +120,28 @@ export default function DashboardStat() {
                     </div>
                 </Card.Row>
             </Card>
-            <Card>
+            <Card color={'green'}>
                 <Card.Header>
                     <img src="/src/assets/icons/small-folder.svg" alt="" />
+                    <h1>New Items</h1>
                 </Card.Header>
                 <Card.Row>
-                    <div className='flex flex-col gap-1'>
-                        <p>X</p>
-                        <h2>X</h2>
-                    </div>
-                    <div className='flex flex-col gap-1'>
-                        <p>X</p>
-                        <h2>X</h2>
+                    <div className='w-100'>
+                        <div className='flex justify-between fs-2 p-1'>
+                            <p>new Item Name</p>
+                            <p>Type</p>
+                            <p>Price</p>
+                        </div>
+                        <div className='flex justify-between fs-2 p-1'>
+                            <p>new Item Name</p>
+                            <p>Type</p>
+                            <p>Price</p>
+                        </div>
+                        <div className='flex justify-between fs-2 p-1'>
+                            <p>new Item Name</p>
+                            <p>Type</p>
+                            <p>Price</p>
+                        </div>
                     </div>
                 </Card.Row>
             </Card>
@@ -142,11 +152,11 @@ export default function DashboardStat() {
 
 
                 {
-                    recentOrders.map((order) => <Card.Row key={recentOrders.indexOf(order)}>
+                    recentOrders.map((order) => <div className='flex justify-between font-bold fs-2 color-grey-3 bb-1 pb-1' key={recentOrders.indexOf(order)}>
                         <p>{order.generalInfo.customer.split(',')[0]}</p>
                         <p>{order.orderTotal}</p>
                         <p>{order.status}</p>
-                    </Card.Row>)
+                    </div>)
                 }
 
             </Card>

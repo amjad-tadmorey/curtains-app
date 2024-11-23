@@ -14,12 +14,11 @@ function CustomersTable() {
     if (customers.length === 0) return <NoData resource={'Customers'} icon={"src/assets/icons/2user.svg"} />
 
     return (
-        <Table cols="13rem 22rem repeat(5, 1fr)">
+        <Table cols="15rem 22rem repeat(4, 1fr)">
             <Table.Header>
                 <div>Customer Name</div>
                 <div>Adress</div>
                 <div>Phone</div>
-                <div>Orders</div>
                 <div>Customer Since</div>
                 <div>Status</div>
                 <div>Actions</div>

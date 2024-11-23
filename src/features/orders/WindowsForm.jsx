@@ -29,7 +29,7 @@ function WindowsForm({ onCloseModal }) {
     function handleAddCuttedOffItem(item, numId, btnId) {
         const { productName: product } = item
 
-        let quantity = document.getElementById(numId).value
+        let quantity = Math.round((document.getElementById(numId).value) * 10) / 10;
         let btn = document.getElementById(btnId)
 
         btn.disabled = true

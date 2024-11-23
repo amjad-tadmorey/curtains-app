@@ -14,7 +14,8 @@ function CustomerRow({ customer }) {
     const queryClient = useQueryClient()
     const { id, customerName, adresses, phoneNumber_1, orders, created_at, status } = customer
 
-
+    console.log(customer);
+    
     function handleAction(e) {
         console.log(e.target.className);
         console.log(id);
@@ -29,7 +30,6 @@ function CustomerRow({ customer }) {
             <td className="table__item ">{customerName}</td>
             <td className="table__item ">{adresses[0]}</td>
             <td className="table__item ">{phoneNumber_1}</td>
-            <td className="table__item ">{orders}</td>
             <td className="table__item ">{formatDate(created_at)}</td>
             <td className="">
                 <Tag role="table__item " status={status}>{status}</Tag>

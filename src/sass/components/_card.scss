@@ -8,9 +8,13 @@
     flex: 1;
 
     &--primary {
-        background-color: $color-primary;
+        background-color: $color-label-red-light;
+        color: $color-label-red;
+    }
 
-        color: #fff;
+    &--green {
+        background-color: $color-label-green-light;
+        color: $color-label-green;
     }
 
     &__header {

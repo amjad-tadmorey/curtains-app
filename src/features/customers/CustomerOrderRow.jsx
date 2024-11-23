@@ -3,11 +3,13 @@ import Table from "../../ui/Table"
 import Tag from "../../ui/Tag";
 
 function CustomerOrderRow({ order }) {
-    const { generalInfo: { date, orderType }, id, status, orderTotal } = order
+    const { generalInfo: { orderType }, orderDate, id, status, orderTotal } = order
+    console.log(order);
+
 
     return (
         <Table.Row>
-            <div className="table__item">{date}</div>
+            <div className="table__item">{orderDate}</div>
             <div className="table__item">{orderType}</div>
             <div className="table__item">{id}</div>
             <div className="table__item">{orderTotal}</div>

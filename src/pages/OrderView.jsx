@@ -31,10 +31,14 @@ function OrderView() {
     const customerId = customer?.id
     const customerName = customer?.customerName
     const adress = customer?.adresses
-    const phoneNumber = customer?.phoneNumber
+    const phoneNumber_1 = customer?.phoneNumber_1
+    const phoneNumber_2 = customer?.phoneNumber_2
     const email = customer?.email
 
     console.log(cuttedOffItems);
+
+    console.log(customer);
+
 
 
 
@@ -48,7 +52,7 @@ function OrderView() {
             <div className='flex justify-center align-center gap-2'>
                 <Card>
                     <Card.Header>
-                        <img src='/src/assets/icons/profile.svg' />
+                        <img src='/src/assets/icons/profile.svg' className='pointer' onClick={() => navigate(`/customers/${customerId}`)} />
                         <div className='flex flex-col gap-1'>
                             <h2>{customerName}</h2>
                             <p>Last order X</p>
@@ -60,7 +64,7 @@ function OrderView() {
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
                             <p>Phone</p>
-                            <h2>{phoneNumber}</h2>
+                            <h2>{phoneNumber_1}{phoneNumber_2 !== null && " / " + phoneNumber_2}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <p>Email</p>
@@ -96,17 +100,19 @@ function OrderView() {
                     </Table.Header>
                     <Table.Body data={staticItems} render={(item => <ItemRow key={item.code} item={item} />)} />
                 </Table>
-                <div>
+                <div className='cutted'>
                     {cuttedOffItems.map(el =>
                         <div>
-                            <h1>Cutted Off Quantity (Must Style)</h1>
-                            <p>{el.product}</p>
-                            <p className='mt-2'>{el.quantity}</p>
+                            <h1>Cutted Off Quantity</h1>
+                            <div className='flex'>
+                                <p>{el.product}</p>
+                                <p className=''>{el.quantity}</p>
+                            </div>
                         </div>
                     )}
                 </div>
                 <div className='ml-auto p-2'>
-                    <Button type='primary' text="Preview As PDF" size="big" onClick={handleToPDF} />
+                    <Button type='primary' text="Preview As PDF" size="big" disabled={status === 'closed'} onClick={handleToPDF} />
                 </div>
             </Wrapper>
         </>

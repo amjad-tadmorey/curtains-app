@@ -115,7 +115,7 @@ export default function AddRoom({ setShowRoom, type }) {
         const { productName: product, productType } = item
 
         const selectedItem = items.find(item => item.productName === product)
-        let quantity = document.getElementById(numId).value
+        let quantity = Math.round((document.getElementById(numId).value) * 10) / 10;
         let variation = document.getElementById(`${item.code}-2`).value
         let btn = document.getElementById(btnId)
 
@@ -150,7 +150,7 @@ export default function AddRoom({ setShowRoom, type }) {
     function handleAddCleats(item, numId, btnId) {
         const { productName: product, productType } = item
         const selectedItem = items.find(item => item.productName === product)
-        let quantity = document.getElementById(numId).value
+        let quantity = Math.round((document.getElementById(numId).value) * 10) / 10;
         let variation = document.getElementById(`${item.code}-2`).value
         let btn = document.getElementById(btnId)
 
@@ -174,6 +174,8 @@ export default function AddRoom({ setShowRoom, type }) {
         }))
         if (type === "add") {
             dispatch(editQuantity({ product, quantity }))
+            console.log(quantity);
+            
         } else if (type === "edit") {
             dispatch(editQuantity({ product, quantity: quantity - prevQuantity }))
         }

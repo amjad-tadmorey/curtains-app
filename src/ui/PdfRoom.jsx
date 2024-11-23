@@ -13,6 +13,8 @@ function PdfRoom({ room }) {
     const { roomName, roomMaterials, roomCleats, windows, notes } = room
 
     const blackout = roomMaterials.filter((mat) => mat.productType === "black-out")
+    console.log(blackout);
+
     const light = roomMaterials.filter((mat) => mat.productType === "light")
     const havey = roomMaterials.filter((mat) => mat.productType === "havey")
     const hook = roomMaterials.filter((mat) => mat.productType === "hook")
@@ -25,7 +27,6 @@ function PdfRoom({ room }) {
     const railrDivision = groupByQuantity(rail);
     const rodDivision = groupByQuantity(rod);
 
-    console.log(blackout);
 
 
     return (
@@ -46,158 +47,160 @@ function PdfRoom({ room }) {
 
 
                             {
-                                blackout.length > 0 ? blackout.map((el) => {
+                                blackout.length > 0 && blackout.map((el) =>
 
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">بلاك :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                }) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">بلاك :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
                             }
                             {
-                                light.length > 0 ? light.map((el) =>
+                                light.length > 0 && light.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">خفيف :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">خفيف :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">خفيف :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                havey.length > 0 ? havey.map((el) =>
+                                havey.length > 0 && havey.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">ثقيل :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">ثقيل :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">ثقيل :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                rail.length > 0 ? rail.map((el) =>
+                                rail.length > 0 && rail.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">مجر :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">مجر :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">مجر :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                rod.length > 0 ? rod.map((el) =>
+                                rod.length > 0 && rod.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">مواسير :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">مواسير :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">مواسير :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                roll.length > 0 ? roll.map((el) =>
+                                roll.length > 0 && roll.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">رول :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">رول :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">رول :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                hook.length > 0 ? hook.map((el) =>
+                                hook.length > 0 && hook.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">شماعات :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">شماعات :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">شماعات :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                accessory.length > 0 ? accessory.map((el) =>
+                                accessory.length > 0 && accessory.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">اكسسوار :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">اكسسوار :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">اكسسوار :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
                             {
-                                oima.length > 0 ? oima.map((el) =>
+                                oima.length > 0 && oima.map((el) =>
 
                                     <Table.Row withBorders={true} >
                                         <div key={el.quantity} className=" heading-2">أويمة :</div>
                                         <div className=" heading-2">{el?.product || "_"}</div>
                                         <div className=" heading-2">{el?.quantity || "_"}</div>
-                                        <div className=" heading-2">{el?.sewingType || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
                                     </Table.Row>
-                                ) :
-                                    <Table.Row withBorders={true} >
-                                        <div className=" heading-2">أويمة :</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                        <div className=" heading-2">{"_"}</div>
-                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">أويمة :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
                             }
 
                         </Table.StaticBody>

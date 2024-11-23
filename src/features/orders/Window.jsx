@@ -62,9 +62,9 @@ function Window({ window }) {
                                     <p>Height Type</p>
                                     <select className="flex-1" name="" id="" value={heightType} onChange={(e) => setHeightType(e.target.value)}>
                                         <option value="">Choose</option>
-                                        <option value="full">Full</option>
-                                        <option value="net">Net</option>
-                                        <option value="installation">Installation</option>
+                                        <option value="K">K</option>
+                                        <option value="S">S</option>
+                                        <option value="T">T</option>
                                     </select>
                                 </div>
 

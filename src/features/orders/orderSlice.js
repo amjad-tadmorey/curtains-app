@@ -37,7 +37,8 @@ const orderSlice = createSlice({
         editQuantity(state, action) {
             const item = state.items.find(item => item.productName === action.payload.product)
             if (!item) return
-            item.quantity -= action.payload.quantity
+            // item.quantity -= action.payload.quantity
+            item.quantity = Math.round((item.quantity - action.payload.quantity) * 10) / 10
         },
         removeItem(state, action) {
             const updatedItems = state.items.filter(item => item.code !== action.payload)

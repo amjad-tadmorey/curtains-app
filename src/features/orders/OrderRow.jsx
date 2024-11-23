@@ -15,16 +15,28 @@ function OrderRow({ order }) {
     const queryClient = useQueryClient()
 
     const { id, status, generalInfo, orderTotal, orderDate } = order
+    console.log(order);
+
     const { customer, orderType } = generalInfo
     const [customerName, customerId] = customer.split(",")
 
     function handleAction(e) {
-        console.log(e.target.className);
-        console.log(id);
 
-        updateOrderState(id, e.target.className)
-        queryClient.invalidateQueries({ queryKey: ['orders'] })
-        toast.success("the order status has been updated successfuly")
+        if (status !== 'closed') {
+            updateOrderState(id, e.target.className)
+            toast.success("the order status has been updated successfuly")
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+            queryClient.invalidateQueries({ queryKey: ['orders'] })
+        } else {
+            toast('Order is Already Closed!', {
+                icon: '😐',
+            });
+        }
+
     }
 
 
@@ -42,9 +54,12 @@ function OrderRow({ order }) {
                     <Menus>
                         <Menus.Toggle id={id}></Menus.Toggle>
                         <Menus.List id={id}>
-                            <Menus.Button onClick={handleAction} status={'completed'} icon={'/src/assets/icons/completed.svg'}>mark as Completed</Menus.Button>
-                            <Menus.Button onClick={handleAction} status={'returned'} icon={'/src/assets/icons/returned.svg'}>mark as Returned</Menus.Button>
-                            <Menus.Button onClick={handleAction} status={'damaged'} icon={'/src/assets/icons/damaged.svg'}>mark as Damaged</Menus.Button>
+                            {status !== 'closed' && <>
+
+                                <Menus.Button onClick={handleAction} status={'completed'} icon={'/src/assets/icons/completed.svg'}>mark as Completed</Menus.Button>
+                                <Menus.Button onClick={handleAction} status={'returned'} icon={'/src/assets/icons/returned.svg'}>mark as Returned</Menus.Button>
+                                <Menus.Button onClick={handleAction} status={'damaged'} icon={'/src/assets/icons/damaged.svg'}>mark as Damaged</Menus.Button>                            </>}
+
                             <Menus.Button onClick={handleAction} status={'closed'} icon={'/src/assets/icons/closed.svg'}>mark as Closed</Menus.Button>
                         </Menus.List>
                     </Menus>

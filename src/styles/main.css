@@ -107,6 +107,28 @@ li:has(a.active) {
   color: #fff;
 }
 
+.cutted {
+  background-color: #fee2e2;
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-left: 2rem;
+}
+.cutted h1 {
+  color: #CC5F5F;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+.cutted .flex {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  border-top: 1px solid;
+  padding-top: 1rem;
+  font-weight: bold;
+  color: #5E6366;
+}
+
 .w-fit {
   width: fit-content !important;
 }
@@ -183,8 +205,16 @@ li:has(a.active) {
   color: #1C1D22 !important;
 }
 
+.color-grey-3 {
+  color: #5E6366 !important;
+}
+
 .color-red {
   color: #CC5F5F;
+}
+
+.bb-1 {
+  border-bottom: 1px solid;
 }
 
 .text-center {
@@ -259,6 +289,10 @@ li:has(a.active) {
   margin-left: auto;
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
 .p-2 {
   padding: 2rem;
 }
@@ -291,6 +325,10 @@ li:has(a.active) {
 
 .text-align-center {
   text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 @keyframes opan-modal {
@@ -1084,8 +1122,12 @@ li:has(a.active) {
   flex: 1;
 }
 .card--primary {
-  background-color: #e52a3b;
-  color: #fff;
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+.card--green {
+  background-color: #dcfce7;
+  color: #15803d;
 }
 .card__header {
   margin-bottom: 2rem;
@@ -1204,10 +1246,10 @@ li:has(a.active) {
   border-bottom: 1px solid #BEC0CA;
 }
 .pdf__room-materials {
-  height: fit-content;
   padding: 1rem;
   width: 50%;
   border-left: 2px solid #BEC0CA;
+  overflow: hidden;
 }
 .pdf__room-materials > div {
   display: flex;
@@ -1241,7 +1283,7 @@ li:has(a.active) {
   padding: 1rem;
 }
 .window-details span {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
 
 .window-width {
@@ -1268,12 +1310,19 @@ li:has(a.active) {
   gap: 1rem;
   align-items: center;
   top: 0;
-  left: -6rem;
+  left: -10rem;
 }
 .window-height .window-line {
   height: 100%;
   width: 0.2rem;
   background-color: #5E6366;
+}
+
+.window-heightType {
+  position: absolute;
+  left: -32%;
+  bottom: 0;
+  font-size: 3rem !important;
 }
 
 .dashboard {
