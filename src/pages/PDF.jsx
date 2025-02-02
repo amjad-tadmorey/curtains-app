@@ -9,6 +9,7 @@ import html2canvas from "html2canvas"
 import jsPDF from "jspdf"
 import Button from "../ui/Button"
 import { formatDate } from "../utils/helpers"
+import Spinner from "../ui/Spinner"
 
 function PDFToPrint() {
     const { isLoadingOrder, order } = useGetOrderById()
@@ -16,29 +17,30 @@ function PDFToPrint() {
 
     useEffect(() => {
         async function getCustomer() {
-            const customerApi = await getCustomerById(order?.generalInfo?.customer)
+            if (isLoadingOrder) return
+            const customerApi = await getCustomerById(order?.generalInfo?.customer.split(',')[1])
             setCustomer(customerApi)
         }
         getCustomer()
     }, [order])
 
-    if (isLoadingOrder) return null
+    if (isLoadingOrder) return <Spinner />
+    console.log(order);
+    
 
-
-    const { id: orderId, created__at, generalInfo: { orderType, date, sales, showRoom, technical }, staticItems, rooms, status } = order
+    const { id: orderId, created_at, generalInfo: { orderType, sales, showRoom, technical }, staticItems, rooms, status, orderDate } = order
     const customerId = customer?.id
-    const customerName = customer?.name
-    const adress = customer?.adress
-    const phoneNumber = customer?.phoneNumber
+    const customerName = customer?.customerName
+    const adress = customer?.adresses
+    const phoneNumber_1 = customer?.phoneNumber_1
     const email = customer?.email
 
-
-
-
-
     return (
-        <div className="" dir="rtl">
-            <div className='flex justify-center align-center gap-2'>
+        <div className="p-3" dir="rtl">
+            <div className="flex align-center mt-2">
+                <img src="/src/assets/Logo.png" alt="" style={{ width: "25rem" }} />
+            </div>
+            <div className='flex justify-center align-center gap-2 bordered-cards mt-2'>
                 <Card>
                     <Card.Header>
                         <img src='/src/assets/icons/profile.svg' />
@@ -50,7 +52,7 @@ function PDFToPrint() {
                     <Card.Row>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">رقم الهاتف</h2>
-                            <h2>{phoneNumber}</h2>
+                            <h2>{phoneNumber_1}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">العنوان</h2>
@@ -88,11 +90,11 @@ function PDFToPrint() {
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">تاريخ التسليم</h2>
-                            <h2>{date}</h2>
+                            <h2>{orderDate}</h2>
                         </div>
                         <div className='flex flex-col gap-1'>
                             <h2 className="heading-2">تاريخ التعاقد</h2>
-                            <h2>{formatDate(created__at)}</h2>
+                            <h2>{formatDate(created_at)}</h2>
                         </div>
                     </Card.Row>
                 </Card>
@@ -100,11 +102,11 @@ function PDFToPrint() {
             <div className="pdf__items">
                 <h3 className="heading-2 mb-3">المنتجات</h3>
 
-                <Table>
+                <Table cols="repeat(2, 1fr) auto">
                     <Table.Header>
-                        <div className="fs-2">كود الصنف</div>
-                        <div className="fs-2">اسم الصنف</div>
                         <div className="fs-2">الكمية</div>
+                        <div className="fs-2">اسم الصنف</div>
+                        <div className="fs-2">كود الصنف</div>
                     </Table.Header>
                     <Table.Body data={staticItems} render={(item => <PdfItem item={item} />)} />
                 </Table>

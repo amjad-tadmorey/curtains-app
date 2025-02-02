@@ -4,9 +4,11 @@ import Tag from "./Tag";
 
 const CardContext = createContext()
 
-function Card({ children }) {
-    return <CardContext.Provider>
-        <div className="card">
+function Card({ children, color }) {
+    return <CardContext.Provider
+        value={{}}
+    >
+        <div className={`card card--${color}`}>
             {children}
         </div>
     </CardContext.Provider>

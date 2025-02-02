@@ -1,7 +1,18 @@
+import { useAddOrder } from "../features/orders/useAddOrder"
+import supabase from "../services/supabase"
+
+
+/* */
+
 function Settings() {
+
+    async function handleClick() {
+
+    }
     return (
         <div>
             Settings
+            <button onClick={handleClick}>Add Product</button>
         </div>
     )
 }

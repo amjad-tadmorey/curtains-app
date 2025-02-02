@@ -1,19 +1,21 @@
 import OrdersTable from "../features/orders/OrdersTable"
 import AddOrder from "../features/orders/AddOrder"
+import ViewSchedule from "../features/orders/ViewSchedule"
+import OrdersStat from '../features/orders/OrdersStat'
 import PageHeading from "../ui/PageHeading"
-import SectionStats from "../ui/SectionStats"
 import TableHeading from "../ui/TableHeading"
 import Wrapper from "../ui/Wrapper"
 
 
 function Orders() {
+    
     return (
         <>
             <PageHeading label={"Orders"}>
                 <AddOrder />
+                <ViewSchedule />
             </PageHeading>
-            <SectionStats />
-
+            <OrdersStat />
             <Wrapper >
                 <TableHeading label='Orders' />
                 <OrdersTable />

@@ -4,6 +4,9 @@ import { useOrders } from './useOrders'
 import Table from "../../ui/Table"
 import OrderRow from "./OrderRow"
 import Spinner from '../../ui/Spinner'
+import NoData from '../../ui/NoData'
+import Menus from '../../ui/Menus'
+
 
 
 function OrdersTable() {
@@ -15,18 +18,23 @@ function OrdersTable() {
 
     if (isAdding || isLoading) return <Spinner />
 
+    if (orders.length === 0) return <NoData resource={'Orders'} icon={'src/assets/icons/bag.svg'} />
+
     return (
-        <Table >
-            <Table.Header>
-                <div className='w-16'>Customer Name</div>
-                <div className='w-16'>Order Date</div>
-                <div className='w-16'>Order Type</div>
-                <div className='w-16'>Tracking ID</div>
-                <div className='w-16'>Order Total</div>
-                <div className='w-16'>Status</div>
-            </Table.Header>
-            <Table.Body data={orders} render={(order => <OrderRow key={order.id} order={order} isLoading={isLoading} />)} />
-        </Table>
+        <Menus>
+            <Table cols="repeat(7, 1fr)">
+                <Table.Header>
+                    <tr><td>Customer Name</td></tr>
+                    <tr><td>Order Date</td></tr>
+                    <tr><td>Order Type</td></tr>
+                    <tr><td>Tracking ID</td></tr>
+                    <tr><td>Order Total</td></tr>
+                    <tr><td>Status</td></tr>
+                    <tr><td>Acions</td></tr>
+                </Table.Header>
+                <Table.Body data={orders} render={(order => <OrderRow key={order.id} order={order} isLoading={isLoading} />)} />
+            </Table>
+        </Menus>
     )
 }
 

@@ -3,9 +3,12 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addWindow } from "./orderSlice"
 import Button from "../../ui/Button"
+import { createPortal } from "react-dom"
+import { generateNumberId } from "../../utils/helpers"
 
 function Window({ window }) {
     const { imageId, src } = window
+    
     const [showForm, setShowForm] = useState(false)
     const [width, setWidth] = useState('')
     const [height, setHeight] = useState('')
@@ -17,8 +20,7 @@ function Window({ window }) {
 
     function handleSubmit() {
         const newWindow = {
-            windowId: Math.random(),
-            imageId,
+            windowId: generateNumberId(),
             src,
             width,
             height,
@@ -31,14 +33,20 @@ function Window({ window }) {
         setShowForm(false)
     };
 
+    /*
+        border-right: 1px solid;
+    padding-right: 3rem;
+    */
+
     return (
-        <div className="flex flex-col position-relative">
-            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} />
+        <div className="flex flex-col position-relative" style={{ borderRight: ".5rem solid", paddingRight: "3rem" }}>
+            <img src={src} className="w-100px" onClick={() => setShowForm(!showForm)} style={{ cursor: "pointer" }} />
 
             {/* Window Materials */}
             {showForm &&
-                <div className="windows-options">
+                createPortal(<div className="windows-options">
                     <form className="" action="" onSubmit={handleSubmit} >
+                        {/* <button className='modal__close position-static ml-auto' onClick={() => setShowForm(false)}>x</button> */}
                         <div className="flex">
                             <div className="windows-options__row">
                                 <div className="flex align-center gap-1">
@@ -54,17 +62,26 @@ function Window({ window }) {
                                     <p>Height Type</p>
                                     <select className="flex-1" name="" id="" value={heightType} onChange={(e) => setHeightType(e.target.value)}>
                                         <option value="">Choose</option>
-                                        <option value="full">Full</option>
-                                        <option value="net">Net</option>
-                                        <option value="installation">Installation</option>
+                                        <option value="K">K</option>
+                                        <option value="S">S</option>
+                                        <option value="T">T</option>
                                     </select>
                                 </div>
 
                             </div>
                         </div>
-                        <Button disabled={disAbleDone} text={'Done'} size={'small'} type={'primary'} />
+                        <div className="flex gap-1">
+                            <Button text={'cancel'} size={'small'} type={'primary-transparent'}
+                                onClick={(e) => {
+                                    e.preventDefault()
+                                    setShowForm(false)
+
+                                }}
+                            />
+                            <Button disabled={disAbleDone} text={'Done'} size={'small'} type={'primary'} />
+                        </div>
                     </form>
-                </div>
+                </div>, document.body)
             }
         </div>
     )

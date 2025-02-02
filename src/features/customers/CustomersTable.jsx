@@ -1,5 +1,6 @@
 import Spinner from "../../ui/Spinner"
 import Table from "../../ui/Table"
+import NoData from "../../ui/NoData"
 import CustomerRow from "./CustomerRow"
 import { useCreateCustomer } from "./useCreateCustomer"
 import { useCustomers } from "./useCustomers"
@@ -10,16 +11,17 @@ function CustomersTable() {
 
     if (isLoading || isCreating) return <Spinner />
 
+    if (customers.length === 0) return <NoData resource={'Customers'} icon={"src/assets/icons/2user.svg"} />
+
     return (
-        <Table>
+        <Table cols="15rem 22rem repeat(4, 1fr)">
             <Table.Header>
-                <div className="w-16">Customer Name</div>
-                <div className="w-16">Adress</div>
-                <div className="w-16">Phone</div>
-                <div className="w-16">Orders</div>
-                <div className="w-16">Order Total</div>
-                <div className="w-16">Customer Since</div>
-                <div className="w-16">Status</div>
+                <div>Customer Name</div>
+                <div>Adress</div>
+                <div>Phone</div>
+                <div>Customer Since</div>
+                <div>Status</div>
+                <div>Actions</div>
             </Table.Header>
             <Table.Body data={customers} render={(customer => <CustomerRow key={customer.id} customer={customer} isLoading={isLoading} />)} />
         </Table>

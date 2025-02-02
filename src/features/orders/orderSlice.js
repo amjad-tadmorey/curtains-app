@@ -5,6 +5,7 @@ const initialState = {
     items: [],
     staticItems: [],
     rooms: [],
+    cuttedOffItems: [],
 
     //reset after add room
     windows: [],
@@ -23,45 +24,28 @@ const orderSlice = createSlice({
             state.items.push(action.payload)
             state.staticItems.push(action.payload)
         },
-        increaseItemQuantityByDecimal(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity += 0.1
-            ///////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity += 0.1
+        addCuttedOffItem(state, action) {
+            state.cuttedOffItems.push(action.payload)
         },
-        increaseItemQuantity(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity++
-            ///////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity++
-        },
-        increaseItemQuantityByTen(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity += 10
-            /////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity += 10
-        },
-        decreaseItemQuantity(state, action) {
-            const item = state.items.find(item => item.code === action.payload)
-            item.quantity--
-            /////////////////////////////////////////
-            const staticItem = state.staticItems.find(item => item.code === action.payload)
-            staticItem.quantity--
+        setItemQuantity(state, action) {
+            const item = state.items.find(item => item.code === action.payload.code)
+            item.quantity = action.payload.quantity
+            /////////////////////////////////////////////////////////////////////
+            const staticItem = state.staticItems.find(item => item.code === action.payload.code)
+            staticItem.quantity = action.payload.quantity
         },
         editQuantity(state, action) {
             const item = state.items.find(item => item.productName === action.payload.product)
             if (!item) return
-            item.quantity -= action.payload.quantity
+            // item.quantity -= action.payload.quantity
+            item.quantity = Math.round((item.quantity - action.payload.quantity) * 10) / 10
         },
         removeItem(state, action) {
             const updatedItems = state.items.filter(item => item.code !== action.payload)
             state.items = updatedItems
             //////////////////////////////////////
             const updatedStaticItems = state.staticItems.filter(item => item.code !== action.payload)
-            state.items = updatedStaticItems
+            state.staticItems = updatedStaticItems
         },
         addRoom(state, action) {
             state.rooms.push(action.payload)
@@ -101,10 +85,8 @@ const orderSlice = createSlice({
 export const {
     addGeneralInfo,
     addItem,
-    increaseItemQuantityByDecimal,
-    increaseItemQuantity,
-    increaseItemQuantityByTen,
-    decreaseItemQuantity,
+    addCuttedOffItem,
+    setItemQuantity,
     editQuantity,
     removeItem,
     addRoom,
@@ -121,11 +103,12 @@ export default orderSlice.reducer
 
 export const getGeneralInfo = (state) => state.order.generalInfo;
 export const getItems = (state) => state.order.items;
+export const getCuttedOffItems = (state) => state.order.cuttedOffItems;
 export const getItemByName = (product) => state => state.order.items.find(item => item.productName === product)
 export const getStaticItems = (state) => state.order.staticItems;
 export const getCurrentQuantityById = (id) => state => state.order.items.find(item => item.code === id)?.quantity ?? 0;
 export const getRooms = (state) => state.order.rooms;
-export const getRoomByName = (roomName) => state => state.order.rooms.filter((room) => room.roomName === roomName);
+export const getRoomByName = (roomName) => state => state.order.rooms.filter((room) => room.roomName === roomName)[0];
 export const getWindows = (state) => state?.order?.windows;
 export const getMaterials = (state) => state?.order?.materials;
 export const getCleats = (state) => state?.order?.cleats;

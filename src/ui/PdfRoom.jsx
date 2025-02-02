@@ -13,15 +13,21 @@ function PdfRoom({ room }) {
     const { roomName, roomMaterials, roomCleats, windows, notes } = room
 
     const blackout = roomMaterials.filter((mat) => mat.productType === "black-out")
+    console.log(blackout);
+
     const light = roomMaterials.filter((mat) => mat.productType === "light")
     const havey = roomMaterials.filter((mat) => mat.productType === "havey")
-    const shammaat = roomMaterials.filter((mat) => mat.productType === "shammaat")
+    const hook = roomMaterials.filter((mat) => mat.productType === "hook")
     const oima = roomMaterials.filter((mat) => mat.productType === "oima")
-    const migar = roomMaterials.filter((mat) => mat.productType === 'migar')
-    const mawaseer = roomMaterials.filter((mat) => mat.productType === 'mawaseer')
+    const rail = roomMaterials.filter((mat) => mat.productType === 'rail')
+    const rod = roomMaterials.filter((mat) => mat.productType === 'rod')
+    const roll = roomMaterials.filter((mat) => mat.productType === 'roll')
+    const accessory = roomMaterials.filter((mat) => mat.productType === 'accessory')
 
-    const migarDivision = groupByQuantity(migar);
-    const mawaseerDivision = groupByQuantity(mawaseer);
+    const railrDivision = groupByQuantity(rail);
+    const rodDivision = groupByQuantity(rod);
+    console.log(room);
+    
 
 
 
@@ -32,67 +38,173 @@ function PdfRoom({ room }) {
                 <div className="pdf__room-materials">
                     <h1 className="heading-2 mb-3">Materials</h1>
 
-                    <Table>
+                    <Table cols="8rem 40rem 15rem auto">
                         <Table.Header>
-                            <div className="w-25 heading-2">الصنف</div>
-                            <div className="w-25 heading-2">اسم المنتج</div>
-                            <div className="w-25 heading-2">الكمية</div>
-                            <div className="w-25 heading-2">نوع الخياطة</div>
+                            <div className=" heading-2">الصنف</div>
+                            <div className=" heading-2">اسم المنتج</div>
+                            <div className=" heading-2">الكمية</div>
+                            <div className=" heading-2">نوع الخياطة</div>
                         </Table.Header>
                         <Table.StaticBody>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">بلاك :</div>
-                                <div className="w-25 heading-2">{blackout[0]?.product || "_"}</div>
-                                <div className="w-25 heading-2">{blackout[0]?.quantity || "_"}</div>
-                                <div className="w-25 heading-2">{blackout[0]?.sewingType || "_"}</div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">خفيف :</div>
-                                <div className="w-25 heading-2">{light[0]?.product || "_"}</div>
-                                <div className="w-25 heading-2">{light[0]?.quantity || "_"}</div>
-                                <div className="w-25 heading-2">{light[0]?.sewingType || "_"}</div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">ثقيل :</div>
-                                <div className="w-25 heading-2">{havey[0]?.product || "_"}</div>
-                                <div className="w-25 heading-2">{havey[0]?.quantity || "_"}</div>
-                                <div className="w-25 heading-2">{havey[0]?.sewingType || "_"}</div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">شماعات :</div>
-                                <div className="w-25 heading-2">{shammaat[0]?.product || "_"}</div>
-                                <div className="w-25 heading-2">{shammaat[0]?.quantity || "_"}</div>
-                                <div className="w-25 heading-2">{shammaat[0]?.sewingType || "_"}</div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">اويمة :</div>
-                                <div className="w-25 heading-2">{oima[0]?.product || "_"}</div>
-                                <div className="w-25 heading-2">{oima[0]?.quantity || "_"}</div>
-                                <div className="w-25 heading-2">{oima[0]?.sewingType || "_"}</div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-2">مجر :</div>
-                                <div className="w-75 flex gap-2 justify-start">
-                                    {
-                                        migarDivision.map((el) => <span className="fs-2 fw-mid">{el[0].quantity} <sup className="fs-1">({el.length}x)</sup> |</span>)
-                                    }
-                                </div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-3">مواسير :</div>
-                                <div className="w-75 flex gap-2 justify-start">
-                                    {
-                                        mawaseerDivision.map((el) => <span className="fs-2 fw-mid">{el[0].quantity} <sup className="fs-1">({el.length}x)</sup> |</span>)
-                                    }
-                                </div>
-                            </Table.Row>
-                            <Table.Row specialStyles={specialStyles}>
-                                <div className="w-25 heading-3">مرابط :</div>
-                                <div className="w-75 flex gap-2 justify-start">
-                                    {roomCleats !== undefined ? roomCleats.map((el) => <span className="fs-2 fw-mid">{el.product} <sup className="fs-1">({el.quantity ? el.quantity + "m" : "From Height"})</sup> |</span>
-                                    ) : "_"}
-                                </div>
-                            </Table.Row>
+
+
+                            {
+                                blackout.length > 0 && blackout.map((el) =>
+
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">بلاك :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                            }
+                            {
+                                light.length > 0 && light.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">خفيف :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">خفيف :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                havey.length > 0 && havey.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">ثقيل :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">ثقيل :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                rail.length > 0 && rail.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">مجر :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">مجر :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                rod.length > 0 && rod.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">مواسير :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">مواسير :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                roll.length > 0 && roll.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">رول :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">رول :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                hook.length > 0 && hook.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">شماعات :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">شماعات :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                accessory.length > 0 && accessory.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">اكسسوار :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">اكسسوار :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+                            {
+                                oima.length > 0 && oima.map((el) =>
+
+                                    <Table.Row withBorders={true} >
+                                        <div key={el.quantity} className=" heading-2">أويمة :</div>
+                                        <div className=" heading-2">{el?.product || "_"}</div>
+                                        <div className=" heading-2">{el?.quantity || "_"}</div>
+                                        <div className=" heading-2">{el?.variation || "_"}</div>
+                                    </Table.Row>
+                                )
+                                // :
+                                //     <Table.Row withBorders={true} >
+                                //         <div className=" heading-2">أويمة :</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //         <div className=" heading-2">{"_"}</div>
+                                //     </Table.Row>
+                            }
+
                         </Table.StaticBody>
                     </Table>
 
@@ -117,7 +229,7 @@ function PdfRoom({ room }) {
                     {notes}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

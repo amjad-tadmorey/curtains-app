@@ -4,31 +4,44 @@
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;
-    margin-top: 2rem;
-    overflow: auto;
+    // overflow: auto;
+    align-content: start;
+    position: relative;
 
     &__header {
-        display: flex;
+        display: grid;
         align-items: center;
         justify-content: space-between;
-        border-top: 1px solid $color-grey-2;
-        border-bottom: 1px solid $color-grey-2;
-        font-size: $font-extra-small;
-        color: $color-grey-3;
+        border-top: 1px solid #BEC0CA;
+        border-bottom: 1px solid #BEC0CA;
+        font-size: 1.2rem;
+        color: #5E6366;
         font-weight: 300;
         text-align: start;
         height: fit-content;
-        padding: 1rem 0;
+        padding: 1rem;
+    }
+
+    &__body {
+        margin-bottom: 2rem;
     }
 
     &__row {
-        display: flex;
+        display: grid;
         margin-top: 1.5rem;
+
+        &--with-borders {
+            border: 1px solid;
+            margin-top: 1rem !important;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+        }
     }
 
     &__item {
         font-size: $font-extra-small;
-        color: $color-grey-2;
+        color: $color-grey-3;
         font-weight: 300;
         text-align: start;
     }

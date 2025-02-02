@@ -1,33 +1,39 @@
 /* eslint-disable react/prop-types */
+import toast from "react-hot-toast"
+import { clearState, getCuttedOffItems, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
+import { useAddOrder } from "./useAddOrder"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router"
-import { useAddOrder } from "./useAddOrder"
-
-import { clearState, getGeneralInfo, getRooms, getStaticItems } from "./orderSlice"
-import Button from "../../ui/Button"
 import { generateNumberId } from "../../utils/helpers"
-import toast from "react-hot-toast"
+
+import Button from "../../ui/Button"
+import { getOrderById } from "../../services/ordersApi"
+import { useOrderDate } from "../../context/OrderDateContext"
 
 
 function ConfirmOrder({ onCloseModal }) {
-
+    const { orderDate } = useOrderDate()
     const { addOrder, isAdding } = useAddOrder()
     const navigate = useNavigate()
 
     const generalInfo = useSelector(getGeneralInfo)
     const staticItems = useSelector(getStaticItems)
     const rooms = useSelector(getRooms)
+    const cuttedOffItems = useSelector(getCuttedOffItems)
+
+    const orderTotal = staticItems.reduce((acc, cur) => acc + (cur.price * cur.quantity), 0)
 
     const dispatch = useDispatch()
 
     function handleCreateOrder() {
         const newOrder = {
-            created__at: new Date(),
-            id: generateNumberId(),
             status: "pending",
             staticItems,
             rooms,
             generalInfo,
+            orderDate,
+            orderTotal,
+            cuttedOffItems
         }
         addOrder(newOrder, {
             onSuccess: () => {
@@ -35,7 +41,9 @@ function ConfirmOrder({ onCloseModal }) {
                     dispatch(clearState())
                 onCloseModal()
                 toast.success("order created successfuly")
-                navigate(`/orders/${newOrder.id}`)
+                // navigate(`/orders/${newOrder.id}`)
+                console.log(newOrder);
+
             }
         })
     }

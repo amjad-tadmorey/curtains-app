@@ -31,9 +31,14 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $color-primary;
+    background: $color-label-red-light;
     border-radius: 10000px;
     cursor: pointer;
+    transition: .3s ease;
+
+    &:hover {
+        background: $color-primary;
+    }
 }
 
 .overlay {
@@ -52,4 +57,92 @@ body {
     color: #CC5F5F;
     font-size: 1.2rem;
     margin-left: 2rem;
+}
+
+
+.recharts-default-legend {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.bordered-cards {
+    .card {
+        border: 1px solid #1C1D22;
+        height: 18rem;
+        font-size: 1.3rem;
+        padding: 1.5rem;
+    }
+}
+
+.date {
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    display: block;
+    border: 1px solid $color-grey-2;
+    transition: .3s ease;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--primary {
+
+        &:focus {
+            border: 1px solid $color-primary;
+        }
+    }
+
+    &--green {
+        &:focus {
+            border: 1px solid $color-green;
+        }
+    }
+
+    &--red {
+        &:focus {
+            border: 1px solid $color-red;
+        }
+    }
+}
+
+a.active {
+    background-color: transparent;
+    color: white;
+}
+
+a.active p {
+    background-color: transparent;
+    color: white;
+}
+
+li:has(a.active) {
+    background-color: $color-primary;
+    color: #fff;
+}
+
+.cutted {
+    background-color: $color-label-red-light;
+    width: fit-content;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-left: 2rem;
+
+    h1 {
+        color: $color-red;
+        font-size: 1.6rem;
+        margin-bottom: .8rem;
+    }
+
+    .flex {
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.5rem;
+        border-top: 1px solid;
+        padding-top: 1rem;
+        font-weight: bold;
+        color: $color-grey-3;
+    }
 }

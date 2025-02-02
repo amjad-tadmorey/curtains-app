@@ -1,5 +1,6 @@
 import AddCustomer from "../features/customers/AddCustomer"
 import CustomersTable from "../features/customers/CustomersTable"
+import CustomerStat from "../features/customers/CustomerStat"
 import PageHeading from "../ui/PageHeading"
 import SectionStats from "../ui/SectionStats"
 import TableHeading from "../ui/TableHeading"
@@ -11,7 +12,7 @@ function Customers() {
             <PageHeading label={"Customers"}>
                 <AddCustomer />
             </PageHeading>
-            <SectionStats />
+            <CustomerStat />
 
             <Wrapper>
                 <TableHeading label='Customers' />

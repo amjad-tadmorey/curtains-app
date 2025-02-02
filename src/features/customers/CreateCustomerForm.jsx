@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form"
 import Button from "../../ui/Button"
 import RequiredMessage from "../../ui/RequiredMessage";
 import { useCreateCustomer } from "./useCreateCustomer";
-import { formatDate, generateNumberId } from "../../utils/helpers";
 import { useNavigate } from "react-router";
 import toast from "react-hot-toast";
 
@@ -20,15 +19,18 @@ function CreateCustomerForm({ onCloseModal }) {
         console.log("creating");
         createCustomer({
             ...getValues(),
-            adress: [getValues().adress],
-            created_at: formatDate(new Date()),
-            id: generateNumberId(),
+            adresses: [getValues().adresses],
             orders: [],
             status: "active"
+        }, {
+            onSuccess: () => {
+                toast.success("Customer Created Successfuly")
+                reset()
+                onCloseModal()
+                // navigate(`/customers/${id}`)
+            }
         })
-        reset()
-        onCloseModal()
-        toast.success("Customer Created Successfully")
+
     }
 
     return (
@@ -57,12 +59,16 @@ function CreateCustomerForm({ onCloseModal }) {
                                     {errors.customerName && <RequiredMessage>{errors.customerName.message}</RequiredMessage>}
                                 </label>
 
-                                <label htmlFor="phoneNumber">
-                                    <p className='label'>Phone Number</p>
-                                    <input type="text" name="phoneNumber" id="phoneNumber" className="create-form__field" {...register('phoneNumber', {
+                                <label htmlFor="phoneNumber_1">
+                                    <p className='label'>Phone Number 1</p>
+                                    <input type="text" name="phoneNumber_1" id="phoneNumber_1" className="create-form__field" {...register('phoneNumber_1', {
                                         required: "this field is required"
                                     })} />
-                                    {errors.phoneNumber && <RequiredMessage>{errors.phoneNumber.message}</RequiredMessage>}
+                                    {errors.phoneNumber_1 && <RequiredMessage>{errors.phoneNumber_1.message}</RequiredMessage>}
+                                </label>
+                                <label htmlFor="phoneNumber_2">
+                                    <p className='label'>Phone Number 2 (Optional)</p>
+                                    <input type="text" name="phoneNumber_2" id="phoneNumber_2" className="create-form__field" {...register('phoneNumber_2')} />
                                 </label>
 
                                 <label htmlFor="email">
@@ -70,12 +76,12 @@ function CreateCustomerForm({ onCloseModal }) {
                                     <input type="text" name="email" id="email" className="create-form__field" {...register('email')} />
                                 </label>
 
-                                <label htmlFor="adress">
-                                    <p className='label'>Adress</p>
-                                    <input type="text" name="adress" id="adress" className="create-form__field" {...register('adress', {
+                                <label htmlFor="adresses">
+                                    <p className='label'>Adresses</p>
+                                    <input type="text" name="adresses" id="adresses" className="create-form__field" {...register('adresses', {
                                         required: "this field is required"
                                     })} />
-                                    {errors.adress && <RequiredMessage>{errors.adress.message}</RequiredMessage>}
+                                    {errors.adresses && <RequiredMessage>{errors.adresses.message}</RequiredMessage>}
                                 </label>
 
                             </div>
