@@ -180,7 +180,8 @@ export default function AddRoom({ setShowRoom, type }) {
             dispatch(editQuantity({ product, quantity: quantity - prevQuantity }))
         }
     }
-
+    console.log(roomMaterials);
+    
     function handleSubmitRoom() {
         const newRoom = {
             roomName,

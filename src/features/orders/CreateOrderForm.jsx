@@ -22,6 +22,11 @@ function CreateOrderForm({ onCloseModal }) {
     const isItemsEmpty = useSelector(getItems).length === 0
     const [search, setSearch] = useState('')
 
+    const activeCustomers = customers?.filter((el) => el.status === 'active')
+
+    console.log(activeCustomers);
+
+
     function onSubmit() {
         dispatch(addGeneralInfo(getValues()))
         setIsSubmited(true)
@@ -54,7 +59,7 @@ function CreateOrderForm({ onCloseModal }) {
                                 })}>
                                     <option value="">Choose A Customer</option>
                                     {
-                                        customers?.map(customer => <option key={customer.id} value={[customer.customerName, customer.id]}>{customer.customerName}</option>)
+                                        activeCustomers?.map(customer => <option key={customer.id} value={[customer.customerName, customer.id]}>{customer.customerName}</option>)
                                     }
                                 </select>
                                 {errors.customer && <RequiredMessage>{errors.customer.message}</RequiredMessage>}

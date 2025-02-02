@@ -4,8 +4,6 @@ import Tag from "../../ui/Tag";
 
 function CustomerOrderRow({ order }) {
     const { generalInfo: { orderType }, orderDate, id, status, orderTotal } = order
-    console.log(order);
-
 
     return (
         <Table.Row>

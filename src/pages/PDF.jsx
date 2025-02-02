@@ -25,7 +25,8 @@ function PDFToPrint() {
     }, [order])
 
     if (isLoadingOrder) return <Spinner />
-
+    console.log(order);
+    
 
     const { id: orderId, created_at, generalInfo: { orderType, sales, showRoom, technical }, staticItems, rooms, status, orderDate } = order
     const customerId = customer?.id

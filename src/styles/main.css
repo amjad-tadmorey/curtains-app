@@ -1310,7 +1310,7 @@ li:has(a.active) {
   gap: 1rem;
   align-items: center;
   top: 0;
-  left: -10rem;
+  left: -7rem;
 }
 .window-height .window-line {
   height: 100%;

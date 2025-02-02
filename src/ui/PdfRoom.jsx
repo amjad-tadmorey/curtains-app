@@ -26,6 +26,8 @@ function PdfRoom({ room }) {
 
     const railrDivision = groupByQuantity(rail);
     const rodDivision = groupByQuantity(rod);
+    console.log(room);
+    
 
 
 

@@ -48,7 +48,7 @@ export default function DashboardStat() {
                 <Card.Row>
                     <div className='flex flex-col gap-1'>
                         <p>Sales</p>
-                        <h2>{totalOrders}</h2>
+                        <h2>{Math.round(totalOrders)}</h2>
                     </div>
                 </Card.Row>
             </Card>

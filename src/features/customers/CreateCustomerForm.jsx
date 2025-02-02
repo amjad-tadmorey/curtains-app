@@ -68,9 +68,7 @@ function CreateCustomerForm({ onCloseModal }) {
                                 </label>
                                 <label htmlFor="phoneNumber_2">
                                     <p className='label'>Phone Number 2 (Optional)</p>
-                                    <input type="text" name="phoneNumber_2" id="phoneNumber_2" className="create-form__field" {...register('phoneNumber_2', {
-                                        required: "this field is required"
-                                    })} />
+                                    <input type="text" name="phoneNumber_2" id="phoneNumber_2" className="create-form__field" {...register('phoneNumber_2')} />
                                 </label>
 
                                 <label htmlFor="email">

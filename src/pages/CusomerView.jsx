@@ -25,7 +25,7 @@ function CusomerView() {
     if (customer === undefined || isLoading) return <Spinner />
 
     const { adresses, customerName, email, id, phoneNumber_1, phoneNumber_2, status } = customer
-    const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[1] === id)
+    const customerOrders = orders.filter((order) => order.generalInfo.customer.split(',')[0] === customerName)
 
     const totalOrders = customerOrders.reduce((acc, cur) => acc + cur.orderTotal, 0)
     const allOrders = customerOrders.length
@@ -35,7 +35,11 @@ function CusomerView() {
     const canceledOrders = customerOrders.filter((order) => order.status === 'canceled').length
     const damagedOrders = customerOrders.filter((order) => order.status === 'damaged').length
 
-    console.log(adresses);
+    console.log(orders[0].generalInfo.customer.split(',')[0]);
+    console.log(customerName);
+    console.log(customerOrders);
+
+
 
 
     return (
@@ -128,7 +132,7 @@ function CusomerView() {
                         <div>Order Total</div>
                         <div>Status</div>
                     </Table.Header>
-                    <Table.Body data={orders} render={(order => <CustomerOrderRow key={order.id} order={order} isLoading={isLoading} />)} />
+                    <Table.Body data={customerOrders} render={(order => <CustomerOrderRow key={order.id} order={order} isLoading={isLoading} />)} />
                 </Table>
             </Wrapper>
         </>
